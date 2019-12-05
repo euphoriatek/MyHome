@@ -48,6 +48,10 @@ const routes: Routes = [
     path: 'room-object',
     loadChildren: () => import('./room-object/room-object.module').then( m => m.RoomObjectPageModule)
   },
+  {
+    path: 'add-room',
+    loadChildren: () => import('./add-room/add-room.module').then( m => m.AddRoomPageModule)
+  },
 ];
 
 @NgModule({

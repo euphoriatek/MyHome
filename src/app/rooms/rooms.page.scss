@@ -7,12 +7,10 @@
         padding: 25px 20px;
         border-radius: 5px;
         box-shadow: var(--ion-shadow-card);
-        min-width: 230px;
+        min-width: 235px;
         font-weight: 300;
-        margin-bottom: 27px;
-        margin-right: 27px;
         position: relative;
-        max-height: 200px;
+        margin: 0 10px 20px;
         &.completed{
             background: var(--ion-complete-color);
         }
@@ -73,17 +71,17 @@
             right: -15px;
             font-size: 28px;
             line-height: 1.5;
+            z-index: 99;
         }
     }
     .editCircle{
         background: var( --ion-theme-none-color);
-        min-width: 230px;
         font-weight: 300;
-        margin-bottom: 27px;
-        margin-right: 27px;
         color: var(--ion-light-color);
         font-size: 22px;
         text-align: center;
+        box-shadow: none;
+        padding: 0;
         .iconEdit {
             display: block;
             height: 130px;
@@ -94,4 +92,11 @@
             margin: 15px auto;
         }
     }
+}
+
+@media only screen and (max-width: 1200px){
+    .mainSection .customContainer .rightSidebar{padding: 40px;}
+}
+@media only screen and (max-width: 1140px){
+    .roomsContainer .roomCardBox{min-width: 210px;flex: 1 0 0;}
 }

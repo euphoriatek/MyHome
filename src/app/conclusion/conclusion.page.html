@@ -51,7 +51,7 @@
                 </div>
                 <div class="normalTextarea">
                     <label>Signature Real estate company</label>
-                    <textarea></textarea>
+                    <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
                 </div>
               </div>
           </div>

@@ -39,6 +39,10 @@ export class ConclusionPage implements OnInit {
     console.log('begin drawing');
   }
 
+  clearSignature(){
+    this.signaturePad.clear();
+  }
+
   goTomiscellaneous(){
     this.router.navigate(['/miscellaneous'])
   }

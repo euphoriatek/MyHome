@@ -1,0 +1,60 @@
+<ion-content>
+  <section class="mainSection">
+      <div class="customContainer">
+          <div class="leftSidebar">
+              <div class="logoLeft">
+                <a [routerLink]="['/home']">
+                      <img src="./assets/images/logo-g.png" title="my home | logo">
+                  </a>
+              </div>
+              <ul class="nav navigationTop">
+                <li><a [routerLink]="['/home']">Home</a></li>
+                <li><a [routerLink]="['/parties']">Parties</a></li>
+                <li><a [routerLink]="['/room-create-request']">Rooms</a></li>
+                <li><a [routerLink]="['/miscellaneous']">Miscellaneous</a></li>
+                <li><a [routerLink]="['/conclusion']" class="active color-g">Conclusion</a></li>
+            </ul>
+          </div>
+          <div class="rightSidebar">
+              <div class="title">
+                  <p>Übergabeprotokoll</p>
+              </div>
+              <div class="lgTitle mb-5">
+                  <h1 class="heading">Conclusion</h1>
+                  <div class="editLink">
+                      <span class="inlineBlock">
+                            <a [routerLink]="['/home']" class="btn btn-sm btn-g">
+                             <img src="./assets/images/icon-logout.png" alt="icon logout">
+                            </a>
+                        </span>
+                  </div>
+              </div>
+              <div class="formWrapper">
+                <div class="formContainer">
+                        <!-- <ion-item>
+                                <ion-label>Date</ion-label>
+                                <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+                              </ion-item>        -->
+                  <div class="field">
+                      <ion-input placeholder="City"></ion-input>
+                  </div>
+                  <div class="field">
+                      <ion-input placeholder="Date" (click)="datePick()"></ion-input>
+                  </div>
+                  <p><button ion-button class="btn w-100 btn-balticsea">PDF Preview</button></p>
+                </div>
+              </div>
+              <div class="signatureWrapper">
+                <div class="normalTextarea">
+                    <label>Signature Resident</label>
+                    <textarea></textarea>
+                </div>
+                <div class="normalTextarea">
+                    <label>Signature Real estate company</label>
+                    <textarea></textarea>
+                </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</ion-content>

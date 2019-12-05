@@ -1,0 +1,90 @@
+<ion-content>
+    <section class="mainSection">
+        <div class="customContainer">
+            <div class="leftSidebar">
+                <div class="logoLeft">
+                    <a [routerLink]="['/home']">
+                        <img src="./assets/images/logo-g.png" title="my home | logo">
+                    </a>
+                </div>
+                <ul class="nav navigationTop">
+                    <li><a [routerLink]="['/home']">Home</a></li>
+                    <li><a [routerLink]="['/parties']">Parties</a></li>
+                    <li><a [routerLink]="['/room-create-request']" class="active color-g">Rooms</a></li>
+                    <li><a [routerLink]="['/miscellaneous']">Miscellaneous</a></li>
+                    <li><a [routerLink]="['/conclusion']">Conclusion</a></li>
+                </ul>
+            </div>
+            <div class="rightSidebar">
+                <div class="title">
+                    <p>Übergabeprotokoll</p>
+                </div>
+                <div class="lgTitle mb-5">
+                    <h1 class="heading">Living- / Dinning room > Wall panels</h1>
+                    <div class="editLink">
+                        <span class="inlineBlock">
+                  <a href="#" class="btn btn-sm btn-g">
+                      <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+                  </a>
+                </span>
+                    </div>
+                </div>
+                <div class="formWrapper">
+                    <h3>Create request</h3>
+                    <div class="formContainer">
+                        <div class="field">
+                            <ion-input placeholder="Title"></ion-input>
+                        </div>
+                        <div class="textareaWrapper">
+                          <textarea name="" id="" cols="" rows=""></textarea>
+                          <span class="floatTitle">Description</span>
+                        </div>
+                        <div class="field">
+                            <ion-input placeholder="Service provider"></ion-input>
+                        </div>
+                        <div class="field">
+                            <div [routerLink]="['/rooms-subdropdown']" class="cstmSelect">Action</div>
+                            <span class="icon">
+                              <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                            </span>
+                        </div>
+                        <div class="field">
+                            <div class="cstmSelect">Costs to be paid by:</div>
+                            <span class="icon">
+                              <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="locationWrap">
+                      <ion-grid>
+                          <ion-row>
+                              <ion-col size="7">
+                                <ion-label>Location</ion-label>
+                                <div class="locateContainer">
+
+                                </div>
+                              </ion-col>
+                              <ion-col size="5">
+                                <ion-label>Pictures</ion-label>
+                                <div class="pictureShot">
+                                        <owl-carousel
+                                        [options]="{items: 3, dots: true, navigation: true, margin: 10, dotsEach: true}" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                                        <div class="item carouselImg" *ngFor="let image of slides;let i = index">
+                                            <img src="{{image.img}}">
+                                        </div>
+                                    </owl-carousel>
+                                </div>
+                              </ion-col>
+                          </ion-row>
+                      </ion-grid>
+                    </div>
+                    <a class="cameraBtn">
+                        <img src="./assets/images/icon-camera.png" alt="icon camera">
+                    </a>
+                    <div class="vacantHeight">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </ion-content>

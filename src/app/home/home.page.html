@@ -1,0 +1,64 @@
+<ion-content>
+  <section class="mainSection">
+      <div class="customContainer">
+        <div class="leftSidebar">
+            <div class="logoLeft">
+              <a [routerLink]="['/home']">
+                <img src="./assets/images/logo.png" title="my home | logo">
+              </a>
+            </div>
+            <ul class="nav navigationTop">
+              <li><a href="#" class="active">Home</a></li>
+            </ul>
+            <div class="btnWrapper">
+              <ion-buttons>
+                <ion-back-button></ion-back-button>
+              </ion-buttons>
+              <ion-title class="btn btnPrimary" (click)="goToProtocol()">
+                New protocol <span class="icon borderRound"><img src="./assets/images/add.png" alt="icon add"></span>
+            </ion-title>
+            </div>
+        </div>
+        <div class="rightSidebar">
+            <div class="title">
+              <p>Home</p>
+            </div>
+            <div class="lgTitle">
+              <h1 class="heading">Overview</h1>
+              <div class="editLink">
+                <span class="inlineBlock">
+                    <ion-buttons>
+                      <ion-button></ion-button>
+                    </ion-buttons>
+                    <ion-title>Edit</ion-title>
+                </span>
+              </div>
+            </div>
+            <div class="cardboxWrapper">
+              <div *ngFor="let itemCard of cardBox;let i= index" class="cardBoxContainer">
+                <div class="cardBox" [ngClass]="itemCard.bgClass">
+                    <a *ngIf="itemCard.bgClass=='secondaryBg'" class="icon"><img src="./assets/images/cardTopIcon.png" class="cloudImg"></a>
+                    <h5 class="cardHeading">{{itemCard.name}}<br> {{itemCard.subname}}</h5>
+                    <p>Jonas <br> Meier <br> 152C-201 <br><a href="">mühlebachweg.ch</a></p>
+                </div>
+                <div class="seeMore">
+                  <a class="iconMore" (click)="toggleClass(itemCard)">
+                    <ion-icon name="more"></ion-icon>
+                    <div class="moreMenu" [ngClass]="itemCard.active?'show':'hide'">
+                      <ul class="moreMenuItems">
+                        <li class="moreMenuItem">
+                            <button (click)="deleteCard(i)" ion-button class="more-menu-btn"><span class="icon"><ion-icon color="danger" ios="ios-trash-outline" md="md-trash"></ion-icon></span>Delete</button>
+                        </li>
+                        <li class="moreMenuItem">
+                          <button ion-button class="more-menu-btn"><span class="icon"><ion-icon color="success" ios="ios-cloud-upload" md="md-cloud-upload"></ion-icon></span>Sync</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+  </section>
+</ion-content>

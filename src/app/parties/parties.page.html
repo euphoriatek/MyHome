@@ -1,0 +1,98 @@
+<ion-content>
+    <section class="mainSection">
+        <div class="customContainer">
+          <div class="leftSidebar">
+              <div class="logoLeft">
+                <a [routerLink]="['/home']">
+                  <img src="./assets/images/logo-g.png" title="my home | logo">
+                </a>
+              </div>
+              <ul class="nav navigationTop">
+                <li><a [routerLink]="['/home']">Home</a></li>
+                <li><a [routerLink]="['/parties']" class="active color-g">Parties</a></li>
+                <li><a [routerLink]="['/room-create-request']">Rooms</a></li>
+                <li><a [routerLink]="['/miscellaneous']">Miscellaneous</a></li>
+                <li><a [routerLink]="['/conclusion']">Conclusion</a></li>
+            </ul>
+          </div>
+          <div class="rightSidebar">
+              <div class="title">
+                <p>Return</p>
+              </div>
+              <div class="lgTitle mb-5">
+                <h1 class="heading">Parties</h1>
+                <div class="editLink">
+                  <span class="inlineBlock">
+                    <a href="#" class="btn btn-sm btn-g">
+                      <ion-icon ios="ios-arrow-round-forward" md="md-arrow-round-forward"></ion-icon>
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <!-- <div class="formWrapper">
+                <h3>Object</h3>
+                <div class="formContainer">
+                  <div class="field">
+                      <ion-input placeholder="Quater"></ion-input>
+                  </div>
+                  <div class="field">
+                      <ion-input placeholder="Building"></ion-input>
+                  </div>
+                  <div class="field">
+                      <ion-input placeholder="Unit"></ion-input>
+                  </div>
+                </div>
+              </div> -->
+              <div class="formWrapper">
+                <h3>Residents</h3>
+                <div class="formContainer">
+                  <div class="field posIn">
+                      <ion-auto-complete [(ngModel)]="isShowUnit" (ionClear)="removedMethod(callback)" [dataProvider]="SimpleService" [options]="{ placeholder : 'Moving in resident' }"></ion-auto-complete>
+                  </div>
+                  <div class="field posIn" *ngIf="isShowUnit" >
+                    <ion-auto-complete [dataProvider]="SimpleService" [options]="{ placeholder : 'Unit' }"></ion-auto-complete>
+                  </div>
+                  <div class="field posIn">
+                    <ion-auto-complete [dataProvider]="SimpleService" [options]="{ placeholder : 'Moving out resident' }"></ion-auto-complete>
+                  </div>
+                </div>
+              </div>
+              <div class="formWrapper">
+                <h3>TU/GU</h3>
+                <div class="formContainer">
+                  <div class="field posIn">
+                      <ion-auto-complete [dataProvider]="SimpleService" [options]="{ placeholder : 'Construction Company' }"></ion-auto-complete>
+                  </div>
+                </div>
+              </div>
+              <div class="formWrapper">
+                <h3>Houseowner</h3>
+                <div class="formContainer">
+                  <div class="field preData">
+                      <ion-input placeholder="Fortimo AG, Rorschacherstrasse 305, 9016 St.Gallen"></ion-input>
+                      <span class="iconAction">
+                        <button class="nothing">
+                          <img src="./assets/images/icon-pencil.png" alt="icon-pencil">
+                        </button>
+                      </span>
+                  </div>
+                </div>
+              </div>
+              <div class="formWrapper">
+                <h3>Realstate Company</h3>
+                <div class="formContainer">
+                  <div class="field preData">
+                      <ion-input placeholder="Fortimo AG, Rorschacherstrasse 302, 9016 St.Gallen"></ion-input>
+                      <span class="iconAction">
+                        <button class="nothing">
+                          <img src="./assets/images/icon-pencil.png" alt="icon-pencil">
+                        </button>
+                      </span>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </section>
+  </ion-content>
+  

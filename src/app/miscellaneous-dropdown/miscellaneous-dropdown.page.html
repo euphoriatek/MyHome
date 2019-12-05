@@ -1,0 +1,51 @@
+<ion-content>
+  <section class="mainSection">
+      <div class="customContainer">
+          <div class="leftSidebar">
+              <div class="logoLeft">
+                  <a [routerLink]="['/home']">
+                      <img src="./assets/images/logo-g.png" title="my home | logo">
+                  </a>
+              </div>
+              <ul class="nav navigationTop">
+                  <li><a [routerLink]="['/home']">Home</a></li>
+                  <li><a [routerLink]="['/parties']">Parties</a></li>
+                  <li><a [routerLink]="['/room-create-request']">Rooms</a></li>
+                  <li><a [routerLink]="['/miscellaneous']" class="active color-g">Miscellaneous</a></li>
+                  <li><a [routerLink]="['/conclusion']">Conclusion</a></li>
+              </ul>
+          </div>
+          <div class="rightSidebar">
+              <div class="title">
+                  <p></p>
+              </div>
+              <div class="lgTitle">
+                  <h1 class="heading"></h1>
+                  <div class="editLink">
+                      <span class="inlineBlock">
+                <a [routerLink]="['/room-create-request']" class="btn btn-sm btn-g">
+                    <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+                </a>
+              </span>
+                  </div>
+              </div>
+              <div class="formWrapper">
+                  <h3>Action</h3>
+                  <div class="dropdownContainer">
+                    <a class="subDropdownOption">1</a>
+                    <a class="subDropdownOption">2</a>
+                    <a class="subDropdownOption">3</a>
+                    <a class="subDropdownOption">4</a>
+                    <a class="subDropdownOption selected">5</a>
+                  </div>
+                  <h3>Schlüsselnummer</h3>
+                  <div class="formContainer">
+                      <div class="field">
+                          <ion-input placeholder="Number"></ion-input>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</ion-content>

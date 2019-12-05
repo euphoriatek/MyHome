@@ -1,0 +1,94 @@
+
+<ion-content>
+    <section class="mainSection">
+        <div class="customContainer">
+            <div class="leftSidebar">
+                <div class="logoLeft">
+                    <a [routerLink]="['/home']">
+                        <img src="./assets/images/logo-g.png" title="my home | logo">
+                    </a>
+                </div>
+                <ul class="nav navigationTop">
+                    <li><a [routerLink]="['/home']">Home</a></li>
+                    <li><a [routerLink]="['/parties']">Parties</a></li>
+                    <li><a [routerLink]="['/room-create-request']" class="active color-g">Rooms</a></li>
+                    <li><a [routerLink]="['/miscellaneous']">Miscellaneous</a></li>
+                    <li><a [routerLink]="['/conclusion']">Conclusion</a></li>
+                </ul>
+            </div>
+            <div class="rightSidebar">
+                <div class="title">
+                    <p>Übergabeprotokoll</p>
+                </div>
+                <div class="lgTitle">
+                    <h1 class="heading">Rooms</h1>
+                    <div class="editLink">
+                        <span class="inlineBlock">
+                  <a href="#" class="btn btn-sm btn-g">
+                      <ion-icon ios="ios-arrow-round-forward" md="md-arrow-round-forward"></ion-icon> 
+                  </a>
+                </span>
+                    </div>
+                </div>
+
+                <div class="roomsContainer">
+                    <div class="roomCardBox">
+                        <h4>Korridor</h4>
+                        <div class="bottomDiv">
+                            <span class="green">2 Mängel</span>
+                            <span class="components">11/11 Bauteile</span>
+                        </div>
+                    </div>
+                    <div class="roomCardBox">
+                        <h4>Korridor</h4>
+                        <div class="bottomDiv">
+                            <span class="green">2 Mängel</span>
+                            <span class="components">11/11 Bauteile</span>
+                        </div>
+                    </div>
+                    <div class="roomCardBox">
+                        <h4>Korridor</h4>
+                        <div class="bottomDiv">
+                            <span class="green">2 Mängel</span>
+                            <span class="components">11/11 Bauteile</span>
+                        </div>
+                    </div>
+                    <div class="roomCardBox">
+                        <h4>Korridor</h4>
+                        <div class="bottomDiv">
+                            <span class="green">2 Mängel</span>
+                            <span class="components">11/11 Bauteile</span>
+                        </div>
+                    </div>
+                    <div class="roomCardBox">
+                        <h4>Korridor</h4>
+                        <div class="bottomDiv">
+                            <span class="green">2 Mängel</span>
+                            <span class="components">11/11 Bauteile</span>
+                        </div>
+                    </div>
+                    <div class="roomCardBox completed">
+                        <h4>Untergeschoss</h4>
+                        <div class="bottomDiv">
+                            <span class="green">2 Mängel</span>
+                            <span class="components">11/11 Bauteile</span>
+                        </div>
+                        <span class="completedMark">
+                            <img src="./assets/images/icon-check-w.png" alt="icon check">
+                        </span>
+                    </div>
+                    <div class="roomCardBox addRoom">
+                        <span class="iconAdd"><ion-icon ios="ios-add" md="md-add"></ion-icon></span>
+                        <p>Add new room</p>
+                    </div>
+                    <div class="editCircle">
+                        <a class="iconEdit">
+                            <img src="./assets/images/icon-edit.png" alt="icon edit">
+                        </a>
+                        <span>Raum anpassen</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </ion-content>

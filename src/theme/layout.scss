@@ -1,0 +1,225 @@
+.mainSection{
+    background: #ddd url(../assets/images/rightbg.png) no-repeat;
+    background-size: cover;
+    background-position: bottom left;
+    .customContainer{
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: nowrap;
+        .leftSidebar {
+            min-width: 350px;
+            padding: 55px 0;
+            min-height: 100vh;
+            background-color: var(--ion-color-primary-contrast);
+            .logoLeft {
+                max-width: 145px;
+                margin: 0 auto 140px;
+            }
+            .navigationTop{
+                padding: 0 20px 0 100px;
+                li{
+                    padding-bottom: 50px;
+                    a{
+                        font-size: 23px;
+                        color: var(--ion-font-color);
+                        position: relative;
+                        font-weight: 300;
+                        &.active{
+                            font-weight: 700;
+                            &:after{
+                                position: absolute;
+                                content: "";
+                                height: 3px;
+                                background-color: var(--ion-theme-primary-color);
+                                width: 20px;
+                                left: 2px;
+                                bottom: -5px;
+                                border-radius: 5px;
+                            }
+                            &.color-g{
+                                &:after{
+                                    background-color: var(--ion-theme-secondary-color);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .btnWrapper {
+                display: block;
+                width: 100%;
+                padding: 50px 40px;
+                .borderRound {
+                    border: 2px solid var(--ion-color-primary-contrast);
+                    border-radius: 50%;
+                    height: 18px;
+                    width: 18px;
+                    text-align: center;
+                    margin-left: 20px;
+                    display: inline-block;
+                    padding: 2px;
+                    line-height: 0;
+                }
+                .toolbar-title{
+                    text-align: center;
+                    padding: 20px 0;
+                }
+            }
+        }
+        .rightSidebar {
+            padding: 40px 70px;
+            width: 100%;
+            position: relative;
+            .title {
+                color: var(--ion-font-light-color);
+                font-weight: lighter;
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+            .lgTitle {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 5px 0 0;
+                margin: 0 0 70px;
+                .heading{
+                    margin: 0;
+                    flex: 0 0 80%;
+                    max-width: 80%;
+                    font-size: 34px;
+                    font-weight: bold;
+                }
+                .editLink{
+                    flex: 0 0 20%;
+                    max-width: 20%;
+                    text-align: right;
+                    color: var(--ion-theme-primary-color);
+                    font-size: 18px;
+                    .inlineBlock {
+                        display: inline-block;
+                        cursor: pointer;
+                        ion-button{
+                            --color: var(--ion-theme-primary-color);
+                            --background: none;
+                            --box-shadow: none;
+                            --padding-start: 0;
+                            --padding-end: 0;
+                            --padding-top: 0;
+                            --padding-bottom: 0;
+                            height: auto;
+                            text-transform: capitalize;
+                        }
+                        ion-title{
+                            padding: 0;
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+            .formWrapper{
+                h3{
+                    margin: 0 0 20px;
+                    font-size: 23px;
+                    font-weight: bold;
+                }
+                .formContainer{
+                    margin-bottom: 40px;
+                }
+            }
+            .locationWrap{
+                .locateContainer{
+                    background-color: var(--ion-color-primary-contrast);
+                    display: block;
+                    width: 100%;
+                    height: 180px;
+                    border-radius: 8px;
+                    max-width: 85%;
+                }
+                .pictureShot{
+                    background-color: var(--ion-color-primary-contrast);
+                    display: block;
+                    width: 100%;
+                    height: 180px;
+                    border-radius: 8px;
+                    padding: 0 10px;
+                    .carouselImg {
+                        height: 120px;
+                        width: 120px;
+                        margin: 20px 0 0;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        position: relative;
+                        &:before{
+                            content: "";
+                            position: absolute;
+                            height: 100%;
+                            width: 100%;
+                            background: var(--ion-color-light-contrast);
+                            opacity: 0.15;
+                            top: 0;
+                            left: 0;
+                        }
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            height: 100%;
+                            width: 100%;
+                            background-image: url(../assets/images/icon-camera.png);
+                            top: 50%;
+                            left: 50%;
+                            background-repeat: no-repeat;
+                            height: 40px;
+                            width: 54px;
+                            background-size: cover;
+                            transform: translate(-50%, -50%);
+                        }
+                        img{
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+            .vacantHeight{
+                min-height: 100px;
+            }
+            .cameraBtn{
+                display: block;
+                height: 80px;
+                width: 80px;
+                background: var(--ion-theme-secondary-color);
+                padding: 20px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 55px;
+                position: absolute;
+                bottom: 40px;
+                right: 40px;
+            }
+            .dropdownContainer{
+                margin-bottom: 40px;
+                .subDropdownOption{
+                    display: block;
+                    background: var(--ion-color-medium-contrast) ;
+                    min-height: 60px;
+                    color: var(--ion-placeholder-color);
+                    padding: 0 15px ;
+                    font-size: 18px;
+                    border-radius: 8px;
+                    line-height: 60px;
+                    font-weight: 400;
+                    cursor: pointer;
+                    margin-bottom: 5px;
+                    &.selected{
+                        font-weight: 500;
+                        color: var(--ion-theme-secondary-color);
+                        background-image: url(../assets/images/icon-check.png);
+                        background-repeat: no-repeat;
+                        background-size: 20px;
+                        background-position: 98% center;
+                    }
+                }
+            }
+        }
+    }
+}
+

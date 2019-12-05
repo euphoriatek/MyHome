@@ -1,0 +1,243 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; 
+}
+  
+/* HTML5 display-role reset for older browsers */
+  
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+  
+body {
+    line-height: 1;
+    color: var(--ion-font-color);
+    font-family: var(--ion-font-family);
+}
+  
+ol, ul {
+    list-style: none; 
+}
+  
+blockquote, q {
+    quotes: none; 
+}
+  
+blockquote {
+    &:before, &:after {
+      content: '';
+      content: none; 
+    } 
+}
+  
+q {
+    &:before, &:after {
+        content: '';
+        content: none; 
+    } 
+}
+  
+table {
+    border-collapse: collapse;
+    border-spacing: 0; 
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    &:hover, &:focus{
+        box-shadow: none;
+    }
+}
+
+img{
+    width: 100%;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+}
+.w-100{
+    width: 100%;
+}
+
+button{
+    box-shadow: none;
+    outline: none;
+}
+.btn {
+    display: flex;
+    height: 58px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: var(--ion-color-medium);
+    color: var(--ion-font-color);
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    &.btnPrimary{
+        background-color: var(--ion-theme-primary-color);
+        color: var(--ion-color-medium-contrast);
+    }
+    &.btn-sm {
+        height: 35px;
+        padding: 0;
+        border-radius: 10px;
+        width: 35px;
+        font-size: 28px;
+    }
+    &.btn-g {
+        background: var(--ion-theme-secondary-color);
+        color: var(--ion-color-medium-contrast);
+    }
+    &.btn-balticsea{
+        background: var(--ion-balticsea-color);
+        color: var(--ion-color-medium-contrast);
+        font-weight: 300;
+    }
+}
+.toolbar-background{
+    background: var(--ion-theme-none-color);
+}
+ion-title {
+    padding: 0 10px;
+}
+.field{
+    margin-bottom: 5px;
+    position: relative;
+    input, .item-select{
+        background: var(--ion-color-medium-contrast) !important;
+        min-height: 60px;
+        color: var(--ion-placeholder-color)!important;
+        padding: 0 15px !important;
+        font-size: 18px!important;
+        border-radius: 8px!important;
+        font-weight: 100!important;
+    }
+    .cstmSelect{
+        background: var(--ion-color-medium-contrast) ;
+        min-height: 60px;
+        color: var(--ion-placeholder-color);
+        padding: 0 15px ;
+        font-size: 18px;
+        border-radius: 8px;
+        line-height: 60px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+    .iconAction {
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        z-index: 9;
+        transform: translateY(-50%);
+        .nothing{
+            background: transparent;
+            padding: 0;
+            max-width: 18px;
+            .button-native{
+                box-shadow: none!important;
+                background: transparent!important;
+                max-width: 20px!important;
+                padding: 0!important;            
+            }
+        }
+    }
+    &.preData{
+        input{
+            font-weight: normal!important;
+        }
+    }
+}
+.textareaWrapper{
+    position: relative;
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 5px;
+    textarea {
+        resize: none;
+        width: 100%;
+        border: none;
+        padding: 15px;
+        font-size: 18px!important;
+        font-weight: 300!important;
+        color: --ion-placeholder-color!important;
+        outline: none;
+        margin-top: 48px;
+        border-radius: 8px;
+    }
+    .floatTitle {
+        display: block;
+        width: 98%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        padding: 15px 7px;
+        font-size: 18px;
+        font-weight: 300;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-50%);
+        background: #fff;
+        color: var(--ion-placeholder-color);
+    }
+}
+.sc-ion-input-md-h{
+    --placeholder-color: var(--ion-placeholder-color)!important;
+    --placeholder-opacity: 1;
+}
+html{
+    body{
+        ion-label{
+            font-weight: 400;
+        }
+        ion-auto-complete {
+            width: 100%;
+            display: inline-block;
+        }
+        ion-auto-complete ul {
+            position: absolute;
+            width: 550px;
+            left: 50%;
+            padding-left: 20px;
+            border-radius: 8px;
+            color: var(--placeholder-color);
+            font-weight: 100;
+            bottom: auto;
+            margin-top: 10px;
+            transform: translateX(-50%);
+            &::before{
+                position: absolute;
+                content: "";
+                height: 30px;
+                width: 30px;
+                background-image: url(../assets/images/diamond.png);
+                background-repeat: no-repeat;
+                left: 50%;
+                top: -12px;
+                background-size: cover;
+            }
+        }
+        .searchbar-input.sc-ion-searchbar-md{
+            box-shadow: none;
+        }
+        .searchbar-has-focus.sc-ion-searchbar-md-h .searchbar-search-icon.sc-ion-searchbar-md, ion-icon.searchbar-search-icon.sc-ion-searchbar-md{
+            display: none;
+        }
+        .sc-ion-searchbar-md-h{
+            --placeholder-opacity: 1;
+        }
+        ion-auto-complete ul li:focus, ion-auto-complete ul li.focus, ion-auto-complete ul li:hover{
+            background: transparent;
+        }
+    }
+}
+.posIn{
+    position: inherit;
+}

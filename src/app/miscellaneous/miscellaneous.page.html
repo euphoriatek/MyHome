@@ -1,0 +1,98 @@
+<ion-content>
+  <section class="mainSection">
+      <div class="customContainer">
+          <div class="leftSidebar">
+              <div class="logoLeft">
+                <a [routerLink]="['/home']">
+                      <img src="./assets/images/logo-g.png" title="my home | logo">
+                  </a>
+              </div>
+              <ul class="nav navigationTop">
+                <li><a [routerLink]="['/home']">Home</a></li>
+                <li><a [routerLink]="['/parties']">Parties</a></li>
+                <li><a [routerLink]="['/room-create-request']">Rooms</a></li>
+                <li><a [routerLink]="['/miscellaneous']" class="active color-g">Miscellaneous</a></li>
+                <li><a [routerLink]="['/conclusion']">Conclusion</a></li>
+            </ul>
+          </div>
+          <div class="rightSidebar">
+              <div class="title">
+                  <p>Übergabeprotokoll</p>
+              </div>
+              <div class="lgTitle mb-5">
+                  <h1 class="heading">Miscellaneous</h1>
+                  <div class="editLink">
+                      <span class="inlineBlock">
+                <a href="#" class="btn btn-sm btn-g">
+                  <ion-icon ios="ios-arrow-round-forward" md="md-arrow-round-forward"></ion-icon>
+                </a>
+              </span>
+                  </div>
+              </div>
+              <div class="formWrapper">
+                  <h3>Key directory</h3>
+                  <div class="formContainer">
+                    <div class="field">
+                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Apartment door</div>
+                        <span class="icon">
+                          <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                        </span>
+                    </div>
+                    <div class="field">
+                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Transmitter underground garage</div>
+                        <span class="icon">
+                          <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                        </span>
+                    </div>
+                    <div class="field">
+                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Office and commercial</div>
+                        <span class="icon">
+                          <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                        </span>
+                    </div>
+                    <div class="field">
+                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Storeroom</div>
+                        <span class="icon">
+                          <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                        </span>
+                    </div>
+                    <div class="field">
+                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Transmitter</div>
+                        <span class="icon">
+                          <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                        </span>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="formWrapper">
+                  <h3>General</h3>
+                  <div class="formContainer">
+                    <div class="field">
+                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Oven tray</div>
+                        <span class="icon">
+                          <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                        </span>
+                    </div>
+                    <div class="field">
+                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Oven grid</div>
+                        <span class="icon">
+                          <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                        </span>
+                    </div>
+                    <div class="field">
+                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Information brochure</div>
+                        <span class="icon">
+                          <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                        </span>
+                    </div>
+                    <div class="textareaWrapper">
+                    <textarea name="" id="" cols="" rows=""></textarea>
+                    <span class="floatTitle">Notes</span>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</ion-content>

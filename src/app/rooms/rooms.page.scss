@@ -24,6 +24,7 @@
             text-align: center;
             padding: 55px 0;
             font-size:20px;
+            display: block;
             span{
                 display: block;
                 width: 100%;
@@ -58,6 +59,20 @@
                     color: var(--ion-theme-secondary-color);
                 }
             }
+        }
+        .crossKill{
+            position: absolute;
+            height: 35px;
+            width: 35px;
+            background-color: var(--ion-bargandy-color);
+            color: var(--ion-color-dark-contrast);
+            border-radius: 50%;
+            display: block;
+            text-align: center;
+            top: -15px;
+            right: -15px;
+            font-size: 28px;
+            line-height: 1.5;
         }
     }
     .editCircle{

@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { OwlModule } from 'ngx-owl-carousel';
-
+import { SignaturePadModule } from 'angular2-signaturepad';
 import { AutoCompleteModule } from 'ionic4-auto-complete';
 import {SimpleService} from './api/simple-service.service';
 import {HttpClient} from '@angular/common/http';
@@ -19,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule,HttpClientModule, IonicModule.forRoot(), AppRoutingModule, OwlModule, AutoCompleteModule],
+  imports: [BrowserModule,SignaturePadModule,HttpClientModule, IonicModule.forRoot(), AppRoutingModule, OwlModule, AutoCompleteModule],
   providers: [
     HttpClient,
     DatePicker,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SignaturePadModule } from 'angular2-signaturepad';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,6 +14,7 @@ import { ConclusionPage } from './conclusion.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    SignaturePadModule,
     ConclusionPageRoutingModule
   ],
   declarations: [ConclusionPage]

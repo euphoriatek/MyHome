@@ -11,5 +11,14 @@ export class AddRoomPage implements OnInit {
 
   ngOnInit() {
   }
-
+  ionViewDidEnter() {
+    const ionSelects = document.querySelectorAll('ion-select');
+    ionSelects.forEach((sel) => {
+      sel.shadowRoot.querySelectorAll('.select-icon-inner')
+        .forEach((elem) => {
+          elem.setAttribute('style', 'display: none;');
+        });
+    });
+  }
+  
 }

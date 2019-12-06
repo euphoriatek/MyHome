@@ -5,16 +5,26 @@
             height: 50px!important;
             border-radius: 8px!important;
             border: 1px solid var(--ion-border-light)!important;
+            padding: 0 10px!important;
         }
         ion-item{
             --background: transparent!important;
             --border: none!important;
+            --highlight-color-valid: transparent;
+            --highlight-color-invalid: transparent;
+            --highlight-color-focused: var(--ion-theme-none-color);
         }
         .selectCustom{
             background: var(--ion-complete-color)!important;
             height: 50px!important;
             border-radius: 8px!important;
             border: 1px solid var(--ion-border-light)!important;
+            ion-select{
+                padding: 0;
+                select-icon{
+                    opacity: 0!important;
+                }
+            }
         }
     }
     .fieldTitle{
@@ -42,15 +52,9 @@
                     margin: 0;
                 }
             }
-            // .item-checkbox-checked{
-            //     background: url(../../assets/images/icon-check.png) no-repeat;
-            //     background-size: 20px;
-            //     background-position: 98% 50%;
-            // }
             ion-checkbox{
                 .checkbox-icon{
-                    opacity: 0;
-                    visibility: hidden;
+                    --display: none;
                 }
             }
         }

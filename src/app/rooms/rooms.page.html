@@ -32,17 +32,20 @@
                 </div>
 
                 <div class="roomsContainer">
-                    <div class="roomCardBox">
-                        <h4>Korridor</h4>
+                    <div class="roomCardBox" *ngFor="let roomdata of roomCard" [ngClass]="roomdata.complete ? 'completed' : ''">
+                        <h4>{{roomdata.title}}</h4>
                         <div class="bottomDiv">
-                            <span class="green">2 Mängel</span>
-                            <span class="components">11/11 Bauteile</span>
+                            <span class="green">{{roomdata.name}}</span>
+                            <span class="components">{{roomdata.component}}</span>
                         </div>
-                        <div class="crossKill">
+                        <div class="crossKill" *ngIf="isCancel">
                             <ion-icon ios="ios-close" md="md-close"></ion-icon>
                         </div>
+                        <span *ngIf="roomdata.complete" class="completedMark">
+                            <img src="./assets/images/icon-check-w.png" alt="icon check">
+                        </span>
                     </div>
-                    <div class="roomCardBox">
+                    <!-- <div class="roomCardBox">
                         <h4>Korridor</h4>
                         <div class="bottomDiv">
                             <span class="green">2 Mängel</span>
@@ -79,16 +82,23 @@
                         <span class="completedMark">
                             <img src="./assets/images/icon-check-w.png" alt="icon check">
                         </span>
-                    </div>
-                    <a class="roomCardBox addRoom">
+                    </div> -->
+                    <a class="roomCardBox addRoom" *ngIf="isCancel" [routerLink]="['/add-room']">
                         <span class="iconAdd"><ion-icon ios="ios-add" md="md-add"></ion-icon></span>
                         <p>Add new room</p>
                     </a>
-                    <div class="editCircle">
+                    <div class="editCircle" (click)="editClick()" *ngIf="!isCancel">
                         <a class="iconEdit">
                             <img src="./assets/images/icon-edit.png" alt="icon edit">
                         </a>
                         <span>Raum anpassen</span>
+                    </div>
+
+                    <div class="editCircle" (click)="editClick()" *ngIf="isCancel">
+                        <a class="iconEdit">
+                            <ion-icon ios="ios-close" md="md-close"></ion-icon>
+                        </a>
+                        <span>Cancel Selection</span>
                     </div>
                 </div>
             </div>

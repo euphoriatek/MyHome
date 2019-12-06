@@ -1,0 +1,25 @@
+.secObjectList{
+    ion-list{
+        padding: 0;
+        border-radius: 8px;
+        ion-item-sliding{
+            cursor: pointer;
+            &:focus{
+                background-color: var(--ion-balticsea-color);
+            }
+            ion-item{
+                color: var(--ion-balticsea-color);
+                font-weight: 100;
+            }
+            ion-item-option{
+                background: var(--ion-bargandy-color);
+                font-weight: 300;
+                font-size: 15px;
+                text-transform: lowercase;
+                padding: 0 2px;
+                text-align: center;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}

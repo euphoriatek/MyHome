@@ -50,14 +50,14 @@
                         <span class="iconAdd"><ion-icon ios="ios-add" md="md-add"></ion-icon></span>
                         <p>Add new room</p>
                     </a>
-                    <div class="editCircle" (click)="editClick()" *ngIf="!isCancel">
+                    <div class="editCircle roomCardBox" (click)="editClick()" *ngIf="!isCancel">
                         <a class="iconEdit">
                             <img src="./assets/images/icon-edit.png" alt="icon edit">
                         </a>
                         <span>Raum anpassen</span>
                     </div>
 
-                    <div class="editCircle" (click)="editClick()" *ngIf="isCancel">
+                    <div class="editCircle roomCardBox" (click)="editClick()" *ngIf="isCancel">
                         <a class="iconEdit">
                             <ion-icon ios="ios-close" md="md-close"></ion-icon>
                         </a>

@@ -12,7 +12,7 @@ export class ConclusionPage implements OnInit {
   @ViewChild(SignaturePad,{'static':false}) signaturePad: SignaturePad;
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'minWidth': 5,
-    'canvasWidth': 600,
+    'canvasWidth': 700,
     'canvasHeight': 300,
     'backgroundColor': 'rgb(255,255,255)',
   };

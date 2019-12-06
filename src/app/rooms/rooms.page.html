@@ -32,13 +32,13 @@
                 </div>
 
                 <div class="roomsContainer">
-                    <div class="roomCardBox" *ngFor="let roomdata of roomCard" [ngClass]="roomdata.complete ? 'completed' : ''">
+                    <div class="roomCardBox" *ngFor="let roomdata of roomCard;let i= index" [ngClass]="roomdata.complete ? 'completed' : ''">
                         <h4>{{roomdata.title}}</h4>
                         <div class="bottomDiv">
                             <span class="green">{{roomdata.name}}</span>
                             <span class="components">{{roomdata.component}}</span>
                         </div>
-                        <div class="crossKill" *ngIf="isCancel">
+                        <div class="crossKill" *ngIf="isCancel" (click)="eraseRoom(i)">
                             <ion-icon ios="ios-close" md="md-close"></ion-icon>
                         </div>
                         <span *ngIf="roomdata.complete" class="completedMark">

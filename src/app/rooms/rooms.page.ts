@@ -56,4 +56,8 @@ export class RoomsPage implements OnInit {
   	this.isCancel = !this.isCancel;
   }
 
+  eraseRoom(indexOfArr){
+  	this.roomCard.pop(indexOfArr);
+  }
+
 }

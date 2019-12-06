@@ -32,63 +32,36 @@
                 </div>
 
                 <div class="roomsContainer">
-                    <div class="roomCardBox">
-                        <h4>Korridor</h4>
+                    <div class="roomCardBox" *ngFor="let roomdata of roomCard;let i= index" [ngClass]="roomdata.complete ? 'completed' : ''">
+                        <h4>{{roomdata.title}}</h4>
                         <div class="bottomDiv">
-                            <span class="green">2 Mängel</span>
-                            <span class="components">11/11 Bauteile</span>
+                            <span class="green">{{roomdata.name}}</span>
+                            <span class="components">{{roomdata.component}}</span>
                         </div>
-                        <div class="crossKill">
+                        <div class="crossKill" *ngIf="isCancel" (click)="eraseRoom(i)">
                             <ion-icon ios="ios-close" md="md-close"></ion-icon>
                         </div>
-                    </div>
-                    <div class="roomCardBox">
-                        <h4>Korridor</h4>
-                        <div class="bottomDiv">
-                            <span class="green">2 Mängel</span>
-                            <span class="components">11/11 Bauteile</span>
-                        </div>
-                    </div>
-                    <div class="roomCardBox">
-                        <h4>Korridor</h4>
-                        <div class="bottomDiv">
-                            <span class="green">2 Mängel</span>
-                            <span class="components">11/11 Bauteile</span>
-                        </div>
-                    </div>
-                    <div class="roomCardBox">
-                        <h4>Korridor</h4>
-                        <div class="bottomDiv">
-                            <span class="green">2 Mängel</span>
-                            <span class="components">11/11 Bauteile</span>
-                        </div>
-                    </div>
-                    <div class="roomCardBox">
-                        <h4>Korridor</h4>
-                        <div class="bottomDiv">
-                            <span class="green">2 Mängel</span>
-                            <span class="components">11/11 Bauteile</span>
-                        </div>
-                    </div>
-                    <div class="roomCardBox completed">
-                        <h4>Untergeschoss</h4>
-                        <div class="bottomDiv">
-                            <span class="green">2 Mängel</span>
-                            <span class="components">11/11 Bauteile</span>
-                        </div>
-                        <span class="completedMark">
+                        <span *ngIf="roomdata.complete" class="completedMark">
                             <img src="./assets/images/icon-check-w.png" alt="icon check">
                         </span>
                     </div>
-                    <div class="roomCardBox addRoom">
+
+                    <a class="roomCardBox addRoom" *ngIf="isCancel" [routerLink]="['/add-room']">
                         <span class="iconAdd"><ion-icon ios="ios-add" md="md-add"></ion-icon></span>
                         <p>Add new room</p>
-                    </div>
-                    <div class="editCircle roomCardBox">
+                    </a>
+                    <div class="editCircle" (click)="editClick()" *ngIf="!isCancel">
                         <a class="iconEdit">
                             <img src="./assets/images/icon-edit.png" alt="icon edit">
                         </a>
                         <span>Raum anpassen</span>
+                    </div>
+
+                    <div class="editCircle" (click)="editClick()" *ngIf="isCancel">
+                        <a class="iconEdit">
+                            <ion-icon ios="ios-close" md="md-close"></ion-icon>
+                        </a>
+                        <span>Cancel Selection</span>
                     </div>
                 </div>
             </div>

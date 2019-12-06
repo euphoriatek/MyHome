@@ -15,35 +15,35 @@ export class RoomsPage implements OnInit {
   ngOnInit() {
   	this.roomCard = [
   	{
-  		'title':'Korridor',
+  		'title':'Korridor 1',
   		'name':'1 Mängel',
   		'component':'11/11 Bauteile',
   		'complete':false
 
   	},
   	{
-  		'title':'Korridor',
+  		'title':'Korridor 2',
   		'name':'1 Mängel',
   		'component':'11/11 Bauteile',
   		'complete':true
 
   	},
   	{
-  		'title':'Korridor',
+  		'title':'Korridor 3',
   		'name':'1 Mängel',
   		'component':'11/11 Bauteile',
   		'complete':false
 
   	},
   	{
-  		'title':'Korridor',
+  		'title':'Korridor 4',
   		'name':'1 Mängel',
   		'component':'11/11 Bauteile',
   		'complete':true
 
   	},
   	{
-  		'title':'Korridor',
+  		'title':'Korridor 5',
   		'name':'1 Mängel',
   		'component':'11/11 Bauteile',
   		'complete':false
@@ -57,7 +57,7 @@ export class RoomsPage implements OnInit {
   }
 
   eraseRoom(indexOfArr){
-  	this.roomCard.pop(indexOfArr);
+  	this.roomCard.splice(indexOfArr,1);
   }
 
 }

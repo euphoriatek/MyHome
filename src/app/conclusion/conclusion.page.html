@@ -10,7 +10,7 @@
               <ul class="nav navigationTop">
                 <li><a [routerLink]="['/home']">Home</a></li>
                 <li><a [routerLink]="['/parties']">Parties</a></li>
-                <li><a [routerLink]="['/room-create-request']">Rooms</a></li>
+                <li><a [routerLink]="['/rooms']">Rooms</a></li>
                 <li><a [routerLink]="['/miscellaneous']">Miscellaneous</a></li>
                 <li><a [routerLink]="['/conclusion']" class="active color-g">Conclusion</a></li>
             </ul>
@@ -46,8 +46,16 @@
               </div>
               <div class="signatureWrapper">
                 <div class="normalTextarea">
-                    <label>Signature Resident</label>
+                    <label>Signature Resident (incoming)</label>
                       <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+                </div>
+                <div class="normalTextarea">
+                    <label>Signature Resident (outgoing)*</label>
+                    <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+                </div>
+                <div class="normalTextarea">
+                    <label>Signature TU / GU*</label>
+                    <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
                 </div>
                 <div class="normalTextarea">
                     <label>Signature Real estate company</label>

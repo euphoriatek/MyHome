@@ -11,7 +11,7 @@
               <ul class="nav navigationTop">
                   <li><a [routerLink]="['/home']">Home</a></li>
                   <li><a [routerLink]="['/parties']">Parties</a></li>
-                  <li><a [routerLink]="['/room-create-request']" class="active color-g">Rooms</a></li>
+                  <li><a [routerLink]="['/rooms']" class="active color-g">Rooms</a></li>
                   <li><a [routerLink]="['/miscellaneous']">Miscellaneous</a></li>
                   <li><a [routerLink]="['/conclusion']">Conclusion</a></li>
               </ul>
@@ -24,7 +24,7 @@
                 <h1 class="heading">Add new room</h1>
                 <div class="editLink">
                   <span class="inlineBlock">
-                    <a href="#" class="btn btn-sm btn-g">
+                    <a (click)="goToRoomsPage()" class="btn btn-sm btn-g">
                       <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon> 
                     </a>
                   </span>
@@ -37,7 +37,7 @@
                       <ion-col size="5">
                         <div class="customField">
                           <span class="fieldTitle">Room name</span>
-                          <ion-input type="text" ></ion-input>
+                          <ion-input [(ngModel)]="roomName" type="text" ></ion-input>
                         </div>        
                       </ion-col>
                       <ion-col size="2"></ion-col>
@@ -46,7 +46,7 @@
                           <span class="fieldTitle">Room type</span>
                             <div class="selectCustom">
                               <ion-item>
-                                <ion-select>
+                                <ion-select [(ngModel)]="roomType" >
                                     <ion-select-option value="u1">Unit 1</ion-select-option>
                                     <ion-select-option value="u2">Unit 2</ion-select-option>
                                     <ion-select-option value="u3">Unit 3</ion-select-option>

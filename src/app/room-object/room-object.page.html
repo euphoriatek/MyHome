@@ -1,552 +1,624 @@
-
 <ion-content>
-    <section class="mainSection">
-        <div class="customContainer">
-            <div class="leftSidebar">
-                <div class="logoLeft">
-                    <a [routerLink]="['/home']">
-                        <img src="./assets/images/logo-g.png" title="my home | logo">
+  <section class="mainSection">
+      <div class="customContainer">
+          <div class="leftSidebar">
+              <div class="logoLeft">
+                  <a [routerLink]="['/home']">
+                      <img src="./assets/images/logo-g.png" title="my home | logo">
+                  </a>
+              </div>
+              <ul class="nav navigationTop">
+                  <li><a [routerLink]="['/home']">Home</a></li>
+                  <li><a [routerLink]="['/parties']">Parties</a></li>
+                  <li><a [routerLink]="['/room-create-request']" class="active color-g">Rooms</a></li>
+                  <li><a [routerLink]="['/miscellaneous']">Miscellaneous</a></li>
+                  <li><a [routerLink]="['/conclusion']">Conclusion</a></li>
+              </ul>
+          </div>
+          <div class="rightSidebar">
+              <div class="title">
+                  <p>Übergabeprotokoll</p>
+              </div>
+              <div class="lgTitle">
+                <h1 class="heading">Räume: <span class="object">Korridor</span></h1>
+                <div class="editLink">
+                  <span class="inlineBlock">
+                    <a href="#" class="btn btn-sm btn-g">
+                      <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon> 
                     </a>
+                  </span>
                 </div>
-                <ul class="nav navigationTop">
-                    <li><a [routerLink]="['/home']">Home</a></li>
-                    <li><a [routerLink]="['/parties']">Parties</a></li>
-                    <li><a [routerLink]="['/room-create-request']" class="active color-g">Rooms</a></li>
-                    <li><a [routerLink]="['/miscellaneous']">Miscellaneous</a></li>
-                    <li><a [routerLink]="['/conclusion']">Conclusion</a></li>
-                </ul>
-            </div>
-            <div class="rightSidebar">
-                <div class="title">
-                    <p>Übergabeprotokoll</p>
+              </div>
+              <div class="secObjectList">
+                <ion-list>
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Boden</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Wandplatten</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Anstrich</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+                  
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Decke</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+                  
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Fenster</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Sims</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Sonnenschutz</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Vorhangschiene</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Abdeckung</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Schränke / Schublade</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Küchenfront</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Spültrog</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Armatur</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Kochfeld</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Abzug / Filter</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Backofen / Steamer</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Geschirrspülmaschine</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Kühlschrank / Tiefkühler</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Abfallelement</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Beleuchtung</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Lichtschalter / Steckdose</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Manuell hinzufügen</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Wände</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Schränke / Garderobe</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Sicherungskasten</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Wohnungstüre / Schloss</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Türzarge</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Türöffner / Gegensprechanlage</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>ManuellWandplatten</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Schwedenofen</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Lichtschalter / Steckdose / Multimedia</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Geländer</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Kurbel / Getriebe</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Beleuchtung / Steckdose</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Manuell</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Türe</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Toilette</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Papierhalter</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Badewanne</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Brause / Schlauch</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Lavabo</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Handtuchhalter</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Spiegelschrank / Licht</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Lüftung / Filter</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Dusche</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Trennwand</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Trockner</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Zuleitung</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+                  
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Tür</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Schalter / Steckdose</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Wand</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Treppe</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Schalter</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Spiegel</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Anzeige</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Griff</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+
+                  <ion-item-sliding>                      
+                    <ion-item>
+                      <ion-label>Knöpfe</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                      <ion-item-option (click)="clear(item)">löschen</ion-item-option>
+                    </ion-item-options>
+                  </ion-item-sliding>
+                </ion-list>
+              </div>
+          </div>
+      </div>
+      <div class="blackSlide">
+        <a class="closeSlider"><ion-icon ios="ios-close" md="md-close"></ion-icon></a>
+        <div class="sliderCarousel">
+          <ul>
+            <li class="tabListContainer">
+              <a class="tabList">Okay</a>
+            </li>
+            <li class="tabListContainer">
+              <a class="tabList active">Mangel</a>
+            </li>
+            <li class="tabListContainer">
+              <a class="tabList">Normal abgenutzt</a>
+            </li>
+            <li class="tabListContainer">
+              <a class="tabList">Nachreinigung</a>
+            </li>
+            <li class="tabListContainer">
+              <a class="tabList">Nicht vorhanden</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tabContent">
+            <div class="formWrapper">
+                <div class="formContainer">
+                    <div class="field">
+                        <ion-input placeholder="Title"></ion-input>
+                    </div>
+                    <div class="textareaWrapper">
+                      <textarea name="" id="" cols="" rows=""></textarea>
+                      <span class="floatTitle">Description</span>
+                    </div>
+                    <div class="field">
+                        <ion-input placeholder="Service provider"></ion-input>
+                    </div>
+                    <div class="field">
+                        <div [routerLink]="['/rooms-subdropdown']" class="cstmSelect">Action</div>
+                        <span class="icon">
+                          <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                        </span>
+                    </div>
+                    <div class="field">
+                        <div class="cstmSelect">Costs to be paid by:</div>
+                        <span class="icon">
+                          <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                        </span>
+                    </div>
                 </div>
-                <div class="lgTitle">
-                  <h1 class="heading">Räume: <span class="object">Korridor</span></h1>
-                  <div class="editLink">
-                    <span class="inlineBlock">
-                      <a href="#" class="btn btn-sm btn-g">
-                        <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon> 
-                      </a>
-                    </span>
-                  </div>
-                </div>
-                <div class="secObjectList">
-                  <ion-list>
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Boden</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
+                <div class="locationWrap">
+                  <ion-grid>
+                      <ion-row>
+                          <ion-col size="7">
+                            <ion-label>Location</ion-label>
+                            <div class="locateContainer">
 
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Wandplatten</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Anstrich</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-                    
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Decke</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-                    
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Fenster</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Sims</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Sonnenschutz</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Vorhangschiene</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Abdeckung</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Schränke / Schublade</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Küchenfront</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Spültrog</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Armatur</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Kochfeld</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Abzug / Filter</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Backofen / Steamer</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Geschirrspülmaschine</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Kühlschrank / Tiefkühler</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Abfallelement</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Beleuchtung</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Lichtschalter / Steckdose</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Manuell hinzufügen</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Wände</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Schränke / Garderobe</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Sicherungskasten</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Wohnungstüre / Schloss</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Türzarge</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Türöffner / Gegensprechanlage</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>ManuellWandplatten</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Schwedenofen</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Lichtschalter / Steckdose / Multimedia</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Geländer</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Kurbel / Getriebe</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Beleuchtung / Steckdose</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Manuell</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Türe</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Toilette</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Papierhalter</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Badewanne</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Brause / Schlauch</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Lavabo</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Handtuchhalter</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Spiegelschrank / Licht</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Lüftung / Filter</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Dusche</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Trennwand</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Trockner</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Zuleitung</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-                    
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Tür</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Schalter / Steckdose</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Wand</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Treppe</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Schalter</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Spiegel</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Anzeige</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Griff</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-
-                    <ion-item-sliding>                      
-                      <ion-item>
-                        <ion-label>Knöpfe</ion-label>
-                      </ion-item>
-                      <ion-item-options side="end">
-                        <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                      </ion-item-options>
-                    </ion-item-sliding>
-                  </ion-list>
+                            </div>
+                          </ion-col>
+                          <ion-col size="5">
+                            <ion-label>Pictures</ion-label>
+                            <div class="pictureShot">
+                                    <owl-carousel
+                                    [options]="{items: 3, dots: true, navigation: true, margin: 10, dotsEach: true}" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                                    <div class="item carouselImg" *ngFor="let image of slides;let i = index">
+                                        <img src="{{image.img}}">
+                                    </div>
+                                </owl-carousel>
+                            </div>
+                          </ion-col>
+                      </ion-row>
+                  </ion-grid>
                 </div>
             </div>
         </div>
-    </section>
-  </ion-content>
+      </div>
+  </section>
+</ion-content>

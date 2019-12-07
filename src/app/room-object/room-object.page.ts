@@ -6,11 +6,29 @@ import {OwlCarousel} from 'ngx-owl-carousel';
   styleUrls: ['./room-object.page.scss'],
 })
 export class RoomObjectPage implements OnInit {
+  activeTabName:any='okay';
+  openslider:any=false;
+  openInfoSlide:any=false;
   @ViewChild('owlElement',{'static':false}) owlElement: OwlCarousel
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  openSliderContent(){
+    this.openslider =  true;
+  }
+
+  closeSliderContent(){
+    this.openslider =  false;
+  }
+
+  openInfoSlider(){
+    this.openInfoSlide = true;
+  }
+  closeInfoSlider(){
+    this.openInfoSlide = false;
   }
   slides = [
     {img: "./assets/images/living-room.jpg"},

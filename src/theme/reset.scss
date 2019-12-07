@@ -4,7 +4,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     border: 0;
     font-size: 100%;
     font: inherit;
-    vertical-align: baseline; 
+    vertical-align: baseline;
+    letter-spacing: 1px;
 }
   
 /* HTML5 display-role reset for older browsers */
@@ -129,7 +130,7 @@ ion-title {
         font-size: 18px;
         border-radius: 8px;
         line-height: 60px;
-        font-weight: 400;
+        font-weight: 300;
         cursor: pointer;
     }
     .iconAction {
@@ -150,16 +151,43 @@ ion-title {
             }
         }
     }
+    .icon {
+        max-width: 32px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        padding: 7px;
+        z-index: 9;
+    }
     &.preData{
         input{
             font-weight: normal!important;
+        }
+    }
+    .sc-ion-input-md-h{
+        --placeholder-color: var(--ion-placeholder-color)!important;
+        --placeholder-opacity: 1;
+    }
+    &.darkField{
+        .sc-ion-input-md-h{
+            --placeholder-color: var(--ion-color-medium-contrast)!important;
+        }
+        input{
+            background: var( --ion-dark-field) !important;
+            color: var(--ion-color-medium-contrast)!important;
+        }
+        .cstmSelect{
+            background: var(--ion-dark-field) ;
+            color: var(--ion-color-medium-contrast);
         }
     }
 }
 .textareaWrapper{
     position: relative;
     border-radius: 8px;
-    background: #fff;
+    background: var(--ion-color-medium-contrast);
     margin-bottom: 5px;
     textarea {
         resize: none;
@@ -168,29 +196,37 @@ ion-title {
         padding: 15px;
         font-size: 18px!important;
         font-weight: 300!important;
-        color: --ion-placeholder-color!important;
+        color: var(--ion-placeholder-color);
         outline: none;
         margin-top: 48px;
         border-radius: 8px;
     }
     .floatTitle {
         display: block;
-        width: 98%;
+        width: 96.5%;
         position: absolute;
         top: 0;
-        left: 50%;
-        padding: 15px 7px;
+        left: 15px;
+        padding: 15px 0;
         font-size: 18px;
         font-weight: 300;
-        border-bottom: 1px solid #ddd;
-        transform: translateX(-50%);
-        background: #fff;
+        background: var(--ion-color-medium-contrast);
+        border-bottom: 1px solid var(--ion-border-light);
         color: var(--ion-placeholder-color);
+        font-weight: 100;
     }
-}
-.sc-ion-input-md-h{
-    --placeholder-color: var(--ion-placeholder-color)!important;
-    --placeholder-opacity: 1;
+    &.darkField{
+        background: var(--ion-dark-field);
+        textarea{
+            background: var(--ion-dark-field);
+            color: var(--ion-color-medium-contrast);
+        }
+        .floatTitle{
+            background: var(--ion-dark-field);
+            border-color: var(--ion-dark-field-line);
+            color: var(--ion-color-medium-contrast);
+        }
+    }
 }
 html{
     body{

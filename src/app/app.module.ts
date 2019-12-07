@@ -8,7 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { IonicStorageModule } from '@ionic/storage';
 import { OwlModule } from 'ngx-owl-carousel';
 import { SignaturePadModule } from 'angular2-signaturepad';
 import { AutoCompleteModule } from 'ionic4-auto-complete';
@@ -24,7 +23,7 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [IonicStorageModule.forRoot(),BrowserModule,SignaturePadModule,HttpClientModule, IonicModule.forRoot(), AppRoutingModule, OwlModule, AutoCompleteModule],
+  imports: [BrowserModule,SignaturePadModule,HttpClientModule, IonicModule.forRoot(), AppRoutingModule, OwlModule, AutoCompleteModule],
   providers: [
     HttpClient,
     DatePicker,

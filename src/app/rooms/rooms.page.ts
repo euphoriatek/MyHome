@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,NavigationExtras,ActivatedRoute} from '@angular/router';
-import { Storage } from '@ionic/storage';
 @Component({
 	selector: 'app-rooms',
 	templateUrl: './rooms.page.html',
@@ -12,7 +11,7 @@ export class RoomsPage implements OnInit {
 	isCancel:any=false;
 	data:any;
 
-	constructor(private route: ActivatedRoute,private storage: Storage) {		
+	constructor(private route: ActivatedRoute) {		
 	}
 
 
@@ -57,12 +56,12 @@ export class RoomsPage implements OnInit {
 	}
 
 	ionViewWillEnter(){
-		this.storage.get('addRoom').then((val) => {
-			console.log('Your age is', val);
-			if(val)
-				this.roomCard.push(val);
-			this.storage.set('addRoom', '');
-		});
+		// this.storage.get('addRoom').then((val) => {
+		// 	console.log('Your age is', val);
+		// 	if(val)
+		// 		this.roomCard.push(val);
+		// 	this.storage.set('addRoom', '');
+		// });
 	}
 
 
@@ -70,7 +69,7 @@ export class RoomsPage implements OnInit {
 		this.isCancel = !this.isCancel;
 	}
 
-	eraseRoom(indexOfArr){
+	eraseRoom(indexOfArr:any){
 		this.roomCard.splice(indexOfArr,1);
 	}
 

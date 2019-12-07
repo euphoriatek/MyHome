@@ -1,39 +1,41 @@
-
 <ion-content>
-    <section class="mainSection">
-        <div class="customContainer">
-            <div class="leftSidebar">
-                <div class="logoLeft">
-                    <a [routerLink]="['/home']">
-                        <img src="./assets/images/logo-g.png" title="my home | logo">
+  <section class="mainSection">
+      <div class="customContainer">
+          <div class="leftSidebar">
+              <div class="logoLeft">
+                  <a [routerLink]="['/home']">
+                      <img src="./assets/images/logo-g.png" title="my home | logo">
+                  </a>
+              </div>
+              <ul class="nav navigationTop">
+                  <li><a [routerLink]="['/home']">Home</a></li>
+                  <li><a [routerLink]="['/parties']">Parties</a></li>
+                  <li><a [routerLink]="['/rooms']" class="active color-g">Rooms</a></li>
+                  <li><a [routerLink]="['/miscellaneous']">Miscellaneous</a></li>
+                  <li><a [routerLink]="['/conclusion']">Conclusion</a></li>
+              </ul>
+          </div>
+          <div class="rightSidebar">
+              <div class="title">
+                  <p>Übergabeprotokoll</p>
+              </div>
+              <div class="lgTitle">
+                <h1 class="heading">Räume: <span class="object">Korridor</span></h1>
+                <div class="editLink">
+                  <span class="inlineBlock">
+                    <a href="#" class="btn btn-sm btn-g">
+                      <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon> 
                     </a>
+                  </span>
                 </div>
-                <ul class="nav navigationTop">
-                    <li><a [routerLink]="['/home']">Home</a></li>
-                    <li><a [routerLink]="['/parties']">Parties</a></li>
-                    <li><a [routerLink]="['/rooms']" class="active color-g">Rooms</a></li>
-                    <li><a [routerLink]="['/miscellaneous']">Miscellaneous</a></li>
-                    <li><a [routerLink]="['/conclusion']">Conclusion</a></li>
-                </ul>
-            </div>
-            <div class="rightSidebar">
-                <div class="title">
-                    <p>Übergabeprotokoll</p>
-                </div>
-                <div class="lgTitle">
-                  <h1 class="heading">Räume: <span class="object">Korridor</span></h1>
-                  <div class="editLink">
-                    <span class="inlineBlock">
-                      <a href="#" class="btn btn-sm btn-g">
-                        <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon> 
-                      </a>
-                    </span>
-                  </div>
-                </div>
-                <div class="secObjectList">
-                  <ion-list>
-                    <ion-item-sliding>                      
-                      <ion-item>
+              </div>
+              
+              <div class="secObjectList">
+                <ion-list>
+                  <div class="radiusBg">
+                    <ion-item-sliding (click)="openSliderContent()">
+                      <div class="checked"><img src="./assets/images/icon-check-b.png" alt="icon checked"></div>                
+                      <ion-item class="done radiusRound">
                         <ion-label>Boden</ion-label>
                       </ion-item>
                       <ion-item-options side="end">
@@ -41,7 +43,7 @@
                       </ion-item-options>
                     </ion-item-sliding>
 
-                    <ion-item-sliding>                      
+                    <ion-item-sliding>   
                       <ion-item>
                         <ion-label>Wandplatten</ion-label>
                       </ion-item>
@@ -537,16 +539,308 @@
                     </ion-item-sliding>
 
                     <ion-item-sliding>                      
-                      <ion-item>
+                      <ion-item class="radiusRoundRev">
                         <ion-label>Knöpfe</ion-label>
                       </ion-item>
                       <ion-item-options side="end">
                         <ion-item-option (click)="clear(item)">löschen</ion-item-option>
                       </ion-item-options>
                     </ion-item-sliding>
-                  </ion-list>
-                </div>
-            </div>
+                  </div>
+                </ion-list>
+              </div>
+          </div>
+      </div>
+      <div class="blackSlide" [ngClass]="openslider?'show':''">
+        <a class="closeSlider" (click)="closeSliderContent()"><ion-icon ios="ios-close" md="md-close"></ion-icon></a>
+        <div class="sliderCarousel">
+          <ul>
+            <li class="tabListContainer" (click)="activeTabName='okay'">
+              <a class="tabList" [ngClass]="activeTabName=='okay'?'active':''">Okay</a>
+            </li>
+            <li class="tabListContainer" (click)="activeTabName='mangel'">
+              <a class="tabList" [ngClass]="activeTabName=='mangel'?'active':''">Mangel</a>
+            </li>
+            <li class="tabListContainer" (click)="activeTabName='normal-abgenutzt'">
+              <a class="tabList" [ngClass]="activeTabName=='normal-abgenutzt'?'active':''">Normal abgenutzt</a>
+            </li>
+            <li class="tabListContainer" (click)="activeTabName='nachreinigung'">
+              <a class="tabList" [ngClass]="activeTabName=='nachreinigung'?'active':''">Nachreinigung</a>
+            </li>
+            <li class="tabListContainer" (click)="activeTabName='nicht-vorhanden'">
+              <a class="tabList" [ngClass]="activeTabName=='nicht-vorhanden'?'active':''">Nicht vorhanden</a>
+            </li>
+          </ul>
         </div>
-    </section>
-  </ion-content>
+
+        <div *ngIf="activeTabName=='okay'">
+          <div class="tabContent">
+            <div class="formWrapper">
+              <div class="vacant"></div>
+              <div class="actionBtn">
+                <ion-button class="darkColor">
+                  <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
+                    Duplizieren
+                </ion-button>
+                <ion-button class="secondaryColor">
+                    <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
+                      Weiter
+                  </ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="activeTabName=='mangel'">
+          <div class="tabContent">
+            <div class="formWrapper">
+              <div class="formContainer">
+                  <div class="field darkField">
+                      <ion-input placeholder="Title"></ion-input>
+                  </div>
+                  <div class="textareaWrapper darkField">
+                    <textarea name="" id="" cols="" rows=""></textarea>
+                    <span class="floatTitle">Description</span>
+                  </div>
+                  <div class="field darkField">
+                      <ion-input placeholder="Service provider"></ion-input>
+                  </div>
+                  <div class="field darkField">
+                      <div (click)="openInfoSlider()" class="cstmSelect">Action</div>
+                      <span class="icon">
+                        <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                      </span>
+                  </div>
+                  <div class="field darkField">
+                      <div class="cstmSelect">Costs to be paid by:</div>
+                      <span class="icon">
+                        <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                      </span>
+                  </div>
+              </div>
+              <div class="locationWrap">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="7">
+                          <ion-label>Location</ion-label>
+                          <div class="locateContainer">
+
+                          </div>
+                        </ion-col>
+                        <ion-col size="5">
+                          <ion-label>Pictures</ion-label>
+                          <div class="pictureShot">
+                                  <owl-carousel
+                                  [options]="{items: 2, dots: true, navigation: true, margin: 0, dotsEach: true}" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                                  <div class="item carouselImg" *ngFor="let image of slides;let i = index">
+                                      <img src="{{image.img}}">
+                                  </div>
+                              </owl-carousel>
+                          </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+              </div>
+              <div class="actionBtn">
+                <ion-button class="darkColor">
+                  <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
+                    Duplizieren
+                </ion-button>
+                <ion-button class="secondaryColor">
+                    <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
+                      Weiter
+                  </ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="activeTabName=='normal-abgenutzt'">
+          <div class="tabContent">
+            <div class="formWrapper">
+              <div class="formContainer">
+                  <div class="field darkField">
+                      <ion-input placeholder="Title"></ion-input>
+                  </div>
+                  <div class="textareaWrapper darkField">
+                    <textarea name="" id="" cols="" rows=""></textarea>
+                    <span class="floatTitle">Description</span>
+                  </div>
+              </div>
+              <div class="locationWrap">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="7">
+                          <ion-label>Location</ion-label>
+                          <div class="locateContainer">
+
+                          </div>
+                        </ion-col>
+                        <ion-col size="5">
+                          <ion-label>Pictures</ion-label>
+                          <div class="pictureShot">
+                                  <owl-carousel
+                                  [options]="{items: 2, dots: true, navigation: true, margin: 0, dotsEach: true}" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                                  <div class="item carouselImg" *ngFor="let image of slides;let i = index">
+                                      <img src="{{image.img}}">
+                                  </div>
+                              </owl-carousel>
+                          </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+              </div>
+              <div class="actionBtn">
+                <ion-button class="darkColor">
+                  <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
+                    Duplizieren
+                </ion-button>
+                <ion-button class="secondaryColor">
+                    <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
+                      Weiter
+                  </ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="activeTabName=='nachreinigung'">
+          <div class="tabContent">
+            <div class="formWrapper">
+              <div class="formContainer">
+                  <div class="field darkField">
+                      <ion-input placeholder="Title"></ion-input>
+                  </div>
+                  <div class="textareaWrapper darkField">
+                    <textarea name="" id="" cols="" rows=""></textarea>
+                    <span class="floatTitle">Description</span>
+                  </div>
+                  <div class="field darkField">
+                      <ion-input placeholder="Service provider"></ion-input>
+                  </div>
+                  <div class="field darkField">
+                      <div class="cstmSelect">Costs to be paid by:</div>
+                      <span class="icon">
+                        <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                      </span>
+                  </div>
+                  <div class="field darkField">
+                      <ion-input placeholder="Pan Location"></ion-input>
+                  </div>
+              </div>
+              <div class="locationWrap">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="7">
+                          <ion-label>Location</ion-label>
+                          <div class="locateContainer">
+
+                          </div>
+                        </ion-col>
+                        <ion-col size="5">
+                          <ion-label>Pictures</ion-label>
+                          <div class="pictureShot">
+                                  <owl-carousel
+                                  [options]="{items: 2, dots: true, navigation: true, margin: 0, dotsEach: true}" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                                  <div class="item carouselImg" *ngFor="let image of slides;let i = index">
+                                      <img src="{{image.img}}">
+                                  </div>
+                              </owl-carousel>
+                          </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+              </div>
+              <div class="actionBtn">
+                <ion-button class="darkColor">
+                  <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
+                    Duplizieren
+                </ion-button>
+                <ion-button class="secondaryColor">
+                    <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
+                      Weiter
+                  </ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="activeTabName=='nicht-vorhanden'">
+          <div class="tabContent">
+            <div class="formWrapper">
+              <div class="formContainer">
+                  <div class="field darkField">
+                      <ion-input placeholder="Title"></ion-input>
+                  </div>
+                  <div class="textareaWrapper darkField">
+                    <textarea name="" id="" cols="" rows=""></textarea>
+                    <span class="floatTitle">Description</span>
+                  </div>
+                  <div class="field darkField">
+                      <ion-input placeholder="Service provider"></ion-input>
+                  </div>
+                  <div class="field darkField">
+                      <div class="cstmSelect">Costs to be paid by:</div>
+                      <span class="icon">
+                        <img src="./assets/images/icon-caret.png" alt="icon-caret">
+                      </span>
+                  </div>
+                  <div class="field darkField">
+                      <ion-input placeholder="Plan Location"></ion-input>
+                  </div>
+              </div>
+              <div class="locationWrap">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="7">
+                          <ion-label>Location</ion-label>
+                          <div class="locateContainer">
+
+                          </div>
+                        </ion-col>
+                        <ion-col size="5">
+                          <ion-label>Pictures</ion-label>
+                          <div class="pictureShot">
+                                  <owl-carousel
+                                  [options]="{items: 2, dots: true, navigation: true, margin: 0, dotsEach: true}" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                                  <div class="item carouselImg" *ngFor="let image of slides;let i = index">
+                                      <img src="{{image.img}}">
+                                  </div>
+                              </owl-carousel>
+                          </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+              </div>
+              <div class="actionBtn">
+                <ion-button class="darkColor">
+                  <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
+                    Duplizieren
+                </ion-button>
+                <ion-button class="secondaryColor">
+                    <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
+                      Weiter
+                  </ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="subDropdown blackSlide" [ngClass]="openInfoSlide?'show':''">
+          <a class="closeSlider" (click)="closeInfoSlider()"><ion-icon ios="ios-close" md="md-close"></ion-icon></a>
+          <div class="formWrapper">
+              <div class="alignBlock">
+                <a class="goBack" (click)="closeInfoSlider()"><img src="../../assets/images/icon-back.png" alt="icon back"> zurück</a>
+                <h4>Action</h4>
+              </div>
+              <div class="dropdownContainer">
+                <a class="subDropdownOption">1</a>
+                <a class="subDropdownOption">2</a>
+                <a class="subDropdownOption">3</a>
+                <a class="subDropdownOption">4</a>
+                <a class="subDropdownOption selected">5</a>
+              </div>
+          </div>
+      </div>
+  </section>
+</ion-content>

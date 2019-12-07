@@ -31,13 +31,40 @@
               </div>
               <div class="formWrapper">
                   <h3>Action</h3>
-                  <div class="dropdownContainer">
+                <!--   <div class="dropdownContainer">
                     <a class="subDropdownOption">1</a>
                     <a class="subDropdownOption">2</a>
                     <a class="subDropdownOption">3</a>
                     <a class="subDropdownOption">4</a>
-                    <a class="subDropdownOption selected">5</a>
-                  </div>
+                    <a class="subDropdownOption selected">5</a>  -->
+
+<div class="protocolList">
+   <ion-list radio-group ngDefaultControl>
+     <ion-radio-group name=“radio-group” [(ngModel)]="protocol">
+      <ion-item>
+              <ion-label>1</ion-label>
+              <ion-radio mode="ios" slot="end" value="1" ></ion-radio>
+          </ion-item>
+           <ion-item>
+              <ion-label>2</ion-label>
+              <ion-radio mode="ios" slot="end" value="2" ></ion-radio>
+          </ion-item> 
+          <ion-item>
+              <ion-label>3</ion-label>
+              <ion-radio mode="ios" slot="end" value="3" ></ion-radio>
+          </ion-item>
+          <ion-item>
+              <ion-label>4</ion-label>
+              <ion-radio mode="ios" slot="end" value="4" ></ion-radio>
+          </ion-item>
+          <ion-item>
+              <ion-label>5</ion-label>
+              <ion-radio mode="ios" slot="end" value="5" ></ion-radio>
+          </ion-item>
+     </ion-radio-group>
+   </ion-list>
+ </div>
+     
                   <h3>Schlüsselnummer</h3>
                   <div class="formContainer">
                       <div class="field">

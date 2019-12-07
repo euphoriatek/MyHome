@@ -41,7 +41,8 @@
                   <div class="field">
                       <ion-input placeholder="Date" (click)="datePick()"></ion-input>
                   </div>
-                  <p><button ion-button class="btn w-100 btn-balticsea">PDF Preview</button></p>
+                  <p><button ion-button class="btn w-100 btn-balticsea"  (click)="createpdf()"  >PDF Preview</button><br>
+                  <button ion-button class="btn w-100 btn-balticsea"  (click)="downloadpdf()"  >Download</button></p>
                 </div>
               </div>
               <div class="signatureWrapper">

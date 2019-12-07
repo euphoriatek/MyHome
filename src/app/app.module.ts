@@ -16,6 +16,11 @@ import {SimpleService} from './api/simple-service.service';
 import {HttpClient} from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 
+import { File } from '@ionic-native/file/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
+
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -25,6 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     DatePicker,
     SimpleService,
     StatusBar,
+     File,
+    FileOpener,
     
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

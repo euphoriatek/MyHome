@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MiscellaneousDropdownPage implements OnInit {
 
+ protocol:any;
+
   constructor() { }
 
   ngOnInit() {

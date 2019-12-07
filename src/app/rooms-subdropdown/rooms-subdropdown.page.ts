@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rooms-subdropdown.page.scss'],
 })
 export class RoomsSubdropdownPage implements OnInit {
-
+ protocol:any;
   constructor() { }
 
   ngOnInit() {

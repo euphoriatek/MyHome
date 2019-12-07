@@ -32,7 +32,7 @@ export class PartiesPage implements OnInit {
     this.router.navigate(['/conclusion'])
   }
 
-  protected filter(keyword) {
+ protected filter(keyword) {
     keyword = keyword.toLowerCase();
 
     return this.autoFillData.filter(
@@ -43,5 +43,12 @@ export class PartiesPage implements OnInit {
       }
     );
   }
+
+ 
+
+
+
+
+
 
 }

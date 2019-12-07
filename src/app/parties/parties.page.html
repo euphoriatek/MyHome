@@ -47,10 +47,10 @@
                 <h3>Residents</h3>
                 <div class="formContainer">
                   <div class="field posIn">
-                      <ion-auto-complete [(ngModel)]="isShowUnit" (ionClear)="removedMethod(callback)" [dataProvider]="SimpleService" [options]="{ placeholder : 'Moving in resident' }"></ion-auto-complete>
+                      <ion-auto-complete id="resident" [(ngModel)]="isShowUnit" (ionClear)="removedMethod(callback)" [dataProvider]="SimpleService" [options]="{ placeholder : 'Moving in resident' }"></ion-auto-complete>
                   </div>
                   <div class="field posIn" *ngIf="isShowUnit" >
-                    <ion-auto-complete [dataProvider]="SimpleService" [options]="{ placeholder : 'Unit' }"></ion-auto-complete>
+                    <ion-auto-complete [dataProvider]="SimpleService" [options]="{ placeholder : 'Unit' }" ></ion-auto-complete>
                   </div>
                   <div class="field posIn">
                     <ion-auto-complete [dataProvider]="SimpleService" [options]="{ placeholder : 'Moving out resident' }"></ion-auto-complete>
@@ -62,6 +62,8 @@
                 <div class="formContainer">
                   <div class="field posIn">
                       <ion-auto-complete [dataProvider]="SimpleService" [options]="{ placeholder : 'Construction Company' }"></ion-auto-complete>
+
+
                   </div>
                 </div>
               </div>
@@ -80,6 +82,7 @@
               </div>
               <div class="formWrapper">
                 <h3>Realstate Company</h3>
+            
                 <div class="formContainer">
                   <div class="field preData">
                       <ion-input placeholder="Fortimo AG, Rorschacherstrasse 302, 9016 St.Gallen"></ion-input>

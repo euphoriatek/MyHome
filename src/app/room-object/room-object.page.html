@@ -850,7 +850,7 @@
     </ion-list>
 
     <ion-list *ngIf="sybTabName=='Costs to be paid by'" radio-group ngDefaultControl>
-       <ion-radio-group name=“radio-group” [(ngModel)]="protocol">
+       <ion-radio-group name=“radio-group” [(ngModel)]="costby">
         <ion-item>
           <ion-label (click)="isShared=false">Housewohner</ion-label>
           <ion-radio mode="ios" slot="end" value="1" ></ion-radio>

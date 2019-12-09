@@ -14,6 +14,7 @@ export class RoomObjectPage implements OnInit {
   sybTabName:any;
   isShared:any=false;
   openInfoSlide:any=false;
+  costby:any;
   @ViewChild('owlElement',{'static':false}) owlElement: OwlCarousel
 
   constructor() { }

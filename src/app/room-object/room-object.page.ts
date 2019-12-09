@@ -3,11 +3,16 @@ import {OwlCarousel} from 'ngx-owl-carousel';
 @Component({
   selector: 'app-room-object',
   templateUrl: './room-object.page.html',
+  host: {
+    '(document:click)': 'onClick($event)',
+  },
   styleUrls: ['./room-object.page.scss'],
 })
 export class RoomObjectPage implements OnInit {
   activeTabName:any='okay';
   openslider:any=false;
+  sybTabName:any;
+  isShared:any=false;
   openInfoSlide:any=false;
   @ViewChild('owlElement',{'static':false}) owlElement: OwlCarousel
 
@@ -22,10 +27,17 @@ export class RoomObjectPage implements OnInit {
 
   closeSliderContent(){
     this.openslider =  false;
+    this.isShared = false;
   }
 
-  openInfoSlider(){
+  //for outside click event
+  onClick(event){
+  }
+
+  openInfoSlider(infoSlideName){
     this.openInfoSlide = true;
+    this.isShared = false;
+    this.sybTabName = infoSlideName;
   }
   closeInfoSlider(){
     this.openInfoSlide = false;

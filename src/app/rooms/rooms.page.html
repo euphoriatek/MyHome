@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="roomsContainer">
-                    <div class="roomCardBox" *ngFor="let roomdata of roomCard;let i= index" [ngClass]="roomdata.complete ? 'completed' : ''">
+                    <div class="roomCardBox" *ngFor="let roomdata of roomCard;let i= index" [ngClass]="roomdata.complete ? 'completed' : ''" [routerLink]="['/room-object']">
                         <h4>{{roomdata.title}}</h4>
                         <div class="bottomDiv">
                             <span class="green">{{roomdata.name}}</span>

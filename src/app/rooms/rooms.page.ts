@@ -58,9 +58,9 @@ export class RoomsPage implements OnInit {
 
 	ionViewWillEnter(){
 		this.storage.get('addRoom').then((val) => {
-			console.log('Your age is', val);
 			if(val)
 				this.roomCard.push(val);
+			this.isCancel=false;
 			this.storage.set('addRoom', '');
 		});
 	}

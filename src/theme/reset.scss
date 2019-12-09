@@ -121,6 +121,7 @@ ion-title {
         font-size: 18px!important;
         border-radius: 8px!important;
         font-weight: 100!important;
+        --placeholder-font-weight:100!important;
     }
     .cstmSelect{
         background: var(--ion-color-medium-contrast) ;
@@ -230,6 +231,10 @@ ion-title {
 }
 html{
     body{
+        .icon-inner{
+            display: flex!important;
+            align-items: center!important;
+        }
         ion-label{
             font-weight: 400;
         }

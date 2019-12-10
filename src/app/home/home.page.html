@@ -42,7 +42,7 @@
                     <p>Jonas <br> Meier <br> 152C-201 <br><a href="">mühlebachweg.ch</a></p>
                 </div>
                 <div class="seeMore">
-                  <a class="iconMore" (click)="toggleClass(itemCard)">
+                  <a class="iconMore" (click)="toggleClass(itemCard, i)">
                     <ion-icon name="more"></ion-icon>
                     <div class="moreMenu" [ngClass]="itemCard.active?'show':'hide'">
                       <ul class="moreMenuItems">

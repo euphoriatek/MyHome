@@ -29,6 +29,7 @@ export class RoomObjectPage implements OnInit {
   closeSliderContent(){
     this.openslider =  false;
     this.isShared = false;
+    this.costby = '';
   }
 
   //for outside click event
@@ -39,6 +40,7 @@ export class RoomObjectPage implements OnInit {
     this.openInfoSlide = true;
     this.isShared = false;
     this.sybTabName = infoSlideName;
+    this.costby = '';
   }
   closeInfoSlider(){
     this.openInfoSlide = false;

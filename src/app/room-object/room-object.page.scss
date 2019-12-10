@@ -148,6 +148,7 @@
                         padding: 0 15px 15px;
                         display: block;
                         position: relative;
+                        opacity: 0.8;
                         &::after{
                             position: absolute;
                             bottom: 0;
@@ -160,6 +161,7 @@
                             border-radius: 50%;
                         }
                         &.active{
+                            opacity: 1;
                             &::after{
                                 width: 5px;
                             }

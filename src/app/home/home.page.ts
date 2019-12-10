@@ -26,8 +26,14 @@ export class HomePage {
     this.isHide=!this.isHide;
   }
 
-  toggleClass(item:any){
-    item.active = !item.active;
+  toggleClass(item:any,index){
+       for (var i = 0; i < this.cardBox.length; ++i) {
+      if(i == index){
+        item.active = !item.active;
+      } else {
+        this.cardBox[i].active = false;
+      }
+    }
   }
 
   deleteCard(indexOf:any){

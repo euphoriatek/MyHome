@@ -17,13 +17,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { ModalPageModule } from './modal/modal.module';
 
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule,IonicStorageModule.forRoot(),SignaturePadModule,HttpClientModule, IonicModule.forRoot(), AppRoutingModule, OwlModule, AutoCompleteModule],
+  imports: [BrowserModule,ModalPageModule,IonicStorageModule.forRoot(),SignaturePadModule,HttpClientModule, IonicModule.forRoot(), AppRoutingModule, OwlModule, AutoCompleteModule],
   providers: [
     HttpClient,
     DatePicker,

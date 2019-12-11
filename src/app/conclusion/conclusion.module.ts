@@ -8,15 +8,17 @@ import { IonicModule } from '@ionic/angular';
 import { ConclusionPageRoutingModule } from './conclusion-routing.module';
 
 import { ConclusionPage } from './conclusion.page';
+// import { ModalPageModule } from '../modal/modal.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    SignaturePadModule,
-    ConclusionPageRoutingModule
-  ],
-  declarations: [ConclusionPage]
+	entryComponents: [],
+	imports: [
+	CommonModule,
+	FormsModule,
+	IonicModule,
+	SignaturePadModule,
+	ConclusionPageRoutingModule
+	],
+	declarations: [ConclusionPage]
 })
 export class ConclusionPageModule {}

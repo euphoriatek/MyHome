@@ -46,10 +46,11 @@
                 </div>
               </div>
               <div class="signatureWrapper">
-                <div class="normalTextarea">
+                <button (click)="presentPopover('Signature Resident (incoming)')">Signature Resident (incoming)</button>
+                <!-- <div class="normalTextarea">
                     <label>Signature Resident (incoming)</label>
                       <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
-                </div>
+                </div> -->
                 <div class="normalTextarea">
                     <label>Signature Resident (outgoing)*</label>
                     <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>

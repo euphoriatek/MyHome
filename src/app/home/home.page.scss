@@ -16,6 +16,9 @@
         }
         .lgTitle{
             padding: 0 30px;
+            .inlineBlock{
+                margin-left: 50px;
+            }
         }
         .cardboxWrapper{
             display: flex;
@@ -24,11 +27,11 @@
                 -ms-flex: 0 0 33.333333%;
                 flex: 0 0 33.333333%;
                 max-width: 33.333333%;
-                padding: 0 30px 30px;
+                padding: 0 15px 30px;
                 .cardBox {
                     width: 100%;
                     background: var(--ion-font-light-color);
-                    padding: 65px 40px 50px;
+                    padding: 80px 40px 50px;
                     box-shadow: var(--ion-shadow);
                     position: relative;
                     cursor: pointer;
@@ -60,6 +63,27 @@
                             border-bottom: 1px solid var(--ion-color-primary-contrast);
                             color: var(--ion-color-primary-contrast);
                         }
+                    }
+                    .radioBox {
+                        height: 40px;
+                        width: 40px;
+                        background: rgba(255, 255, 255, 0.5);
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 20px;
+                        left: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        span.innerBorder {
+                            height: 34px;
+                            width: 34px;
+                            border: 2px solid var(--ion-balticsea-color);
+                            border-radius: 50%;
+                            display: block;
+                            background: var(--ion-balticsea-color);
+                            padding:3px;
+                        }                        
                     }
                 }
             }

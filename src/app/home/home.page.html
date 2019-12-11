@@ -30,6 +30,18 @@
                     <ion-buttons>
                       <ion-button></ion-button>
                     </ion-buttons>
+                    <ion-title>Alle auswählen</ion-title>
+                </span>
+                <span class="inlineBlock">
+                    <ion-buttons>
+                      <ion-button></ion-button>
+                    </ion-buttons>
+                    <ion-title>Fetig</ion-title>
+                </span>
+                <span class="inlineBlock">
+                    <ion-buttons>
+                      <ion-button></ion-button>
+                    </ion-buttons>
                     <ion-title>Edit</ion-title>
                 </span>
               </div>
@@ -37,6 +49,11 @@
             <div class="cardboxWrapper">
               <div *ngFor="let itemCard of cardBox;let i= index" class="cardBoxContainer">
                 <div class="cardBox" [ngClass]="itemCard.bgClass">
+                    <div class="radioBox">
+                      <span class="innerBorder">
+                        <img src="./assets/images/icon-check-w.png" alt="icon tick">
+                      </span>
+                    </div>
                     <a *ngIf="itemCard.bgClass=='secondaryBg'" class="icon"><img src="./assets/images/cardTopIcon.png" class="cloudImg"></a>
                     <h5 class="cardHeading">{{itemCard.name}}<br> {{itemCard.subname}}</h5>
                     <p>Jonas <br> Meier <br> 152C-201 <br><a href="">mühlebachweg.ch</a></p>

@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
   isHide:any=false;
+  isEditable:any=false;
+  isSelected:any=false;
+  isSelectAll:any=false;
 
   cardBox = [
     {name:'Handover',subname:'',bgClass:"primaryBg", active:false},
@@ -22,6 +25,22 @@ export class HomePage {
   goToProtocol(){
   	this.router.navigate(['/new-protocol'])
   }
+
+  allSelected(){
+    this.isSelectAll=!this.isSelectAll;
+  }
+
+  finishAll(){
+    this.isEditable=false;
+    this.isSelected=false;
+    this.isSelectAll = false;
+  }
+
+  editClick(){
+    this.isEditable=true;
+    this.isSelected=true;
+  }
+
   changeEditValue(){
     this.isHide=!this.isHide;
   }

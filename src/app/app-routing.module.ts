@@ -52,10 +52,7 @@ const routes: Routes = [
     path: 'room-object',
     loadChildren: () => import('./room-object/room-object.module').then( m => m.RoomObjectPageModule)
   },
-  {
-    path: 'modal',
-    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
-  },
+
 ];
 
 @NgModule({

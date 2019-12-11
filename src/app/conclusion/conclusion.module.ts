@@ -8,7 +8,6 @@ import { IonicModule } from '@ionic/angular';
 import { ConclusionPageRoutingModule } from './conclusion-routing.module';
 
 import { ConclusionPage } from './conclusion.page';
-// import { ModalPageModule } from '../modal/modal.module';
 
 @NgModule({
 	entryComponents: [],

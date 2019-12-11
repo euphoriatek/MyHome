@@ -1,7 +1,7 @@
 import { Component, OnInit,ViewChild,Input } from '@angular/core';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
-import { NavParams ,PopoverController,Events} from '@ionic/angular';
-import { Router,NavigationExtras} from '@angular/router';
+import {PopoverController,Events} from '@ionic/angular';
+import { Router,NavigationExtras,ActivatedRoute} from '@angular/router';
 
 import { Storage } from '@ionic/storage';
 
@@ -23,12 +23,12 @@ export class ModalPage implements OnInit {
   };
 
   constructor(public popoverController: PopoverController,
-  	public navParams:NavParams,
+  	// public navParams:NavParams,
   	private storage: Storage,
   	private router: Router,
   	public events: Events) {
-  console.log(this.navParams.get('type'));
-  this.signatureType = this.navParams.get('type');
+  // console.log(this.navParams.get('type'));
+  // this.signatureType = this.navParams.get('type');
    }
 
   ngOnInit() {

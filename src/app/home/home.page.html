@@ -26,19 +26,19 @@
             <div class="lgTitle">
               <h1 class="heading">Overview</h1>
               <div class="editLink">
-                <span class="inlineBlock">
+                <span *ngIf="isEditable" class="inlineBlock" (click)="allSelected()">
                     <ion-buttons>
                       <ion-button></ion-button>
                     </ion-buttons>
                     <ion-title>Alle auswählen</ion-title>
                 </span>
-                <span class="inlineBlock">
+                <span *ngIf="isEditable" class="inlineBlock" (click)="finishAll()">
                     <ion-buttons>
                       <ion-button></ion-button>
                     </ion-buttons>
                     <ion-title>Fetig</ion-title>
                 </span>
-                <span class="inlineBlock">
+                <span *ngIf="!isEditable" class="inlineBlock" (click)="editClick()">
                     <ion-buttons>
                       <ion-button></ion-button>
                     </ion-buttons>
@@ -49,9 +49,9 @@
             <div class="cardboxWrapper">
               <div *ngFor="let itemCard of cardBox;let i= index" class="cardBoxContainer">
                 <div class="cardBox" [ngClass]="itemCard.bgClass">
-                    <div class="radioBox">
+                    <div *ngIf="isSelected" class="radioBox">
                       <span class="innerBorder">
-                        <img src="./assets/images/icon-check-w.png" alt="icon tick">
+                        <img [ngClass]="isSelectAll?'opacityShow':''"  src="./assets/images/icon-check-w.png" alt="icon tick">
                       </span>
                     </div>
                     <a *ngIf="itemCard.bgClass=='secondaryBg'" class="icon"><img src="./assets/images/cardTopIcon.png" class="cloudImg"></a>

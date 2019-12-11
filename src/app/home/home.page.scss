@@ -83,6 +83,13 @@
                             display: block;
                             background: var(--ion-balticsea-color);
                             padding:3px;
+                            img{
+                                transition: 0.3s all ease;
+                                opacity: 0;
+                            &.opacityShow{
+                                opacity: 1;
+                            }
+                            }
                         }                        
                     }
                 }

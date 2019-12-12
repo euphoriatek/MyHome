@@ -9,7 +9,7 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
-import { ModalPage } from '../modal/modal.page';
+import { SignaturePadComponent } from '../signature-pad/signature-pad.component';
 import { Storage } from '@ionic/storage';
 
 
@@ -82,7 +82,7 @@ export class ConclusionPage implements OnInit {
     async presentPopover(typeOfSignature: any) {
       this.currentSignatureType = typeOfSignature;
       const popover = await this.popoverController.create({
-        component: ModalPage,
+        component: SignaturePadComponent,
         componentProps:{'type':typeOfSignature},
         translucent: true
       });

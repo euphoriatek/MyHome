@@ -17,13 +17,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
-// import { ModalPageModule } from './modal/modal.module';
+import { SignaturePadComponent } from './signature-pad/signature-pad.component';
+
 
 
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent,SignaturePadComponent],
+  entryComponents: [SignaturePadComponent],
   imports: [BrowserModule,IonicStorageModule.forRoot(),SignaturePadModule,HttpClientModule, IonicModule.forRoot(), AppRoutingModule, OwlModule, AutoCompleteModule],
   providers: [
     HttpClient,

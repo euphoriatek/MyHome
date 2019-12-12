@@ -10,14 +10,15 @@ export class HomePage {
   isEditable:any=false;
   isSelected:any=false;
   isSelectAll:any=false;
+  classVariable:any;
 
   cardBox = [
-    {name:'Handover',subname:'',bgClass:"primaryBg", active:false},
-    {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false},
-    {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false},
-    {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false},
-    {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false},
-    {name:'Construction',subname:'control II',bgClass:"secondaryBg", active:false},
+  {name:'Handover',subname:'',bgClass:"primaryBg", active:false, isChecked:false},
+  {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false,isChecked:false},
+  {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false,isChecked:false},
+  {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false,isChecked:false},
+  {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false,isChecked:false},
+  {name:'Construction',subname:'control II',bgClass:"secondaryBg", active:false,isChecked:false},
   ];
 
   constructor(private router: Router) {}
@@ -26,8 +27,22 @@ export class HomePage {
   	this.router.navigate(['/new-protocol'])
   }
 
+  changeClass(){
+    debugger;
+    this.classVariable = 'opacityShow';
+  }
+
   allSelected(){
     this.isSelectAll=!this.isSelectAll;
+    if(this.isSelectAll){
+      for (var i = 0; i < this.cardBox.length; ++i) {
+        this.cardBox[i].isChecked=true;
+      }
+    } else {
+      for (var i = 0; i < this.cardBox.length; ++i) {
+        this.cardBox[i].isChecked=false;
+      }
+    }
   }
 
   finishAll(){
@@ -46,7 +61,7 @@ export class HomePage {
   }
 
   toggleClass(item:any,index){
-       for (var i = 0; i < this.cardBox.length; ++i) {
+    for (var i = 0; i < this.cardBox.length; ++i) {
       if(i == index){
         item.active = !item.active;
       } else {

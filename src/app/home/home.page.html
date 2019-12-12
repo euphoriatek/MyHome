@@ -51,7 +51,7 @@
                 <div class="cardBox" [ngClass]="itemCard.bgClass">
                     <div *ngIf="isSelected" class="radioBox">
                       <span class="innerBorder">
-                        <img [ngClass]="isSelectAll?'opacityShow':''"  src="./assets/images/icon-check-w.png" alt="icon tick">
+                        <img (click)="itemCard.isChecked=!itemCard.isChecked" [ngClass]="itemCard.isChecked?'opacityShow':''"  src="./assets/images/icon-check-w.png" alt="icon tick">
                       </span>
                     </div>
                     <a *ngIf="itemCard.bgClass=='secondaryBg'" class="icon"><img src="./assets/images/cardTopIcon.png" class="cloudImg"></a>

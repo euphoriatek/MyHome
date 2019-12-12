@@ -37,8 +37,8 @@ export class ConclusionPage implements OnInit {
   @ViewChild(SignaturePad,{'static':false}) signaturePad: SignaturePad;
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'minWidth': 5,
-    'canvasWidth': 700,
-    'canvasHeight': 300,
+    'canvasWidth': 100,
+    'canvasHeight': 200,
     'backgroundColor': 'rgb(255,255,255)',
   };
 
@@ -96,9 +96,7 @@ export class ConclusionPage implements OnInit {
     }
 
     ngAfterViewInit() {
-      // this.signaturePad is now available
-      this.signaturePad.set('minWidth', 5); // set szimek/signature_pad options at runtime
-      this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
+
     }
 
 

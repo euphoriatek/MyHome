@@ -1,14 +1,20 @@
-<ion-header>
+<!-- <ion-header>
 	<ion-toolbar>
 		<ion-title>{{signatureType}}</ion-title>
 		<button (click)="DismissClick()">DismissClick</button>
 	</ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
 	<div class="normalTextarea">
 		<signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()"></signature-pad>
-		<button ion-button class="btn btn-balticsea" (click)="drawComplete()">Save</button><br>
-		<button ion-button class="btn btn-balticsea" (click)="clearSignature()">Reset</button>
+		<ul>
+			<li>
+				<button ion-button (click)="clearSignature()">Reset</button>
+			</li>
+			<li>
+				<button ion-button (click)="drawComplete()">Save</button>
+			</li>
+		</ul>		
 	</div>
 </ion-content>

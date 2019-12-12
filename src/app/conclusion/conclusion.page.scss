@@ -27,7 +27,7 @@ ion-label{
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
-    background: #fff;
+    background: var(--ion-color-medium-contrast);
     padding: 7px;
     z-index: 9;
 }
@@ -54,6 +54,25 @@ ion-label{
             border-radius: 8px;
             outline: none;
             padding: 20px;
+        }
+    }
+    .signatureShowcaseContainer{
+        label{
+            font-size:18px;
+            padding: 10px 20px;
+            display: block;
+        }
+        .signatureShowcase {
+            max-height: 220px;
+            background: var(--ion-color-medium-contrast);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            overflow: hidden;
+            img{
+                max-height: 220px;
+                padding: 30px;
+            }
         }
     }
 }

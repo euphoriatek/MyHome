@@ -18,6 +18,7 @@
             padding: 0 30px;
             .inlineBlock{
                 margin-left: 50px;
+                transition: all 10s ease-in-out;
             }
         }
         .cardboxWrapper{
@@ -75,6 +76,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        transition: all 10s ease-in-out;
                         span.innerBorder {
                             height: 34px;
                             width: 34px;
@@ -86,9 +88,9 @@
                             img{
                                 transition: 0.3s all ease;
                                 opacity: 0;
-                            &.opacityShow{
-                                opacity: 1;
-                            }
+                                &.opacityShow{
+                                    opacity: 1;
+                                }
                             }
                         }                        
                     }

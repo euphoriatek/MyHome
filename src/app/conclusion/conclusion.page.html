@@ -46,23 +46,55 @@
                 </div>
               </div>
               <div class="signatureWrapper">
-                <button (click)="presentPopover('Signature Resident (incoming)')">Signature Resident (incoming)</button>
+                <!-- <button >Signature Resident (incoming)</button> -->
+                <div class="signatureShowcaseContainer">
+                    <label>Signature Resident (incoming)</label>
+                    <div class="signatureShowcase" (click)="presentPopover('Signature Resident (incoming)')">
+                        <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA
+                            AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
+                            9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
+                    </div>
+                </div>
+                <div class="signatureShowcaseContainer">
+                    <label>Signature Resident (outgoing)</label>
+                    <div class="signatureShowcase" (click)="presentPopover('Signature Resident (incoming)')">
+                        <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA
+                            AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
+                            9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
+                    </div>
+                </div>
+                <div class="signatureShowcaseContainer">
+                    <label>Signature TU / GU*</label>
+                    <div class="signatureShowcase" (click)="presentPopover('Signature Resident (incoming)')">
+                        <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA
+                            AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
+                            9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
+                    </div>
+                </div>
+                <div class="signatureShowcaseContainer">
+                    <label>Signature Real estate company</label>
+                    <div class="signatureShowcase" (click)="presentPopover('Signature Resident (incoming)')">
+                        <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA
+                            AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
+                            9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
+                    </div>
+                </div>
                 <!-- <div class="normalTextarea">
                     <label>Signature Resident (incoming)</label>
                       <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
                 </div> -->
-                <div class="normalTextarea">
+                <!-- <div class="normalTextarea">
                     <label>Signature Resident (outgoing)*</label>
                     <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
-                </div>
-                <div class="normalTextarea">
+                </div> -->
+                <!-- <div class="normalTextarea">
                     <label>Signature TU / GU*</label>
                     <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
-                </div>
-                <div class="normalTextarea">
+                </div> -->
+                <!-- <div class="normalTextarea">
                     <label>Signature Real estate company</label>
                     <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
-                </div>
+                </div> -->
               </div>
           </div>
       </div>

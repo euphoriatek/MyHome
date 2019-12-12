@@ -61,18 +61,22 @@ export class ConclusionPage implements OnInit {
     }
 
     settheSignatureValue(){
-      this.storage.get(this.currentSignatureType).then((val) => {
+      this.storage.get('signature').then((val) => {
         if(val){
           if(this.currentSignatureType == 'Signature Resident (incoming)'){
             this.incomingResSign = val;
+            this.storage.set('signature', '');
           } else if(this.currentSignatureType == 'Signature Resident (outgoing)'){
             this.outgoingResSign = val;
+            this.storage.set('signature', '');
           } else if(this.currentSignatureType == 'Signature TU / GU'){
             this.tuCuSign = val;
+            this.storage.set('signature', '');
           } else {
             this.RSCSign = val;
+            this.storage.set('signature', '');
           }
-          this.storage.set(this.currentSignatureType, '');
+          this.currentSignatureType='';
         }
       });
     }

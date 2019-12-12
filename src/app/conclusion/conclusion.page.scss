@@ -36,26 +36,6 @@ ion-label{
 }
 
 .signatureWrapper{
-    .normalTextarea{
-        margin-top: 22px;
-        label{
-            display: block;
-            font-size: 18px;
-            font-weight: 400;
-            padding-bottom: 11px;
-            padding-left: 20px;
-            color: var(--ion--placeholder-color);
-        }
-        textarea{
-            min-height: 200px;
-            resize: none;
-            width: 100%;
-            border: none;
-            border-radius: 8px;
-            outline: none;
-            padding: 20px;
-        }
-    }
     .signatureShowcaseContainer{
         label{
             font-size:18px;
@@ -64,6 +44,7 @@ ion-label{
         }
         .signatureShowcase {
             max-height: 220px;
+            min-height: 220px;
             background: var(--ion-color-medium-contrast);
             border-radius: 8px;
             margin-bottom: 20px;

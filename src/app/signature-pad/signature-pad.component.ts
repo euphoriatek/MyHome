@@ -12,9 +12,9 @@ import { Storage } from '@ionic/storage';
 export class SignaturePadComponent implements OnInit {
 
   @ViewChild(SignaturePad,{'static':false}) signaturePad: SignaturePad;
-	@Input() type: string;
-	signatureType:any;
-	 private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
+  @Input() type: string;
+  signatureType:any;
+  private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'minWidth': 5,
     'canvasWidth': 700,
     'canvasHeight': 300,
@@ -26,27 +26,28 @@ export class SignaturePadComponent implements OnInit {
   	private storage: Storage,
   	private router: Router,
   	public events: Events) {
-  // console.log(this.navParams.get('type'));
-  // this.signatureType = this.navParams.get('type');
-   }
+    // console.log(this.navParams.get('type'));
+    // this.signatureType = this.navParams.get('type');
+  }
 
   ngOnInit() {
   }
   ngAfterViewInit() {
-    // this.signaturePad is now available
-    this.signaturePad.set('minWidth', 5); // set szimek/signature_pad options at runtime
-    this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
+    this.signaturePad.set('minWidth', 5); 
+    this.signaturePad.clear();
   }
 
   async DismissClick() {
     await this.popoverController.dismiss();
   }
 
-   drawComplete() {
+  drawComplete() {
     console.log(this.signaturePad.toDataURL());
-    this.storage.set(this.signatureType, this.signaturePad.toDataURL());
-    this.DismissClick();
-    this.events.publish('signature:complete');
+    this.storage.set('signature', this.signaturePad.toDataURL());
+    setTimeout(() => {
+      this.events.publish('signature:complete');
+      this.DismissClick();
+    }, 500);
   }	
 
   drawStart() {

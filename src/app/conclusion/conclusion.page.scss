@@ -50,9 +50,12 @@ ion-label{
             margin-bottom: 20px;
             cursor: pointer;
             overflow: hidden;
+            margin: 0 auto;
+            text-align: center;
             img{
                 max-height: 220px;
                 padding: 5px;
+                width: auto;
             }
         }
     }

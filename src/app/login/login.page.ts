@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SimpleService} from '../api/simple-service.service';
+import { SimpleService } from '../api/simple-service.service';
 import { Router,NavigationExtras} from '@angular/router';
 
 

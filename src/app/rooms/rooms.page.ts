@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router,NavigationExtras,ActivatedRoute} from '@angular/router';
 import { Storage } from '@ionic/storage';
 import { LoadingController } from '@ionic/angular';
+import { SimpleService } from '../api/simple-service.service';
+
 @Component({
 	selector: 'app-rooms',
 	templateUrl: './rooms.page.html',
@@ -18,7 +20,9 @@ export class RoomsPage implements OnInit {
 	constructor(private route: ActivatedRoute,
 		private storage: Storage,
 		public loadingController: LoadingController,
-		private router: Router) {		
+		private router: Router,
+		public service:SimpleService) {	
+		this.service.hideLoader();	
 	}
 
 

@@ -23,7 +23,7 @@
           <h1 class="heading">Räume: <span class="object">Korridor</span></h1>
           <div class="editLink">
             <span class="inlineBlock">
-              <a [routerLink]="['/rooms']" class="btn btn-sm btn-g">
+              <a (click)="goToRoom()" class="btn btn-sm btn-g">
                 <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon> 
               </a>
             </span>
@@ -33,18 +33,18 @@
         <div class="secObjectList">
           <ion-list>
             <div class="radiusBg">
-              <ion-item-sliding (click)="openSliderContent()">
-                <div class="checked"><img src="./assets/images/icon-check-b.png" alt="icon checked"></div>                
-                <ion-item class="done radiusRound">
-                  <ion-label>Boden</ion-label>
+              <ion-item-sliding (click)="openSliderContent(i)" *ngFor="let component of roomComponent;let i = index">
+                <div *ngIf="component.complete" class="checked"><img src="./assets/images/icon-check-b.png" alt="icon checked"></div>                
+                <ion-item class="radiusRound" [ngClass]="component.complete?'done':''">
+                  <ion-label>{{component.name}}</ion-label>
                 </ion-item>
                 <ion-item-options side="end">
                   <ion-item-option (click)="clear(item)">löschen</ion-item-option>
                 </ion-item-options>
               </ion-item-sliding>
 
-              <ion-item-sliding>   
-                <ion-item>
+              <!-- <ion-item-sliding>   
+                <ion-item class="done radiusRound">
                   <ion-label>Wandplatten</ion-label>
                 </ion-item>
                 <ion-item-options side="end">
@@ -545,7 +545,7 @@
                 <ion-item-options side="end">
                   <ion-item-option (click)="clear(item)">löschen</ion-item-option>
                 </ion-item-options>
-              </ion-item-sliding>
+              </ion-item-sliding> -->
             </div>
           </ion-list>
         </div>
@@ -578,7 +578,7 @@
           <div class="formWrapper">
             <div class="vacant"></div>
             <div class="actionBtn">
-              <ion-button class="secondaryColor">
+              <ion-button class="secondaryColor" (click)="gofurther(currentComponent)">
                 <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
                 Weiter
               </ion-button>
@@ -642,7 +642,7 @@
               <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
               Duplizieren
             </ion-button>
-            <ion-button class="secondaryColor">
+            <ion-button (click)="gofurther(currentComponent)" class="secondaryColor">
               <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
               Weiter
             </ion-button>
@@ -691,7 +691,7 @@
             <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
             Duplizieren
           </ion-button>
-          <ion-button class="secondaryColor">
+          <ion-button (click)="gofurther(currentComponent)" class="secondaryColor">
             <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
             Weiter
           </ion-button>
@@ -752,7 +752,7 @@
           <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
           Duplizieren
         </ion-button>
-        <ion-button class="secondaryColor">
+        <ion-button (click)="gofurther(currentComponent)" class="secondaryColor">
           <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
           Weiter
         </ion-button>
@@ -813,7 +813,7 @@
         <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
         Duplizieren
       </ion-button>
-      <ion-button class="secondaryColor">
+      <ion-button (click)="gofurther(currentComponent)" class="secondaryColor">
         <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
         Weiter
       </ion-button>

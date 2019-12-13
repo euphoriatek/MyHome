@@ -23,7 +23,7 @@
                 <h1 class="heading">Parties</h1>
                 <div class="editLink">
                   <span class="inlineBlock">
-                    <a href="#" class="btn btn-sm btn-g">
+                    <a (click)="goToRoom()" class="btn btn-sm btn-g">
                       <ion-icon ios="ios-arrow-round-forward" md="md-arrow-round-forward"></ion-icon>
                     </a>
                   </span>
@@ -44,16 +44,16 @@
                 </div>
               </div> -->
               <div class="formWrapper">
-                <h3>Residents</h3>
+                <h3>Residents*</h3>
                 <div class="formContainer">
                   <div class="field posIn">
-                      <ion-auto-complete id="resident" [(ngModel)]="isShowUnit" (ionClear)="removedMethod(callback)" [dataProvider]="SimpleService" [options]="{ placeholder : 'Moving in resident' }"></ion-auto-complete>
+                      <ion-auto-complete id="resident" [(ngModel)]="partiesInfo.moving_in" (ionClear)="removedMethod(callback)" [dataProvider]="SimpleService" [options]="{ placeholder : 'Moving in resident' }"></ion-auto-complete>
                   </div>
-                  <div class="field posIn" *ngIf="isShowUnit" >
-                    <ion-auto-complete [dataProvider]="SimpleService.getUnit" [options]="{ placeholder : 'Unit' }" ></ion-auto-complete>
+                  <div class="field posIn" *ngIf="partiesInfo.moving_in" >
+                    <ion-auto-complete [(ngModel)]="partiesInfo.unit" [dataProvider]="SimpleService" [options]="{ placeholder : 'Unit' }" ></ion-auto-complete>
                   </div>
                   <div class="field posIn">
-                    <ion-auto-complete [dataProvider]="SimpleService" [options]="{ placeholder : 'Moving out resident' }"></ion-auto-complete>
+                    <ion-auto-complete [(ngModel)]="partiesInfo.moving_out" [dataProvider]="SimpleService" [options]="{ placeholder : 'Moving out resident' }"></ion-auto-complete>
                   </div>
                 </div>
               </div>
@@ -61,17 +61,15 @@
                 <h3>TU/GU</h3>
                 <div class="formContainer">
                   <div class="field posIn">
-                      <ion-auto-complete [dataProvider]="SimpleService" [options]="{ placeholder : 'Construction Company' }"></ion-auto-complete>
-
-
+                      <ion-auto-complete [(ngModel)]="partiesInfo.tu_gu" [dataProvider]="SimpleService" [options]="{ placeholder : 'Construction Company' }"></ion-auto-complete>
                   </div>
                 </div>
               </div>
               <div class="formWrapper">
-                <h3>Houseowner</h3>
+                <h3>Houseowner*</h3>
                 <div class="formContainer">
                   <div class="field preData">
-                      <ion-input [disabled]="!isDisabledHouse" placeholder="Fortimo AG, Rorschacherstrasse 305, 9016 St.Gallen"></ion-input>
+                      <ion-input [(ngModel)]="partiesInfo.house_owner" [disabled]="!isDisabledHouse" placeholder="{{partiesInfo.realstatecompany}}"></ion-input>
                       <span class="iconAction">
                         <button (click)="isDisabledHouse=!isDisabledHouse" class="nothing">
                           <img src="./assets/images/icon-pencil.png" alt="icon-pencil">
@@ -81,11 +79,11 @@
                 </div>
               </div>
               <div class="formWrapper">
-                <h3>Realstate Company</h3>
+                <h3>Realstate Company*</h3>
             
                 <div class="formContainer">
                   <div class="field preData">
-                      <ion-input [disabled]="!isDisabled" placeholder="Fortimo AG, Rorschacherstrasse 302, 9016 St.Gallen"></ion-input>
+                      <ion-input [(ngModel)]="partiesInfo.realstatecompany" [disabled]="!isDisabled" placeholder="{{partiesInfo.realstatecompany}}"></ion-input>
                       <span class="iconAction">
                         <button (click)="isDisabled=!isDisabled" class="nothing">
                           <img src="./assets/images/icon-pencil.png" alt="icon-pencil">

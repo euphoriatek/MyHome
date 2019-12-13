@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SimpleService} from '../api/simple-service.service';
+import { SimpleService } from '../api/simple-service.service';
 import { Router,NavigationExtras} from '@angular/router';
 
 
@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   }
 
   gotoHome(){
-  	this.service.showLoader();
+  	this.service.showLoader('Please Wait...');
   	setTimeout(() => {
       this.router.navigate(['/home']);
     }, 1000);

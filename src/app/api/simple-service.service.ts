@@ -50,11 +50,16 @@ export class SimpleService implements AutoCompleteService {
   }
 
   getUnit(keyword:string):Observable<any[]> {
-    debugger;
     if(keyword && (keyword.length==0 || keyword.length==null)){
       return
     }
     let observable:Observable<any>;
+
+    if (this.countries.length === 0) {
+      observable = this.residentUnit;
+    } else {
+      observable = this.residentUnit;
+    }
 
     return this.residentUnit.filter(
       (item) => {
@@ -66,9 +71,9 @@ export class SimpleService implements AutoCompleteService {
   }
 
 
-  showLoader() {
+  showLoader(loadingText) {
     this.loaderToShow = this.loadingController.create({
-      message: 'Please Wait...'
+      message: loadingText
     }).then((res) => {
       res.present();
       res.onDidDismiss().then((dis) => {

@@ -14,6 +14,7 @@ export class HomePage {
   isSelected:any=false;
   isSelectAll:any=false;
   classVariable:any;
+  isSynch:false;
 
 
 
@@ -27,11 +28,12 @@ export class HomePage {
   ];
 
   constructor(private router: Router,private storage: Storage,public service:SimpleService) {
-    this.service.hideLoader();
+
   }
 
 
   ngOnInit() {
+    this.service.hideLoader();
   }
 
   goToProtocol(){
@@ -49,6 +51,7 @@ export class HomePage {
         this.cardBox[i].isChecked=true;
       }
     } else {
+      this.isSynch = false;
       for (var i = 0; i < this.cardBox.length; ++i) {
         this.cardBox[i].isChecked=false;
       }
@@ -68,6 +71,24 @@ export class HomePage {
 
   changeEditValue(){
     this.isHide=!this.isHide;
+  }
+
+  synchData(){
+    this.service.showLoader('Synching...');
+    setTimeout(()=>{
+      for (var i = 0; i < this.cardBox.length; ++i) {
+        if(this.cardBox[i].isChecked){
+           this.cardBox[i].bgClass='secondaryBg';
+        }
+      }
+      this.service.hideLoader();
+      this.service.presentAlertWithSingle('Data Synched Successfully!');
+      this.isHide=false;
+      this.isEditable=false;
+      this.isSelected=false;
+      this.isSelectAll=false;
+      this.isSynch=false;
+    },2000)
   }
 
   toggleClass(item:any,index){

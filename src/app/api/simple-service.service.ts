@@ -71,9 +71,9 @@ export class SimpleService implements AutoCompleteService {
   }
 
 
-  showLoader() {
+  showLoader(loadingText) {
     this.loaderToShow = this.loadingController.create({
-      message: 'Please Wait...'
+      message: loadingText
     }).then((res) => {
       res.present();
       res.onDidDismiss().then((dis) => {

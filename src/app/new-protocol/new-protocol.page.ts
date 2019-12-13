@@ -27,7 +27,7 @@ export class NewProtocolPage implements OnInit {
     if(this.selectedProtocol=='' || this.selectedProtocol==null){
       this.service.presentAlertWithSingle('Please select atleast one Protocol!');
     } else if(this.selectedProtocol == 'Abnahme') {
-      this.service.showLoader();
+      this.service.showLoader("please Wait...");
       setTimeout(() => {
         this.router.navigate(['/parties']);
       }, 1000);

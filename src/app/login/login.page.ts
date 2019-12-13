@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   }
 
   gotoHome(){
-  	this.service.showLoader();
+  	this.service.showLoader('Please Wait...');
   	setTimeout(() => {
       this.router.navigate(['/home']);
     }, 1000);

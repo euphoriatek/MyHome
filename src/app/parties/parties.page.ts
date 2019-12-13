@@ -47,7 +47,7 @@ export class PartiesPage implements OnInit {
     return;
   } else {
   console.log("this is parties data "+JSON.stringify(this.partiesInfo));
-  this.SimpleService.showLoader();
+  this.SimpleService.showLoader('Please Wait...');
     setTimeout(() => {
       this.router.navigate(['/rooms']);
     }, 500);

@@ -1,4 +1,4 @@
-@media only screen and (max-width: 2736px) and (min-width: 1920px){
+@media only screen and (max-width: 2736px) and (min-width: 1700px){
     .mainSection .customContainer .leftSidebar .logoLeft {max-width: 180px;}
     .mainSection .customContainer .leftSidebar {min-width: 400px;}
     .mainSection .customContainer .leftSidebar .navigationTop {padding: 0 20px 0 110px;}
@@ -11,4 +11,8 @@
     .mainSection .rightSidebar .cardboxWrapper .cardBoxContainer .cardBox p {font-size: 25px!important;}
     .mainSection .customContainer .rightSidebar .lgTitle .editLink .inlineBlock ion-title{font-size: 25px}
     .mainSection .protocolList .list-md ion-item ion-label{font-size: 25px!important;}
+    .mainSection .customContainer .rightSidebar .formWrapper h3{font-size: 25px;}
+    .field input, .field .item-select{ min-height: 70px;font-size: 25px !important;}
+    ion-auto-complete ul > li{padding: 20px;}
+    html body ion-auto-complete ul li span {font-size: 22px;}
 }

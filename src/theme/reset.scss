@@ -164,7 +164,7 @@ ion-title {
     }
     &.preData{
         input{
-            font-weight: normal!important;
+            font-weight: 400!important;
         }
     }
     .sc-ion-input-md-h{
@@ -264,9 +264,18 @@ html{
                 top: -12px;
                 background-size: cover;
             }
+            li{
+                border-color: var(--ion-placeholder-color);
+                span{
+                    font-size: 18px;
+                }
+            }
         }
         .searchbar-input.sc-ion-searchbar-md{
             box-shadow: none;
+            font-weight: 400!important;
+            line-height: 1.4;
+            padding: 0 20px!important;
         }
         .searchbar-has-focus.sc-ion-searchbar-md-h .searchbar-search-icon.sc-ion-searchbar-md, ion-icon.searchbar-search-icon.sc-ion-searchbar-md{
             display: none;

@@ -127,11 +127,11 @@ ion-title {
         background: var(--ion-color-medium-contrast) ;
         min-height: 60px;
         color: var(--ion-placeholder-color);
-        padding: 0 15px ;
+        padding: 0 20px ;
         font-size: 18px;
         border-radius: 8px;
         line-height: 60px;
-        font-weight: 300;
+        font-weight: 100;
         cursor: pointer;
     }
     .iconAction {
@@ -231,6 +231,14 @@ ion-title {
 }
 html{
     body{
+        .alert-wrapper.sc-ion-alert-md {
+            width: 100%;
+            max-width: 450px;
+            .alert-message.sc-ion-alert-md {
+                font-size: 18px;
+                line-height: 1.5;
+            }
+        }
         .icon-inner{
             display: flex!important;
             align-items: center!important;

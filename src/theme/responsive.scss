@@ -7,6 +7,8 @@
     .btn {font-size: 24px; height: 75px;}
     .mainSection .customContainer .rightSidebar .lgTitle .heading {font-size: 40px;}
     .mainSection .customContainer .rightSidebar .title {font-size: 24px; margin-bottom: 10px;}
+    .mainSection .rightSidebar .cardboxWrapper .cardBoxContainer .cardBox {padding: 100px 40px 70px!important;}
+    .mainSection .rightSidebar .cardboxWrapper .cardBoxContainer .cardBox h5{ min-height: 260px;}
     .mainSection .rightSidebar .cardboxWrapper .cardBoxContainer .cardBox .cardHeading {font-size: 25px!important;}
     .mainSection .rightSidebar .cardboxWrapper .cardBoxContainer .cardBox p {font-size: 25px!important;}
     .mainSection .customContainer .rightSidebar .lgTitle .editLink .inlineBlock ion-title{font-size: 25px}
@@ -15,4 +17,6 @@
     .field input, .field .item-select{ min-height: 70px;font-size: 25px !important;}
     ion-auto-complete ul > li{padding: 20px;}
     html body ion-auto-complete ul li span {font-size: 22px;}
+    .field .cstmSelect{font-size: 25px; min-height: 80px; line-height: 80px;}
+    .signatureWrapper .signatureShowcaseContainer label{font-size: 25px!important; padding: 20px 20px!important;}
 }

@@ -62,3 +62,9 @@
         }
     }
 }
+
+@media only screen and (max-width: 2736px) and (min-width: 1700px){
+    .loginPage .loginWrapper .floatCenter .cardBoard .logoHolder{max-width: 220px;}
+    .loginPage .loginWrapper .floatCenter .cardBoard h1{font-size: 35px;}
+    .loginPage .loginWrapper .floatCenter .cardBoard p{font-size: 20px;}
+}

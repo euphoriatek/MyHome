@@ -29,6 +29,7 @@
                 flex: 0 0 33.333333%;
                 max-width: 33.333333%;
                 padding: 0 15px 30px;
+                transition: all 0.4s ease;
                 .cardBox {
                     width: 100%;
                     background: var(--ion-font-light-color);
@@ -83,7 +84,6 @@
                             border: 2px solid var(--ion-balticsea-color);
                             border-radius: 50%;
                             display: block;
-                            background: var(--ion-balticsea-color);
                             padding:3px;
                             img{
                                 transition: 0.3s all ease;
@@ -92,59 +92,82 @@
                                     opacity: 1;
                                 }
                             }
+                        }
+                        &.opacityShow {
+                            .innerBorder{
+                                background: var(--ion-balticsea-color);
+                            }
                         }                        
                     }
                 }
-            }
-            .seeMore{
-                display: inline-block;
-                width: 100%;
-                text-align: right;
-                z-index: 99;
-                position: relative;
-                .iconMore{
+                .seeMore{
                     display: inline-block;
-                    font-size: 30px;
-                    transform: rotate(90deg);
-                    color: var(--ion-balticsea-color);
-                    .moreMenu {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        position: absolute;
-                        z-index: 900;
-                        background-color: var(--ion-color-medium-contrast);
-                        border: 1px solid var(--ion-font-light-color);
-                        border-radius: 4px;
-                        box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-                        opacity: 0;
-                        transform: scale(.95) rotate(-90deg);
-                        transition: transform 0.1s ease-out, opacity 0.1s ease-out;
-                        left: 100%;
-                        top: 100%;
-                        margin: -5px 0px 0px -30px;
-                        min-width: 100px;
-                        line-height: 0;
-                        &.show{
-                            opacity: 1;
-                        }
-                        .moreMenuItems{
-                            .moreMenuItem{
-                                padding: 12px 8px;
-                                button{
-                                    font-size: 18px;
-                                    font-weight: 300;
-                                    padding: 0;
-                                    background: var(--ion-theme-none-color);
-                                    width: 100%;
-                                    span{
-                                        margin-right: 8px;
-                                        position: relative;
-                                        top: 3px;
-                                        left: -2px;
+                    width: 100%;
+                    text-align: right;
+                    z-index: 99;
+                    position: relative;
+                    .iconMore{
+                        display: inline-block;
+                        font-size: 30px;
+                        transform: rotate(90deg);
+                        color: var(--ion-balticsea-color);
+                        .moreMenu {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: absolute;
+                            z-index: 900;
+                            background-color: var(--ion-color-medium-contrast);
+                            border: 1px solid var(--ion-font-light-color);
+                            border-radius: 4px;
+                            box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+                            opacity: 0;
+                            transform: scale(.95) rotate(-90deg);
+                            transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+                            left: 100%;
+                            top: 100%;
+                            margin: -5px 0px 0px -30px;
+                            min-width: 100px;
+                            line-height: 0;
+                            &.show{
+                                opacity: 1;
+                            }
+                            .moreMenuItems{
+                                .moreMenuItem{
+                                    padding: 12px 8px;
+                                    button{
+                                        font-size: 18px;
+                                        font-weight: 300;
+                                        padding: 0;
+                                        background: var(--ion-theme-none-color);
+                                        width: 100%;
+                                        span{
+                                            margin-right: 8px;
+                                            position: relative;
+                                            top: 3px;
+                                            left: -2px;
+                                        }
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+            &.opacitylow{
+                .cardBoxContainer{
+                    opacity: 0.7;
+                    transform: scale(0.9);
+                    .seeMore{
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    &.fineCard{
+                        opacity: 1;
+                        transform: scale(1);
+                        .seeMore{
+                            opacity: 1;
+                            visibility: visible;
                         }
                     }
                 }
@@ -153,9 +176,36 @@
                 margin-bottom: 30px;
             }
         }
+        .syncSpace{
+            padding: 70px 40px 0;
+            .btnContainer{
+                max-width: 200px;
+                margin-left: auto;
+                .btn{
+                    height: 45px;
+                    margin: 0;
+                    font-size: 20px;
+                    text-transform: capitalize;
+                    font-weight: 300;
+                    padding: 0;
+                    --padding-end: 0;
+                    --padding-start: 0;
+                    --margin-inline-start: 0;
+                    --border-radius: 15px;
+                    --box-shadow: none;
+                    --background: none;
+                    --background-focused: none;
+                    --background-hover: none;
+                }
+            }
+        }
     }
 }
-
+@media only screen and (max-width: 2736px) and (min-width: 1920px){
+    .mainSection .rightSidebar .cardboxWrapper .cardBoxContainer {padding: 0 40px 30px!important;}
+    .mainSection .rightSidebar .title {padding: 0 40px!important}
+    .mainSection .rightSidebar .lgTitle {padding: 0 40px!important}
+}
 @media only screen and (max-width: 1200px){
     .mainSection .customContainer .leftSidebar{min-width: 320px;}
     .mainSection .customContainer .leftSidebar .logoLeft{max-width: 145px;}

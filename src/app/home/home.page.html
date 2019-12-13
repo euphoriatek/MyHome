@@ -46,10 +46,10 @@
                 </span>
               </div>
             </div>
-            <div class="cardboxWrapper">
-              <div *ngFor="let itemCard of cardBox;let i= index" class="cardBoxContainer">
+            <div class="cardboxWrapper" [ngClass]="isSelected?'opacitylow':''">
+              <div *ngFor="let itemCard of cardBox;let i= index" class="cardBoxContainer" [ngClass]="itemCard.isChecked?'fineCard':''">
                 <div class="cardBox" [ngClass]="itemCard.bgClass">
-                    <div *ngIf="isSelected" class="radioBox">
+                    <div *ngIf="isSelected" class="radioBox" [ngClass]="itemCard.isChecked?'opacityShow':''">
                       <span class="innerBorder">
                         <img (click)="itemCard.isChecked=!itemCard.isChecked" [ngClass]="itemCard.isChecked?'opacityShow':''"  src="./assets/images/icon-check-w.png" alt="icon tick">
                       </span>
@@ -64,13 +64,16 @@
                     <div class="moreMenu" [ngClass]="itemCard.active?'show':'hide'">
                       <ul class="moreMenuItems">
                         <li class="moreMenuItem">
-                            <button (click)="deleteCard(i)" ion-button class="more-menu-btn"><span class="icon"><ion-icon ios="ios-create" md="md-create"></ion-icon></span>Edit</button>
+                            <button (click)="deleteCard(i)" ion-button class="more-menu-btn"><span class="icon"><ion-icon ios="ios-create" md="md-create"></ion-icon></span>Delete</button>
                         </li>
                       </ul>
                     </div>
                   </a>
                 </div>
               </div>
+            </div>
+            <div class="syncSpace">
+              <div class="btnContainer"><ion-button class="btn btnPrimary">Hochladen</ion-button></div>
             </div>
         </div>
       </div>

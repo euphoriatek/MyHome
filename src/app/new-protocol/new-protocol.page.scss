@@ -23,6 +23,12 @@
             border-radius: 8px;
             padding: 0 0 0 20px;
             ion-item{
+                --background:none;
+                --background-hover:none;
+                --background-focused:none;
+                --background-activated:none;
+                --transition: none;
+                --ripple-color:none;
                 ion-label{
                     color: var(--ion-placeholder-color);
                     font-size: 18px;
@@ -30,6 +36,18 @@
                     padding: 24px 0;
                     display: block;
                     margin: 0;
+                }
+                ion-radio.ios.in-item.interactive.hydrated.radio-checked {
+                    width: 30px;
+                    height: 40px;
+                    margin: 0;
+                    --color-checked: var(--ion-theme-primary-color);
+                }
+                &.item-radio-checked{
+                    ion-label{
+                        font-weight: bold;
+                        color: var(--ion-theme-primary-color);
+                    }
                 }
             }
         }

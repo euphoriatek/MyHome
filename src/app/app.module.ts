@@ -18,7 +18,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { SignaturePadComponent } from './signature-pad/signature-pad.component';
-
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 
 @NgModule({
@@ -26,15 +26,16 @@ import { SignaturePadComponent } from './signature-pad/signature-pad.component';
   entryComponents: [SignaturePadComponent],
   imports: [BrowserModule,IonicStorageModule.forRoot(),SignaturePadModule,HttpClientModule, IonicModule.forRoot(), AppRoutingModule, OwlModule, AutoCompleteModule],
   providers: [
-    HttpClient,
-    DatePicker,
-    SimpleService,
-    StatusBar,
-     File,
-    FileOpener,
-    
-    SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  Camera,
+  HttpClient,
+  DatePicker,
+  SimpleService,
+  StatusBar,
+  File,
+  FileOpener,
+
+  SplashScreen,
+  { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })

@@ -128,7 +128,7 @@
                     <div class="pictureShot">
                       <owl-carousel
                       [options]="{items: 2, dots: true, navigation: true, margin: 0, dotsEach: true}" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-                      <div class="item carouselImg" *ngFor="let image of slides;let i = index">
+                      <div (click)="openCam();" class="item carouselImg" *ngFor="let image of slides;let i = index">
                         <img src="{{image.img}}">
                       </div>
                     </owl-carousel>
@@ -177,7 +177,7 @@
                   <div class="pictureShot">
                     <owl-carousel
                     [options]="{items: 2, dots: true, navigation: true, margin: 0, dotsEach: true}" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-                    <div class="item carouselImg" *ngFor="let image of slides;let i = index">
+                    <div (click)="openCam();" class="item carouselImg" *ngFor="let image of slides;let i = index">
                       <img src="{{image.img}}">
                     </div>
                   </owl-carousel>
@@ -238,7 +238,7 @@
                 <div class="pictureShot">
                   <owl-carousel
                   [options]="{items: 2, dots: true, navigation: true, margin: 0, dotsEach: true}" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-                  <div class="item carouselImg" *ngFor="let image of slides;let i = index">
+                  <div (click)="openCam();" class="item carouselImg" *ngFor="let image of slides;let i = index">
                     <img src="{{image.img}}">
                   </div>
                 </owl-carousel>
@@ -299,7 +299,7 @@
               <div class="pictureShot">
                 <owl-carousel
                 [options]="{items: 2, dots: true, navigation: true, margin: 0, dotsEach: true}" [items]="slides" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-                <div class="item carouselImg" *ngFor="let image of slides;let i = index">
+                <div (click)="openCam();" class="item carouselImg" *ngFor="let image of slides;let i = index">
                   <img src="{{image.img}}">
                 </div>
               </owl-carousel>

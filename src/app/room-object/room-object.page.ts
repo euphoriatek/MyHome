@@ -1,8 +1,10 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
-import {OwlCarousel} from 'ngx-owl-carousel';
+import { OwlCarousel } from 'ngx-owl-carousel';
 import { Storage } from '@ionic/storage';
 import { Router,NavigationExtras,ActivatedRoute} from '@angular/router';
 import { LoadingController,IonContent } from '@ionic/angular';
+import { SimpleService } from '../api/simple-service.service';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-room-object',
@@ -20,6 +22,7 @@ export class RoomObjectPage implements OnInit {
   isShared:any=false;
   openInfoSlide:any=false;
   costby:any;
+  image:any=''
   roomComponent:any;
   currentComponent:any;
   mangel:any={'title':'','description':'','service_provider':'','action':'','cost_by':'','location':'','image':''};
@@ -30,8 +33,12 @@ export class RoomObjectPage implements OnInit {
 
   @ViewChild('owlElement',{'static':false}) owlElement: OwlCarousel
 
-  constructor(private storage: Storage,public loadingController: LoadingController,
-    private router: Router) { }
+  constructor(
+    private storage: Storage,
+    public loadingController: LoadingController,
+    private router: Router,
+    private camera: Camera,
+    public service:SimpleService) { }
 
   ngOnInit() {
     this.storage.get('Korridor').then((val) => {
@@ -52,6 +59,23 @@ export class RoomObjectPage implements OnInit {
     this.costby = '';
   }
 
+  openCam(){
+    debugger;
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     this.image=(<any>window).Ionic.WebView.convertFileSrc(imageData);
+    }, (err) => {
+     alert("error "+JSON.stringify(err))
+    });
+
+  }
+
   //for outside click event
   onClick(event){
   }
@@ -67,9 +91,14 @@ export class RoomObjectPage implements OnInit {
   }
 
   gofurther(componentIndex,componentName){
+    this.service.showLoader('Please Wait...');
+    setTimeout(()=>{
+      this.service.hideLoader();
+      this.content.scrollToTop(0);
+      this.activeTabName = 'okay';
+    },800)
     this.roomComponent[componentIndex].complete=true;
     this.roomComponent[componentIndex].inspection.push(componentName);
-    debugger;
     if(componentIndex == this.roomComponent.length-1){
       this.openslider = false;
     } else {
@@ -106,7 +135,6 @@ export class RoomObjectPage implements OnInit {
 
   async goToRoom() {
     this.roomComponent[0].inspection.push(this.inspectionArr);
-    debugger;
     this.storage.set('Korridor',this.roomComponent);
     const loading = await this.loadingController.create({
       message: 'Please Wait..',

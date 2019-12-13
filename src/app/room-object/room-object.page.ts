@@ -2,7 +2,7 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import {OwlCarousel} from 'ngx-owl-carousel';
 import { Storage } from '@ionic/storage';
 import { Router,NavigationExtras,ActivatedRoute} from '@angular/router';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController,IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-room-object',
@@ -13,6 +13,7 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['./room-object.page.scss'],
 })
 export class RoomObjectPage implements OnInit {
+  @ViewChild(IonContent,{'static':false}) content: IonContent;
   activeTabName:any='okay';
   openslider:any=false;
   sybTabName:any;
@@ -21,6 +22,12 @@ export class RoomObjectPage implements OnInit {
   costby:any;
   roomComponent:any;
   currentComponent:any;
+  mangel:any={'title':'','description':'','service_provider':'','action':'','cost_by':'','location':'','image':''};
+  normalabgenutzt:any={'title':'','description':'','location':'','image':''};
+  nachreinigung:any={'title':'','description':'','service_provider':'','cost_by':'','location':'','image':'','pan_location':''};
+  nichtVorhanden:any={'title':'','description':'','service_provider':'','cost_by':'','location':'','image':'','pan_location':''};
+  inspectionArr:any=[];
+
   @ViewChild('owlElement',{'static':false}) owlElement: OwlCarousel
 
   constructor(private storage: Storage,public loadingController: LoadingController,
@@ -59,14 +66,47 @@ export class RoomObjectPage implements OnInit {
     this.openInfoSlide = false;
   }
 
-  gofurther(componentIndex){
+  gofurther(componentIndex,componentName){
     this.roomComponent[componentIndex].complete=true;
-    this.openslider = false;
+    this.roomComponent[componentIndex].inspection.push(componentName);
+    debugger;
+    if(componentIndex == this.roomComponent.length-1){
+      this.openslider = false;
+    } else {
+      this.currentComponent++;
+    }
+    if(componentName!='okay'){
+
+    }
+  }
+
+
+  dupliacteEntry(componentName){
+    this.presentLoading();
+    if(componentName =='mangel'){
+      this.inspectionArr.push(this.mangel);
+      this.mangel={'title':'','description':'','service_provider':'','action':'','cost_by':'','location':'','image':''};
+    }
+  }
+
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Please Wait...',
+      duration: 500
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    this.content.scrollToTop(0);
+    console.log('Loading dismissed!');
   }
 
 
 
   async goToRoom() {
+    this.roomComponent[0].inspection.push(this.inspectionArr);
+    debugger;
     this.storage.set('Korridor',this.roomComponent);
     const loading = await this.loadingController.create({
       message: 'Please Wait..',

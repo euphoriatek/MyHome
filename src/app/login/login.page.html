@@ -29,7 +29,7 @@
             <ion-buttons>
               <ion-back-button></ion-back-button>
             </ion-buttons>
-            <ion-title [routerLink]="['/home']" class="btn btnPrimary">
+            <ion-title (click)="gotoHome()" class="btn btnPrimary">
               <span>Login</span>
             </ion-title>
           </div>

@@ -10,6 +10,9 @@ import {SimpleService} from '../api/simple-service.service';
 export class PartiesPage implements OnInit {
   public labelAttribute:string;
   isShowUnit:any;
+  isDisabled:any=false;
+  isDisabledHouse:any=false;
+  
   public autoFillData:any[];
   constructor(private router: Router, public SimpleService:SimpleService) {
     const autoFillData = [

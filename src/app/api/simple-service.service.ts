@@ -5,14 +5,15 @@ import {map} from 'rxjs/operators';
 import {Observable, of} from 'rxjs';
 
 import {AutoCompleteService} from 'ionic4-auto-complete';
-
+import { LoadingController } from '@ionic/angular';
 @Injectable()
 export class SimpleService implements AutoCompleteService {
+  loaderToShow: any;
   labelAttribute = 'name';
 
   private countries:any[] = [];
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient,public loadingController: LoadingController) {
 
   }
 
@@ -31,12 +32,28 @@ export class SimpleService implements AutoCompleteService {
           return result.filter(
             (item) => {
               return item.name.toLowerCase().startsWith(
-                  keyword.toLowerCase()
-              );
+                keyword.toLowerCase()
+                );
             }
-          );
+            );
         }
-      )
-    );
+        )
+      );
+  }
+
+
+  showLoader() {
+    this.loaderToShow = this.loadingController.create({
+      message: 'Please Wait...'
+    }).then((res) => {
+      res.present();
+      res.onDidDismiss().then((dis) => {
+        console.log('Loading dismissed!');
+      });
+    });
+  }
+
+  hideLoader() {
+    this.loadingController.dismiss();
   }
 }

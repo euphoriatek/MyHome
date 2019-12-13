@@ -21,7 +21,6 @@ import { SignaturePadComponent } from './signature-pad/signature-pad.component';
 
 
 
-
 @NgModule({
   declarations: [AppComponent,SignaturePadComponent],
   entryComponents: [SignaturePadComponent],

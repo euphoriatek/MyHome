@@ -33,9 +33,10 @@
         <div class="secObjectList">
           <ion-list>
             <div class="radiusBg">
-              <ion-item-sliding (click)="openSliderContent(i)" *ngFor="let component of roomComponent;let i = index">
+
+              <ion-item-sliding *ngFor="let component of roomComponent;let i = index">
                 <div *ngIf="component.complete" class="checked"><img src="./assets/images/icon-check-b.png" alt="icon checked"></div>                
-                <ion-item class="radiusRound" [ngClass]="component.complete?'done':''">
+                <ion-item (click)="openSliderContent(i)" class="radiusRound" [ngClass]="component.complete?'done':''">
                   <ion-label>{{component.name}}</ion-label>
                 </ion-item>
                 <ion-item-options side="end">
@@ -43,514 +44,13 @@
                 </ion-item-options>
               </ion-item-sliding>
 
-              <!-- <ion-item-sliding>   
-                <ion-item class="done radiusRound">
-                  <ion-label>Wandplatten</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Anstrich</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Decke</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Fenster</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Sims</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Sonnenschutz</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Vorhangschiene</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Abdeckung</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Schränke / Schublade</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Küchenfront</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Spültrog</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Armatur</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Kochfeld</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Abzug / Filter</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Backofen / Steamer</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Geschirrspülmaschine</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Kühlschrank / Tiefkühler</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Abfallelement</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Beleuchtung</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Lichtschalter / Steckdose</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Manuell hinzufügen</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Wände</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Schränke / Garderobe</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Sicherungskasten</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Wohnungstüre / Schloss</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Türzarge</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Türöffner / Gegensprechanlage</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>ManuellWandplatten</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Schwedenofen</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Lichtschalter / Steckdose / Multimedia</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Geländer</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Kurbel / Getriebe</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Beleuchtung / Steckdose</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Manuell</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Türe</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Toilette</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Papierhalter</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Badewanne</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Brause / Schlauch</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Lavabo</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Handtuchhalter</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Spiegelschrank / Licht</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Lüftung / Filter</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Dusche</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Trennwand</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Trockner</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Zuleitung</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Tür</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Schalter / Steckdose</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Wand</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Treppe</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Schalter</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Spiegel</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Anzeige</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item>
-                  <ion-label>Griff</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>                      
-                <ion-item class="radiusRoundRev">
-                  <ion-label>Knöpfe</ion-label>
-                </ion-item>
-                <ion-item-options side="end">
-                  <ion-item-option (click)="clear(item)">löschen</ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding> -->
             </div>
           </ion-list>
         </div>
       </div>
     </div>
+
+
     <div class="blackSlide" [ngClass]="openslider?'show':''">
       <a class="closeSlider" (click)="closeSliderContent()"><ion-icon ios="ios-close" md="md-close"></ion-icon></a>
       <div class="sliderCarousel">
@@ -578,7 +78,7 @@
           <div class="formWrapper">
             <div class="vacant"></div>
             <div class="actionBtn">
-              <ion-button class="secondaryColor" (click)="gofurther(currentComponent)">
+              <ion-button class="secondaryColor" (click)="gofurther(currentComponent,activeTabName)">
                 <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
                 Weiter
               </ion-button>
@@ -592,10 +92,10 @@
           <div class="formWrapper">
             <div class="formContainer">
               <div class="field darkField">
-                <ion-input placeholder="Title"></ion-input>
+                <ion-input [(ngModel)]="mangel.title" placeholder="Title"></ion-input>
               </div>
               <div class="textareaWrapper darkField">
-                <textarea name="" id="" cols="" rows=""></textarea>
+                <textarea [(ngModel)]="mangel.description" name="" id="" cols="" rows=""></textarea>
                 <span class="floatTitle">Description</span>
               </div>
               <div class="field darkField">
@@ -638,11 +138,11 @@
             </ion-grid>
           </div>
           <div class="actionBtn">
-            <ion-button class="darkColor">
+            <ion-button class="darkColor" (click)="dupliacteEntry(activeTabName)">
               <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
               Duplizieren
             </ion-button>
-            <ion-button (click)="gofurther(currentComponent)" class="secondaryColor">
+            <ion-button (click)="gofurther(currentComponent,activeTabName)" class="secondaryColor">
               <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
               Weiter
             </ion-button>
@@ -656,10 +156,10 @@
         <div class="formWrapper">
           <div class="formContainer">
             <div class="field darkField">
-              <ion-input placeholder="Title"></ion-input>
+              <ion-input [(ngModel)]="normalabgenutzt.title" placeholder="Title"></ion-input>
             </div>
             <div class="textareaWrapper darkField">
-              <textarea name="" id="" cols="" rows=""></textarea>
+              <textarea [(ngModel)]="normalabgenutzt.description" name="" id="" cols="" rows=""></textarea>
               <span class="floatTitle">Description</span>
             </div>
           </div>
@@ -691,7 +191,7 @@
             <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
             Duplizieren
           </ion-button>
-          <ion-button (click)="gofurther(currentComponent)" class="secondaryColor">
+          <ion-button (click)="gofurther(currentComponent,activeTabName)" class="secondaryColor">
             <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
             Weiter
           </ion-button>
@@ -705,10 +205,10 @@
       <div class="formWrapper">
         <div class="formContainer">
           <div class="field darkField">
-            <ion-input placeholder="Title"></ion-input>
+            <ion-input [(ngModel)]="nachreinigung.title" placeholder="Title"></ion-input>
           </div>
           <div class="textareaWrapper darkField">
-            <textarea name="" id="" cols="" rows=""></textarea>
+            <textarea [(ngModel)]="nachreinigung.description" name="" id="" cols="" rows=""></textarea>
             <span class="floatTitle">Description</span>
           </div>
           <div class="field darkField">
@@ -721,7 +221,7 @@
             </span>
           </div>
           <div class="field darkField">
-            <ion-input placeholder="Pan Location"></ion-input>
+            <ion-input [(ngModel)]="nachreinigung.pan_location" placeholder="Pan Location"></ion-input>
           </div>
         </div>
         <div class="locationWrap">
@@ -752,7 +252,7 @@
           <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
           Duplizieren
         </ion-button>
-        <ion-button (click)="gofurther(currentComponent)" class="secondaryColor">
+        <ion-button (click)="gofurther(currentComponent,activeTabName)" class="secondaryColor">
           <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
           Weiter
         </ion-button>
@@ -766,10 +266,10 @@
     <div class="formWrapper">
       <div class="formContainer">
         <div class="field darkField">
-          <ion-input placeholder="Title"></ion-input>
+          <ion-input placeholder="Title" [(ngModel)]="nichtVorhanden.title"></ion-input>
         </div>
         <div class="textareaWrapper darkField">
-          <textarea name="" id="" cols="" rows=""></textarea>
+          <textarea [(ngModel)]="nichtVorhanden.description" name="" id="" cols="" rows=""></textarea>
           <span class="floatTitle">Description</span>
         </div>
         <div class="field darkField">
@@ -782,7 +282,7 @@
           </span>
         </div>
         <div class="field darkField">
-          <ion-input placeholder="Plan Location"></ion-input>
+          <ion-input [(ngModel)]="nichtVorhanden.pan_location" placeholder="Plan Location"></ion-input>
         </div>
       </div>
       <div class="locationWrap">
@@ -813,7 +313,7 @@
         <span slot="end"><img src="./assets/images/icon-duplicate.png" alt="icon duplicate"></span>
         Duplizieren
       </ion-button>
-      <ion-button (click)="gofurther(currentComponent)" class="secondaryColor">
+      <ion-button (click)="gofurther(currentComponent,activeTabName)" class="secondaryColor">
         <span slot="end"><img src="./assets/images/icon-forward.png" alt="icon forward"></span>
         Weiter
       </ion-button>

@@ -71,9 +71,9 @@
                 <h3>Houseowner</h3>
                 <div class="formContainer">
                   <div class="field preData">
-                      <ion-input placeholder="Fortimo AG, Rorschacherstrasse 305, 9016 St.Gallen"></ion-input>
+                      <ion-input [disabled]="!isDisabledHouse" placeholder="Fortimo AG, Rorschacherstrasse 305, 9016 St.Gallen"></ion-input>
                       <span class="iconAction">
-                        <button class="nothing">
+                        <button (click)="isDisabledHouse=!isDisabledHouse" class="nothing">
                           <img src="./assets/images/icon-pencil.png" alt="icon-pencil">
                         </button>
                       </span>
@@ -85,9 +85,9 @@
             
                 <div class="formContainer">
                   <div class="field preData">
-                      <ion-input placeholder="Fortimo AG, Rorschacherstrasse 302, 9016 St.Gallen"></ion-input>
+                      <ion-input [disabled]="!isDisabled" placeholder="Fortimo AG, Rorschacherstrasse 302, 9016 St.Gallen"></ion-input>
                       <span class="iconAction">
-                        <button class="nothing">
+                        <button (click)="isDisabled=!isDisabled" class="nothing">
                           <img src="./assets/images/icon-pencil.png" alt="icon-pencil">
                         </button>
                       </span>

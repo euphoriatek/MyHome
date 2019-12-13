@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
+import {SimpleService} from '../api/simple-service.service';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,8 @@ export class HomePage {
   isSelectAll:any=false;
   classVariable:any;
 
+
+
   cardBox = [
   {name:'Handover',subname:'',bgClass:"primaryBg", active:false, isChecked:false},
   {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false,isChecked:false},
@@ -23,21 +26,26 @@ export class HomePage {
   {name:'Construction',subname:'control II',bgClass:"secondaryBg", active:false,isChecked:false},
   ];
 
-  constructor(private router: Router,private storage: Storage) {
-    var roomObjects = [{'name':'Boden','complete':false},
-        {'name':'Wände','complete':false},
-        {'name':'Schränke / Garderobe','complete':false},
-        {'name':'Sicherungskasten','complete':false},
-        {'name':'Wohnungstüre / Schloss','complete':false},
-        {'name':'Türzarge','complete':false},
-        {'name':'Türöffner / Gegensprechanlage','complete':false},
-        {'name':'Lichtschalter / Steckdose','complete':false},
-        {'name':'Beleuchtung','complete':false},
-        {'name':'Manuell','complete':false},
+  constructor(private router: Router,private storage: Storage,public service:SimpleService) {
+    var roomObjects = [{'name':'Boden','complete':false,'inspection':[]},
+        {'name':'Wände','complete':false,'inspection':''},
+        {'name':'Schränke / Garderobe','complete':false,'inspection':[]},
+        {'name':'Sicherungskasten','complete':false,'inspection':[]},
+        {'name':'Wohnungstüre / Schloss','complete':false,'inspection':[]},
+        {'name':'Türzarge','complete':false,'inspection':[]},
+        {'name':'Türöffner / Gegensprechanlage','complete':false,'inspection':[]},
+        {'name':'Lichtschalter / Steckdose','complete':false,'inspection':[]},
+        {'name':'Beleuchtung','complete':false,'inspection':[]},
+        {'name':'Manuell','complete':false,'inspection':[]},
     ]
 
     
     this.storage.set('Korridor',roomObjects);
+    this.service.hideLoader();
+  }
+
+
+  ngOnInit() {
   }
 
   goToProtocol(){

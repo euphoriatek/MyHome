@@ -12,6 +12,8 @@ export class RoomsPage implements OnInit {
 	roomCard:any=[];
 	isCancel:any=false;
 	data:any;
+	doneComponent:any;
+	isComplete:any=false;;
 
 	constructor(private route: ActivatedRoute,
 		private storage: Storage,
@@ -27,40 +29,63 @@ export class RoomsPage implements OnInit {
 			'title':'Korridor 1',
 			'name':'',
 			'component':'',
+			'done':0,
 			'complete':false
 
 		},
 		{
 			'title':'Korridor 2',
 			'name':'1 Mängel',
-			'component':'11/11 Bauteile',
-			'complete':true
+			'done':0,
+			'component':'11',
+			'complete':false
 
 		},
 		{
 			'title':'Korridor 3',
 			'name':'1 Mängel',
-			'component':'11/11 Bauteile',
+			'done':0,
+			'component':'11',
 			'complete':false
 
 		},
 		{
 			'title':'Korridor 4',
 			'name':'1 Mängel',
-			'component':'11/11 Bauteile',
-			'complete':true
+			'done':0,
+			'component':'11',
+			'complete':false
 
 		},
 		{
 			'title':'Korridor 5',
 			'name':'1 Mängel',
-			'component':'11/11 Bauteile',
+			'done':0,
+			'component':'11',
 			'complete':false
 
 		}]
 	}
 
 	ionViewWillEnter(){
+		this.storage.get('Korridor').then((val) => {
+			if(val){
+				this.roomCard[0].component = val.length;
+				var doneComp=0;
+				var isCompleteComponent=0;
+				for (var i = 0; i < val.length; ++i) {
+					if(val[i].complete){
+						doneComp++;
+					} else {
+						isCompleteComponent++;
+					}
+				} if(isCompleteComponent == 0){
+					this.roomCard[0].complete = true;
+				}
+				this.roomCard[0].done = doneComp;
+			}
+		});
+
 		this.storage.get('addRoom').then((val) => {
 			if(val)
 				this.roomCard.push(val);

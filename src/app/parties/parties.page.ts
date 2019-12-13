@@ -12,7 +12,7 @@ export class PartiesPage implements OnInit {
   isShowUnit:any;
   isDisabled:any=false;
   isDisabledHouse:any=false;
-  
+
   public autoFillData:any[];
   constructor(private router: Router, public SimpleService:SimpleService) {
     const autoFillData = [
@@ -21,6 +21,7 @@ export class PartiesPage implements OnInit {
    }
 
   ngOnInit() {
+    this.SimpleService.hideLoader();
   }
 
   goTomiscellaneous(){

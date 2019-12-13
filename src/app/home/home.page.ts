@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
-import {SimpleService} from '../api/simple-service.service';
+import { SimpleService } from '../api/simple-service.service';
 
 @Component({
   selector: 'app-home',
@@ -27,20 +27,6 @@ export class HomePage {
   ];
 
   constructor(private router: Router,private storage: Storage,public service:SimpleService) {
-    var roomObjects = [{'name':'Boden','complete':false,'inspection':[]},
-        {'name':'Wände','complete':false,'inspection':''},
-        {'name':'Schränke / Garderobe','complete':false,'inspection':[]},
-        {'name':'Sicherungskasten','complete':false,'inspection':[]},
-        {'name':'Wohnungstüre / Schloss','complete':false,'inspection':[]},
-        {'name':'Türzarge','complete':false,'inspection':[]},
-        {'name':'Türöffner / Gegensprechanlage','complete':false,'inspection':[]},
-        {'name':'Lichtschalter / Steckdose','complete':false,'inspection':[]},
-        {'name':'Beleuchtung','complete':false,'inspection':[]},
-        {'name':'Manuell','complete':false,'inspection':[]},
-    ]
-
-    
-    this.storage.set('Korridor',roomObjects);
     this.service.hideLoader();
   }
 
@@ -53,7 +39,6 @@ export class HomePage {
   }
 
   changeClass(){
-    debugger;
     this.classVariable = 'opacityShow';
   }
 

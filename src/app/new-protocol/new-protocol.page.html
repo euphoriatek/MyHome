@@ -9,7 +9,7 @@
               </a>
             </div>
             <ul class="nav navigationTop">
-              <li><a href="#" class="active">Home</a></li>
+              <li><a [routerLink]="['/home']" class="active">Home</a></li>
             </ul>
             <!-- <div class="btnWrapper">
               <ion-buttons>
@@ -37,33 +37,12 @@
             </div>
             <div class="protocolList">
               <ion-list radio-group ngDefaultControl>
-                <ion-radio-group name=“radio-group” [(ngModel)]="protocol">
-                  <ion-item>
-                    <ion-label>Bauphase</ion-label>
-                    <ion-radio mode="ios" slot="end" value="Bauphase"></ion-radio>
+                <ion-radio-group name=“radio-group” [(ngModel)]="selectedProtocol">
+                  <ion-item *ngFor="let protocol of protocolList">
+                    <ion-label>{{protocol.title}}</ion-label>
+                    <ion-radio mode="ios" slot="end" value="{{protocol.title}}"></ion-radio>
                   </ion-item>
-              
-                  <ion-item>
-                      <ion-radio mode="ios" slot="end" value="Rohbauabnahme"></ion-radio>
-                    <ion-label>Rohbauabnahme</ion-label>
-                  </ion-item>
-              
-                  <ion-item>
-                    <ion-label>Vorabnahme</ion-label>
-                    <ion-radio mode="ios" slot="end" value="Vorabnahme"></ion-radio>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Bauabnahme</ion-label>
-                      <ion-radio mode="ios" slot="end" value="Bauabnahme"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                        <ion-label>Abnahme</ion-label>
-                        <ion-radio mode="ios" slot="end" value="Abnahme" checked></ion-radio>
-                      </ion-item>
-                      <ion-item>
-                          <ion-label>Übergabe</ion-label>
-                          <ion-radio mode="ios" slot="end" value="Übergabe"></ion-radio>
-                        </ion-item>
+
                 </ion-radio-group>
               </ion-list>
             </div>

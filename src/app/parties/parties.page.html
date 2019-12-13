@@ -50,7 +50,7 @@
                       <ion-auto-complete id="resident" [(ngModel)]="isShowUnit" (ionClear)="removedMethod(callback)" [dataProvider]="SimpleService" [options]="{ placeholder : 'Moving in resident' }"></ion-auto-complete>
                   </div>
                   <div class="field posIn" *ngIf="isShowUnit" >
-                    <ion-auto-complete [dataProvider]="SimpleService" [options]="{ placeholder : 'Unit' }" ></ion-auto-complete>
+                    <ion-auto-complete [dataProvider]="SimpleService.getUnit" [options]="{ placeholder : 'Unit' }" ></ion-auto-complete>
                   </div>
                   <div class="field posIn">
                     <ion-auto-complete [dataProvider]="SimpleService" [options]="{ placeholder : 'Moving out resident' }"></ion-auto-complete>

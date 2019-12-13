@@ -18,7 +18,6 @@ export class SignaturePadComponent implements OnInit {
     'minWidth': 5,
     'canvasWidth': 700,
     'canvasHeight': 300,
-    'backgroundColor': 'rgb(249,249,249,1)',
   };
 
   constructor(public popoverController: PopoverController,

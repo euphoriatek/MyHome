@@ -30,6 +30,9 @@ export class RoomObjectPage implements OnInit {
   nachreinigung:any={'title':'','description':'','service_provider':'','cost_by':'','location':'','image':'','pan_location':''};
   nichtVorhanden:any={'title':'','description':'','service_provider':'','cost_by':'','location':'','image':'','pan_location':''};
   inspectionArr:any=[];
+  currentCmp:any;
+  costbyprotocol:any;
+  actionprotocol:any;
 
   @ViewChild('owlElement',{'static':false}) owlElement: OwlCarousel
 
@@ -48,19 +51,20 @@ export class RoomObjectPage implements OnInit {
     });
   }
 
-  openSliderContent(componentIndex){
+  openSliderContent(componentIndex,componentName){
+    this.currentCmp = componentName;
     this.currentComponent = componentIndex;
     this.openslider =  true;
   }
 
   closeSliderContent(){
+    this.currentCmp = '';
     this.openslider =  false;
     this.isShared = false;
     this.costby = '';
   }
 
   openCam(){
-    debugger;
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.FILE_URI,
@@ -69,9 +73,9 @@ export class RoomObjectPage implements OnInit {
     }
     
     this.camera.getPicture(options).then((imageData) => {
-     this.image=(<any>window).Ionic.WebView.convertFileSrc(imageData);
+      this.image=(<any>window).Ionic.WebView.convertFileSrc(imageData);
     }, (err) => {
-     alert("error "+JSON.stringify(err))
+      alert("error "+JSON.stringify(err))
     });
 
   }
@@ -86,11 +90,13 @@ export class RoomObjectPage implements OnInit {
     this.sybTabName = infoSlideName;
     this.costby = '';
   }
-  closeInfoSlider(){
+  closeInfoSlider(getSubProtocol){
     this.openInfoSlide = false;
   }
 
   gofurther(componentIndex,componentName){
+    this.costbyprotocol='';
+    this.actionprotocol='';
     this.service.showLoader('Please Wait...');
     setTimeout(()=>{
       this.service.hideLoader();

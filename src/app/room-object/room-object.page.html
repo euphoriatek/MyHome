@@ -36,7 +36,7 @@
 
               <ion-item-sliding *ngFor="let component of roomComponent;let i = index">
                 <div *ngIf="component.complete" class="checked"><img src="./assets/images/icon-check-b.png" alt="icon checked"></div>                
-                <ion-item (click)="openSliderContent(i)" class="radiusRound" [ngClass]="component.complete?'done':''">
+                <ion-item (click)="openSliderContent(i,component.name)" class="radiusRound" [ngClass]="component.complete?'done':''">
                   <ion-label>{{component.name}}</ion-label>
                 </ion-item>
                 <ion-item-options side="end">
@@ -103,13 +103,13 @@
               </div>
               <div class="field darkField">
                 <div (click)="openInfoSlider('Action')" class="cstmSelect">Action</div>
-                <span class="icon">
+                <span class="icon"> {{actionprotocol}}
                   <img src="./assets/images/icon-caret.png" alt="icon-caret">
                 </span>
               </div>
               <div class="field darkField">
                 <div (click)="openInfoSlider('Costs to be paid by')"  class="cstmSelect">Costs to be paid by:</div>
-                <span class="icon">
+                <span class="icon"> {{costbyprotocol}}
                   <img src="./assets/images/icon-caret.png" alt="icon-caret">
                 </span>
               </div>
@@ -325,43 +325,43 @@
 
 
 <div class="subDropdown blackSlide" [ngClass]="openInfoSlide?'show':''">
-  <a class="closeSlider" (click)="closeInfoSlider()"><ion-icon ios="ios-close" md="md-close"></ion-icon></a>
+  <a class="closeSlider" (click)="closeInfoSlider(sybTabName)"><ion-icon ios="ios-close" md="md-close"></ion-icon></a>
   <div class="formWrapper">
     <div class="alignBlock">
-      <a class="goBack" (click)="closeInfoSlider()"><img src="../../assets/images/icon-back.png" alt="icon back"> zurück</a>
+      <a class="goBack" (click)="closeInfoSlider(sybTabName)"><img src="../../assets/images/icon-back.png" alt="icon back"> zurück</a>
       <h4>{{sybTabName}}</h4>
     </div>
     <div class="dropdownContainer">
      <ion-list *ngIf="sybTabName=='Action'" radio-group ngDefaultControl>
-       <ion-radio-group name=“radio-group” [(ngModel)]="protocol">
+       <ion-radio-group name=“radio-group” [(ngModel)]="actionprotocol">
         <ion-item>
           <ion-label>Fixed</ion-label>
-          <ion-radio mode="ios" slot="end" value="1" ></ion-radio>
+          <ion-radio mode="ios" slot="end" value="Fixed" ></ion-radio>
         </ion-item>
         <ion-item>
           <ion-label>Leave</ion-label>
-          <ion-radio mode="ios" slot="end" value="2" ></ion-radio>
+          <ion-radio mode="ios" slot="end" value="Leave" ></ion-radio>
         </ion-item> 
         <ion-item>
           <ion-label>Wait</ion-label>
-          <ion-radio mode="ios" slot="end" value="3" ></ion-radio>
+          <ion-radio mode="ios" slot="end" value="Wait" ></ion-radio>
         </ion-item>
       </ion-radio-group>
     </ion-list>
 
     <ion-list *ngIf="sybTabName=='Costs to be paid by'" radio-group ngDefaultControl>
-       <ion-radio-group name=“radio-group” [(ngModel)]="costby">
+       <ion-radio-group name=“radio-group” [(ngModel)]="costbyprotocol">
         <ion-item>
           <ion-label (click)="isShared=false">Housewohner</ion-label>
-          <ion-radio mode="ios" slot="end" value="1" ></ion-radio>
+          <ion-radio mode="ios" slot="end" value="Housewohner" ></ion-radio>
         </ion-item>
         <ion-item (click)="isShared=false">
           <ion-label>Resident</ion-label>
-          <ion-radio mode="ios" slot="end" value="2" ></ion-radio>
+          <ion-radio mode="ios" slot="end" value="Resident" ></ion-radio>
         </ion-item> 
         <ion-item (click)="isShared=true">
           <ion-label>Shared</ion-label>
-          <ion-radio mode="ios" slot="end" value="3" ></ion-radio>
+          <ion-radio mode="ios" slot="end" value="Shared" ></ion-radio>
         </ion-item>
         <ion-item *ngIf="isShared">
           <ion-input placeholder="%"></ion-input>

@@ -96,6 +96,13 @@ export class RoomsPage implements OnInit {
 			this.isCancel=false;
 			this.storage.set('addRoom', '');
 		});
+		this.storage.get('mangel').then((val) => {
+			if(val){
+			this.roomCard[0].name = val.length+' mangel';
+			this.isCancel=false;
+			this.storage.set('mangel', '');
+			}
+		});
 	}
 
 

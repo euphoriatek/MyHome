@@ -91,6 +91,11 @@ export class RoomObjectPage implements OnInit {
     this.costby = '';
   }
   closeInfoSlider(getSubProtocol){
+    if(this.costbyprotocol!=''){
+      this.storage.set(this.currentCmp,this.costbyprotocol);
+    } if(this.actionprotocol!=''){
+      this.storage.set(this.currentCmp,this.actionprotocol);
+    }
     this.openInfoSlide = false;
   }
 
@@ -110,8 +115,10 @@ export class RoomObjectPage implements OnInit {
     } else {
       this.currentComponent++;
     }
-    if(componentName!='okay'){
-
+    if(componentName=='mangel'){
+      this.inspectionArr.push(this.mangel);
+      debugger;
+      this.storage.set('mangel',this.inspectionArr);
     }
   }
 

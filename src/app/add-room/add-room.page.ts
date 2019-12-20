@@ -40,6 +40,4 @@ export class AddRoomPage implements OnInit {
   	this.storage.set('addRoom', roomDetails);
   	this.router.navigate(['/rooms']);
   }
-
-  
 }

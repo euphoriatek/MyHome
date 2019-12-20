@@ -7,6 +7,10 @@
             padding: 0;
             margin: 0 0 0 -30px;
             background: transparent;
+            .radiusBg{
+                border-radius: 8px;
+                overflow: hidden;
+            }
             ion-item-sliding{
                 cursor: pointer;
                 padding: 0 0 0 30px;
@@ -44,6 +48,16 @@
                     text-align: center;
                     letter-spacing: 1px;
                 }
+                &:first-child{
+                    ion-item {
+                        border-radius: 8px 0 0!important;
+                    }
+                }
+                &:last-child{
+                    ion-item {
+                        border-radius: 0 0 0 8px!important;
+                    }
+                }
             }
         }
     }
@@ -58,7 +72,8 @@
         padding: 25px 30px;
         transform: translateX(105%);
         transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
-        min-height: 100vh;
+        max-height: 100%;
+        overflow: auto;
         &.show{
             transform: translateX(0);
         }
@@ -74,7 +89,7 @@
             transform: translateY(-50%);
         }
         &.subDropdown{
-            min-height: 120vh;
+            min-height: 100vh;
             &::before{
                 display: none;
             }
@@ -97,6 +112,8 @@
                     font-weight: 100;
                     img{
                         max-width: 15px;
+                        position: relative;
+                        top: 3px;
                     }
                 }
             }

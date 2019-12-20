@@ -19,7 +19,7 @@ export class AppComponent {
         this.initializeApp();
         var roomObjects = [
         {'name':'Boden','complete':false,'inspection':[]},
-        {'name':'Wände','complete':false,'inspection':''},
+        {'name':'Wände','complete':false,'inspection':[]},
         {'name':'Schränke / Garderobe','complete':false,'inspection':[]},
         {'name':'Sicherungskasten','complete':false,'inspection':[]},
         {'name':'Wohnungstüre / Schloss','complete':false,'inspection':[]},

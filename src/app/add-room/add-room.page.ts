@@ -41,10 +41,5 @@ export class AddRoomPage implements OnInit {
   	this.router.navigate(['/rooms']);
   }
 
-
-  addNewComponent(){
-    var comonentName = this.service.presentAlertConfirm('Add Component','Add New COmponent');
-    debugger;
-  }
   
 }

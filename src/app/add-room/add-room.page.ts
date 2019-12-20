@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,NavigationExtras} from '@angular/router';
 import { Storage } from '@ionic/storage';
+import { SimpleService } from '../api/simple-service.service';
+
 @Component({
   selector: 'app-add-room',
   templateUrl: './add-room.page.html',
@@ -10,7 +12,7 @@ export class AddRoomPage implements OnInit {
 	roomName:any;
 	roomType:any;
 
-  constructor(private router: Router,private storage: Storage) { }
+  constructor(private router: Router,private storage: Storage,public service:SimpleService) { }
 
   ngOnInit() {
   }
@@ -37,6 +39,12 @@ export class AddRoomPage implements OnInit {
     if(this.roomName)
   	this.storage.set('addRoom', roomDetails);
   	this.router.navigate(['/rooms']);
+  }
+
+
+  addNewComponent(){
+    var comonentName = this.service.presentAlertConfirm('Add Component','Add New COmponent');
+    debugger;
   }
   
 }

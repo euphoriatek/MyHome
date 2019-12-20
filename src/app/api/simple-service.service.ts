@@ -94,4 +94,5 @@ export class SimpleService implements AutoCompleteService {
 
     await alert.present();
   }
+
 }

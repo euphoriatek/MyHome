@@ -39,7 +39,7 @@
                 <ion-item (click)="openSliderContent(i,component.name)" class="radiusRound" [ngClass]="component.complete?'done':''">
                   <ion-label>{{component.name}}</ion-label>
                   <ion-label *ngIf="!component.complete" slot="end" text-right>Pending</ion-label>
-                  <ion-label *ngIf="component.complete" slot="end" text-right>Okay</ion-label>
+                  <ion-label *ngIf="component.complete" slot="end" text-right>{{component.complete_inspection}}</ion-label>
                 </ion-item>
                 <ion-item-options side="end">
                   <ion-item-option (click)="clear(item)">löschen</ion-item-option>
@@ -50,7 +50,7 @@
           </ion-list>
         </div>
 
-        <div class="addNewcomponent">
+        <div class="addNewcomponent" (click)="addNewComponent('Add Component')">
           <a><ion-icon ios="ios-add" md="md-add"></ion-icon></a>
         </div>
       </div>

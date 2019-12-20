@@ -5,6 +5,7 @@ import { Router,NavigationExtras,ActivatedRoute} from '@angular/router';
 import { LoadingController,IonContent } from '@ionic/angular';
 import { SimpleService } from '../api/simple-service.service';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-room-object',
@@ -41,13 +42,13 @@ export class RoomObjectPage implements OnInit {
     public loadingController: LoadingController,
     private router: Router,
     private camera: Camera,
-    public service:SimpleService) { }
+    public service:SimpleService,
+    public alertController: AlertController) { }
 
   ngOnInit() {
     this.storage.get('Korridor').then((val) => {
       if(val){
         this.roomComponent = val;
-        debugger;
       }
     });
   }
@@ -101,9 +102,10 @@ export class RoomObjectPage implements OnInit {
   }
 
   gofurther(componentIndex,componentName){
+    this.service.showLoader('Please Wait...');
+    this.roomComponent[componentIndex].complete_inspection=componentName;
     this.costbyprotocol='';
     this.actionprotocol='';
-    this.service.showLoader('Please Wait...');
     setTimeout(()=>{
       this.service.hideLoader();
       this.content.scrollToTop(0);
@@ -158,6 +160,42 @@ export class RoomObjectPage implements OnInit {
 
     const { role, data } = await loading.onDidDismiss();
     console.log('Loading dismissed!');
+  }
+
+
+
+
+
+  async addNewComponent(Header) {
+    const alert = await this.alertController.create({
+      header: Header,
+      inputs: [
+      {
+        name: 'Component',
+        type: 'text',
+        placeholder: 'Enter New Component Name Here!'
+      }],
+      buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => {
+          console.log('Confirm Cancel: blah');
+        }
+      }, {
+        text: 'Save',
+        handler: (alertData) => {
+          console.log('Confirm Okay');
+          var appendComponent = {'name':alertData.Component,'complete':false,'inspection':[]};
+          if(alertData.Component)
+          this.roomComponent.push(appendComponent);
+        }
+      }
+      ]
+    });
+
+    await alert.present();
   }
 
 

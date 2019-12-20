@@ -7,6 +7,10 @@
             padding: 0;
             margin: 0 0 0 -30px;
             background: transparent;
+            .radiusBg{
+                border-radius: 8px;
+                overflow: hidden;
+            }
             ion-item-sliding{
                 cursor: pointer;
                 padding: 0 0 0 30px;
@@ -24,6 +28,14 @@
                 ion-item{
                     color: var(--ion-balticsea-color);
                     font-weight: 100;
+                    ion-label{
+                        color: var(--ion-balticsea-color);
+                        font-size: 18px;
+                        font-weight: 300;
+                        padding: 10px 0;
+                        display: block;
+                        margin: 0;
+                    }
                     &.done{
                         --background:var(--ion-light-backgound);
                         position: relative;
@@ -44,6 +56,17 @@
                     text-align: center;
                     letter-spacing: 1px;
                 }
+                &:first-child{
+                    ion-item {
+                        border-radius: 8px 0 0!important;
+                    }
+                }
+                &:last-child{
+                    ion-item {
+                        border-radius: 0 0 0 8px!important;
+                        --border-color: var(--ion-color-medium-contrast);
+                    }
+                }
             }
         }
     }
@@ -58,7 +81,8 @@
         padding: 25px 30px;
         transform: translateX(105%);
         transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
-        min-height: 100vh;
+        max-height: 100%;
+        overflow: auto;
         &.show{
             transform: translateX(0);
         }
@@ -74,7 +98,7 @@
             transform: translateY(-50%);
         }
         &.subDropdown{
-            min-height: 120vh;
+            min-height: 100vh;
             &::before{
                 display: none;
             }
@@ -97,6 +121,8 @@
                     font-weight: 100;
                     img{
                         max-width: 15px;
+                        position: relative;
+                        top: 3px;
                     }
                 }
             }
@@ -276,5 +302,14 @@
             }
         }
     }
+    .addNewcomponent {
+        height: 40px;
+        width: 40px;
+        border: 2px dashed var(--ion-theme-primary-color);
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        margin: 20px 0 0;
+        color: var(--ion-theme-primary-color);
+    }
 }
-

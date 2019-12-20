@@ -49,6 +49,10 @@
             </div>
           </ion-list>
         </div>
+
+        <div class="addNewcomponent">
+          <a><ion-icon ios="ios-add" md="md-add"></ion-icon></a>
+        </div>
       </div>
     </div>
 
@@ -105,13 +109,15 @@
               </div>
               <div class="field darkField">
                 <div (click)="openInfoSlider('Action')" class="cstmSelect">Action</div>
-                <span class="icon"> {{actionprotocol}}
+                <div class="outCome">{{actionprotocol}}</div>
+                <span class="icon">
                   <img src="./assets/images/icon-caret.png" alt="icon-caret">
                 </span>
               </div>
               <div class="field darkField">
                 <div (click)="openInfoSlider('Costs to be paid by')"  class="cstmSelect">Costs to be paid by:</div>
-                <span class="icon"> {{costbyprotocol}}
+                <div class="outCome">{{costbyprotocol}}</div>
+                <span class="icon"> 
                   <img src="./assets/images/icon-caret.png" alt="icon-caret">
                 </span>
               </div>

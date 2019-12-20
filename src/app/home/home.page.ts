@@ -15,17 +15,7 @@ export class HomePage {
   isSelectAll:any=false;
   classVariable:any;
   isSynch:false;
-
-
-
-  cardBox = [
-  {name:'Handover',subname:'',bgClass:"primaryBg", active:false, isChecked:false},
-  {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false,isChecked:false},
-  {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false,isChecked:false},
-  {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false,isChecked:false},
-  {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false,isChecked:false},
-  {name:'Construction',subname:'control II',bgClass:"secondaryBg", active:false,isChecked:false},
-  ];
+  cardBox:any=[];
 
   constructor(private router: Router,private storage: Storage,public service:SimpleService) {
 
@@ -34,6 +24,11 @@ export class HomePage {
 
   ngOnInit() {
     this.service.hideLoader();
+    this.storage.get('hometiles').then((val) => {
+      if(val){
+        this.cardBox = val;
+      }
+    });
   }
 
   goToProtocol(){

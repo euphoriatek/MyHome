@@ -47,6 +47,7 @@ export class RoomObjectPage implements OnInit {
     this.storage.get('Korridor').then((val) => {
       if(val){
         this.roomComponent = val;
+        debugger;
       }
     });
   }
@@ -117,7 +118,6 @@ export class RoomObjectPage implements OnInit {
     }
     if(componentName=='mangel'){
       this.inspectionArr.push(this.mangel);
-      debugger;
       this.storage.set('mangel',this.inspectionArr);
     }
   }

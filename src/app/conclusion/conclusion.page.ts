@@ -57,7 +57,7 @@ export class ConclusionPage implements OnInit {
     }); }
 
     ngOnInit() {
-
+      this.createpdf();
     }
 
     settheSignatureValue(){
@@ -176,7 +176,7 @@ export class ConclusionPage implements OnInit {
     }
 
 
-    downloadpdf() {
+    showPdf() {
       if (this.plt.is('cordova')) {
         this.pdfObj.getBuffer((buffer) => {
           var blob = new Blob([buffer], { type: 'application/pdf' });
@@ -184,13 +184,17 @@ export class ConclusionPage implements OnInit {
           // Save the PDF to the data Directory of our App
           this.file.writeFile(this.file.dataDirectory, 'myletter.pdf', blob, { replace: true }).then(fileEntry => {
             // Open the PDf with the correct OS tools
-            this.fileOpener.open(this.file.dataDirectory + 'myletter.pdf', 'application/pdf');
+            this.fileOpener.showOpenWithDialog(this.file.dataDirectory + 'myletter.pdf', 'application/pdf');
           })
         });
       } else {
         // On a browser simply use download!
         this.pdfObj.download();
       }
+    }
+
+    downloadpdf(){
+      this.pdfObj.download();
     }
 
 

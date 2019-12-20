@@ -41,8 +41,8 @@
                   <div class="field">
                       <ion-input placeholder="Date" (click)="datePick()"></ion-input>
                   </div>
-                  <p><button ion-button class="btn w-100 btn-balticsea"  (click)="createpdf()"  >PDF Preview</button><br>
-                  <button ion-button class="btn w-100 btn-balticsea"  (click)="downloadpdf()"  >Download</button></p>
+                  <p><button ion-button class="btn w-100 btn-balticsea"  (click)="showPdf()"  >PDF Preview</button><br>
+                  <!-- <button ion-button class="btn w-100 btn-balticsea"  (click)="downloadpdf()"  >Download</button></p> -->
                 </div>
               </div>
               <div class="signatureWrapper">
@@ -71,22 +71,7 @@
                         <img src="{{RSCSign}}" />
                     </div>
                 </div>
-                <!-- <div class="normalTextarea">
-                    <label>Signature Resident (incoming)</label>
-                      <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
-                </div> -->
-                <!-- <div class="normalTextarea">
-                    <label>Signature Resident (outgoing)*</label>
-                    <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
-                </div> -->
-                <!-- <div class="normalTextarea">
-                    <label>Signature TU / GU*</label>
-                    <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
-                </div> -->
-                <!-- <div class="normalTextarea">
-                    <label>Signature Real estate company</label>
-                    <signature-pad class="signature-pad" [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
-                </div> -->
+  
               </div>
           </div>
       </div>

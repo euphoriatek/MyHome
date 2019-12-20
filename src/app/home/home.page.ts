@@ -18,7 +18,7 @@ export class HomePage {
   cardBox:any=[];
 
   constructor(private router: Router,private storage: Storage,public service:SimpleService) {
-
+    this.service.hideLoader();
   }
 
 

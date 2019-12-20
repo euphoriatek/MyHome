@@ -32,37 +32,9 @@
               <div class="formWrapper">
                   <h3>Key directory</h3>
                   <div class="formContainer">
-                    <div class="field">
-                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Apartment door</div>
-                        <div class="outCome">text</div>
-                        <span class="icon">
-                          <img src="./assets/images/icon-caret-b.png" alt="icon-caret">
-                        </span>
-                    </div>
-                    <div class="field">
-                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Transmitter underground garage</div>
-                        <div class="outCome">text</div>
-                        <span class="icon">
-                          <img src="./assets/images/icon-caret-b.png" alt="icon-caret">
-                        </span>
-                    </div>
-                    <div class="field">
-                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Office and commercial</div>
-                        <div class="outCome">text</div>
-                        <span class="icon">
-                          <img src="./assets/images/icon-caret-b.png" alt="icon-caret">
-                        </span>
-                    </div>
-                    <div class="field">
-                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Storeroom</div>
-                        <div class="outCome">text</div>
-                        <span class="icon">
-                          <img src="./assets/images/icon-caret-b.png" alt="icon-caret">
-                        </span>
-                    </div>
-                    <div class="field">
-                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Transmitter</div>
-                        <div class="outCome">text</div>
+                    <div class="field" *ngFor="let keyDirectory of keyDirectoryArray;let i = index">
+                        <div (click)="goToDropDown(i,'Key')" class="cstmSelect">{{keyDirectory.key_name}}</div>
+                        <div class="outCome">{{keyDirectory.key_value}}</div>
                         <span class="icon">
                           <img src="./assets/images/icon-caret-b.png" alt="icon-caret">
                         </span>
@@ -73,27 +45,14 @@
               <div class="formWrapper">
                   <h3>General</h3>
                   <div class="formContainer">
-                    <div class="field">
-                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Oven tray</div>
-                        <div class="outCome">text</div>
+                    <div class="field" *ngFor="let miscellaneousGeneral of miscellaneousGeneralList;let i = index">
+                        <div (click)="goToDropDown(i,'General')" class="cstmSelect">{{miscellaneousGeneral.key_name}}</div>
+                        <div class="outCome">{{miscellaneousGeneral.key_value}}</div>
                         <span class="icon">
                           <img src="./assets/images/icon-caret-b.png" alt="icon-caret">
                         </span>
                     </div>
-                    <div class="field">
-                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Oven grid</div>
-                        <div class="outCome">text</div>
-                        <span class="icon">
-                          <img src="./assets/images/icon-caret-b.png" alt="icon-caret">
-                        </span>
-                    </div>
-                    <div class="field">
-                        <div [routerLink]="['/miscellaneous-dropdown']" class="cstmSelect">Information brochure</div>
-                        <div class="outCome">text</div>
-                        <span class="icon">
-                          <img src="./assets/images/icon-caret-b.png" alt="icon-caret">
-                        </span>
-                    </div>
+                  
                     <div class="textareaWrapper">
                     <textarea name="" id="" cols="" rows=""></textarea>
                     <span class="floatTitle">Notes</span>

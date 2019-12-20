@@ -69,6 +69,21 @@ export class AppComponent {
         {'name':'Unit 12'}
         ]
 
+
+        var keyDirectoryArray=[
+        {'key_name':'Apartment door','key_value':''},
+        {'key_name':'Transmitter underground garage','key_value':''},
+        {'key_name':'Office and commercialr','key_value':''},
+        {'key_name':'Storeroom','key_value':''},
+        {'key_name':'Transmitter','key_value':''}
+        ]
+
+        var General=[
+        {'key_name':'Oven tray','key_value':''},
+        {'key_name':'Oven grid','key_value':''},
+        {'key_name':'Information brochure','key_value':''}
+        ]
+
         var cardBox = [
         {name:'Handover',subname:'',bgClass:"primaryBg", active:false, isChecked:false},
         {name:'Construction',subname:'control I',bgClass:"primaryBg", active:false,isChecked:false},
@@ -83,6 +98,9 @@ export class AppComponent {
         this.storage.set('inResidentUser',residentUser);
         this.storage.set('unitList',unitData);
         this.storage.set('hometiles',cardBox);
+        this.storage.set('miscellaneousList',keyDirectoryArray);
+        this.storage.set('miscellaneousGeneralList',General);
+
     }
 
     initializeApp() {

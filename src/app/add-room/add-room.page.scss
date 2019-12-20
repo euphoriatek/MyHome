@@ -38,11 +38,17 @@
         margin-top: 40px;
     }
     .componentList {
+        box-shadow: var(--ion-shadow-card);
+        overflow: hidden;
+        border-radius: 8px;
         .list-md{
             max-width: 100%;
-            border-radius: 8px;
             padding: 0 0 0 10px;
             ion-item{
+                --background: transparent!important;
+                --background-activated: none!important;
+                --background-focused: none!important;
+                --background-hover: none!important;
                 ion-label{
                     color: var(--ion-balticsea-color);
                     font-size: 18px;
@@ -50,6 +56,22 @@
                     padding: 18px 0;
                     display: block;
                     margin: 0;
+                }
+                ion-checkbox{
+                    opacity: 0;
+                    margin: 0;
+                }
+                .showCheckox{
+                    height: 20px;
+                    width: 28px;
+                    background: url(../../assets/images/icon-check-w.png) center center no-repeat;
+                    background-size: 22px;
+                }
+                &.item-checkbox-checked{
+                    .showCheckox{
+                        background: url(../../assets/images/icon-check-b.png) center center no-repeat;
+                        background-size: 22px;
+                    }
                 }
             }
             ion-checkbox{

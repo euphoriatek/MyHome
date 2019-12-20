@@ -28,6 +28,14 @@
                 ion-item{
                     color: var(--ion-balticsea-color);
                     font-weight: 100;
+                    ion-label{
+                        color: var(--ion-balticsea-color);
+                        font-size: 18px;
+                        font-weight: 300;
+                        padding: 10px 0;
+                        display: block;
+                        margin: 0;
+                    }
                     &.done{
                         --background:var(--ion-light-backgound);
                         position: relative;
@@ -56,6 +64,7 @@
                 &:last-child{
                     ion-item {
                         border-radius: 0 0 0 8px!important;
+                        --border-color: var(--ion-color-medium-contrast);
                     }
                 }
             }
@@ -293,5 +302,14 @@
             }
         }
     }
+    .addNewcomponent {
+        height: 40px;
+        width: 40px;
+        border: 2px dashed var(--ion-theme-primary-color);
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        margin: 20px 0 0;
+        color: var(--ion-theme-primary-color);
+    }
 }
-

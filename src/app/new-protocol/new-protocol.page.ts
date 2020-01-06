@@ -15,7 +15,7 @@ export class NewProtocolPage implements OnInit {
   constructor(public service:SimpleService,private router: Router,private storage: Storage) { }
 
   ngOnInit() {
-    this.storage.get('protocolList').then((val) => {
+    this.storage.get('protocolData').then((val) => {
       if(val){
         this.protocolList = val;
       }
@@ -26,7 +26,7 @@ export class NewProtocolPage implements OnInit {
     console.log("this is selected value of protocol "+this.selectedProtocol);
     if(this.selectedProtocol=='' || this.selectedProtocol==null){
       this.service.presentAlertWithSingle('Please select atleast one Protocol!');
-    } else if(this.selectedProtocol == 'Abnahme') {
+    } else if(this.selectedProtocol == 'handover') {
       this.service.showLoader("please Wait...");
       setTimeout(() => {
         this.router.navigate(['/parties']);

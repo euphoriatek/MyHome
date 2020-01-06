@@ -35,35 +35,35 @@
           <div class="protocolList">
            <ion-list radio-group ngDefaultControl>
              <ion-radio-group name=“radio-group” [(ngModel)]="protocol">
-              <ion-item>
+              <ion-item (click)="isManual=false">
                 <ion-label>1</ion-label>
                 <ion-radio mode="ios" slot="end" value="1" ></ion-radio>
               </ion-item>
-              <ion-item>
+              <ion-item (click)="isManual=false">
                 <ion-label>2</ion-label>
                 <ion-radio mode="ios" slot="end" value="2" ></ion-radio>
               </ion-item> 
-              <ion-item>
+              <ion-item (click)="isManual=false">
                 <ion-label>3</ion-label>
                 <ion-radio mode="ios" slot="end" value="3" ></ion-radio>
               </ion-item>
-              <ion-item>
+              <ion-item (click)="isManual=false">
                 <ion-label>4</ion-label>
                 <ion-radio mode="ios" slot="end" value="4" ></ion-radio>
               </ion-item>
-              <ion-item>
+              <ion-item (click)="isManual=false">
                 <ion-label>5</ion-label>
                 <ion-radio mode="ios" slot="end" value="5" ></ion-radio>
               </ion-item>
+              <ion-item (click)="isManual=true">
+                <ion-label>Manual</ion-label>
+                <ion-radio mode="ios" slot="end" value="manualProtocol"></ion-radio>
+              </ion-item>
+              <ion-item *ngIf="isManual">
+                <ion-input [(ngModel)]="manualProtocol" type="number" placeholder="Enter Manual Value!"></ion-input>
+              </ion-item>
             </ion-radio-group>
           </ion-list>
-        </div>
-
-        <h3>Schlüsselnummer</h3>
-        <div class="formContainer">
-          <div class="field">
-            <ion-input placeholder="Number"></ion-input>
-          </div>
         </div>
       </div>
     </div>

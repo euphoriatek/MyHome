@@ -33,7 +33,7 @@
                   <h3>Key directory</h3>
                   <div class="formContainer">
                     <div class="field" *ngFor="let keyDirectory of keyDirectoryArray;let i = index">
-                        <div (click)="goToDropDown(i,'Key')" class="cstmSelect">{{keyDirectory.key_name}}</div>
+                        <div (click)="goToDropDown(i,'Key')" class="cstmSelect">{{keyDirectory.name}}</div>
                         <div class="outCome">{{keyDirectory.key_value}}</div>
                         <span class="icon">
                           <img src="./assets/images/icon-caret-b.png" alt="icon-caret">
@@ -46,7 +46,7 @@
                   <h3>General</h3>
                   <div class="formContainer">
                     <div class="field" *ngFor="let miscellaneousGeneral of miscellaneousGeneralList;let i = index">
-                        <div (click)="goToDropDown(i,'General')" class="cstmSelect">{{miscellaneousGeneral.key_name}}</div>
+                        <div (click)="goToDropDown(i,'General')" class="cstmSelect">{{miscellaneousGeneral.name}}</div>
                         <div class="outCome">{{miscellaneousGeneral.key_value}}</div>
                         <span class="icon">
                           <img src="./assets/images/icon-caret-b.png" alt="icon-caret">

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,NavigationExtras  } from '@angular/router';
 import { Storage } from '@ionic/storage';
 import { SimpleService } from '../api/simple-service.service';
 
@@ -17,7 +17,7 @@ export class MiscellaneousPage implements OnInit {
 
 	ngOnInit() {
 		this.service.hideLoader();
-		this.storage.get('miscellaneousList').then((val) => {
+		this.storage.get('KeyList').then((val) => {
 			if(val){
 				this.keyDirectoryArray = val;
 			}
@@ -38,7 +38,7 @@ export class MiscellaneousPage implements OnInit {
 		this.keyDirectoryArray = [];
 		this.miscellaneousGeneralList=[];
 		this.service.hideLoader();
-		this.storage.get('miscellaneousList').then((val) => {
+		this.storage.get('KeyList').then((val) => {
 			if(val){
 				this.keyDirectoryArray = val;
 			}

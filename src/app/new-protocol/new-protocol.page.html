@@ -39,8 +39,8 @@
               <ion-list radio-group ngDefaultControl>
                 <ion-radio-group name=“radio-group” [(ngModel)]="selectedProtocol">
                   <ion-item *ngFor="let protocol of protocolList">
-                    <ion-label>{{protocol.title}}</ion-label>
-                    <ion-radio mode="ios" slot="end" value="{{protocol.title}}"></ion-radio>
+                    <ion-label>{{protocol.name}}</ion-label>
+                    <ion-radio mode="ios" slot="end" value="{{protocol.name}}"></ion-radio>
                   </ion-item>
 
                 </ion-radio-group>

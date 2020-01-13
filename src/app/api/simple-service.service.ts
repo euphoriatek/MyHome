@@ -30,11 +30,11 @@ export class SimpleService implements AutoCompleteService {
   }
 
   getResults(keyword:string):Observable<any[]> {
-    if(keyword.length==0 || keyword.length==null){
-      return
-    }
+    // return;
+    // if(!keyword || keyword ==''){
+    //   return
+    // }
     let observable:Observable<any>;
-
     if (this.countries.length === 0) {
       observable = this.inResidentUser;
     } else {

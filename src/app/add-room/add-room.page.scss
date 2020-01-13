@@ -81,4 +81,14 @@
             }
         }
     }
+    .addNewcomponent {
+        height: 40px;
+        width: 40px;
+        border: 2px dashed var(--ion-theme-primary-color);
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        margin: 20px 0 0;
+        color: var(--ion-theme-primary-color);
+    }
 }

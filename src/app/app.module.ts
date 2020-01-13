@@ -11,7 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { OwlModule } from 'ngx-owl-carousel';
 import { SignaturePadModule } from 'angular2-signaturepad';
 import { AutoCompleteModule } from 'ionic4-auto-complete';
-import {SimpleService} from './api/simple-service.service';
+import { SimpleService } from './api/simple-service.service';
+import { AuthService } from './api/auth.service';
 import {HttpClient} from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
@@ -30,6 +31,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
   HttpClient,
   DatePicker,
   SimpleService,
+  AuthService,
   StatusBar,
   File,
   FileOpener,

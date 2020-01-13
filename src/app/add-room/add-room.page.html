@@ -47,7 +47,7 @@
                             <div class="selectCustom">
                               <ion-item>
                                 <ion-select [(ngModel)]="roomType"  (ionChange)="addNewRoomType();">
-                                    <ion-select-option *ngFor="let roomData of roomTypeData" value="{{roomData.name}}">{{roomData.name}}</ion-select-option>
+                                    <ion-select-option *ngFor="let roomData of roomTypeData" value="{{roomData.id}}">{{roomData.name}}</ion-select-option>
                                     <ion-select-option value="new">Add New Room Type</ion-select-option>
                                 </ion-select>
                                 <span class="showCheckox"></span>
@@ -62,12 +62,15 @@
                   <span class="fieldTitle">Components</span>
                   <div class="componentList">
                       <ion-list>
-                          <ion-item *ngFor="let roomComponent of roomComponentData">
+                          <ion-item *ngFor="let roomComponent of roomComponentData;let i=index">
                             <ion-label>{{roomComponent.name}}</ion-label>
-                            <ion-checkbox slot="end" value="{{roomComponent.name}}"></ion-checkbox>
+                            <ion-checkbox slot="end" (ionChange)="checkedComponent(i)" value="{{roomComponent.name}}" checked="{{roomComponent.checked}}"></ion-checkbox>
                             <span class="showCheckox"></span>
                           </ion-item>
                       </ion-list>
+                      <div class="addNewcomponent" (click)="addNewComponent('Add Component')">
+                        <a><ion-icon ios="ios-add" md="md-add"></ion-icon></a>
+                      </div>
                     </div>
                 </div>
               </div>

@@ -34,7 +34,7 @@
           <ion-list>
             <div class="radiusBg">
 
-              <ion-item-sliding *ngFor="let component of roomComponent;let i = index">
+              <ion-item-sliding *ngFor="let component of roomTypeComponent;let i = index">
                 <div *ngIf="component.complete" class="checked"><img src="./assets/images/icon-check-b.png" alt="icon checked"></div>                
                 <ion-item (click)="openSliderContent(i,component.name)" class="radiusRound" [ngClass]="component.complete?'done':''">
                   <ion-label>{{component.name}}</ion-label>

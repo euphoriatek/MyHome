@@ -28,53 +28,16 @@ export class RoomsPage implements OnInit {
 
 
 	ngOnInit() {
-		this.roomCard = [
-		{
-			'title':'Korridor 1',
-			'name':'',
-			'component':'',
-			'done':0,
-			'complete':false
-
-		},
-		{
-			'title':'Korridor 2',
-			'name':'1 Mängel',
-			'done':0,
-			'component':'11',
-			'complete':false
-
-		},
-		{
-			'title':'Korridor 3',
-			'name':'1 Mängel',
-			'done':0,
-			'component':'11',
-			'complete':false
-
-		},
-		{
-			'title':'Korridor 4',
-			'name':'1 Mängel',
-			'done':0,
-			'component':'11',
-			'complete':false
-
-		},
-		{
-			'title':'Korridor 5',
-			'name':'1 Mängel',
-			'done':0,
-			'component':'11',
-			'complete':false
-
-		}]
+		this.storage.get('roomLists').then((val) => {
+			if(val)
+				this.roomCard=val;
+		});
 	}
 
 	ionViewWillEnter(){
 		this.storage.get('Korridor').then((val) => {
 			if(val){
-				this.roomCard[0].component = val.length;
+				// this.roomCard[0].component = val.length;
 				var doneComp=0;
 				var isCompleteComponent=0;
 				for (var i = 0; i < val.length; ++i) {
@@ -89,7 +52,6 @@ export class RoomsPage implements OnInit {
 				this.roomCard[0].done = doneComp;
 			}
 		});
-
 		this.storage.get('addRoom').then((val) => {
 			if(val)
 				this.roomCard.push(val);
@@ -106,13 +68,18 @@ export class RoomsPage implements OnInit {
 	}
 
 
-	async presentLoading() {
+	async presentLoading(roomObject:any) {
 		const loading = await this.loadingController.create({
 			message: 'Please Wait..',
 			duration: 500
 		});
 		await loading.present();
-		this.router.navigate(['/room-object']);
+		let navigationExtras: NavigationExtras = {
+			queryParams: {
+				roomInfo: JSON.stringify({'id':roomObject.room_type})
+			}
+		};
+		this.router.navigate(['/room-object'],navigationExtras);
 
 		const { role, data } = await loading.onDidDismiss();
 		console.log('Loading dismissed!');

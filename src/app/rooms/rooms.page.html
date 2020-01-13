@@ -32,10 +32,10 @@
                 </div>
 
                 <div class="roomsContainer">
-                    <div class="roomCardBox" *ngFor="let roomdata of roomCard;let i= index" [ngClass]="roomdata.complete ? 'completed' : ''" (click)="presentLoading()">
-                        <h4>{{roomdata.title}}</h4>
+                    <div class="roomCardBox" *ngFor="let roomdata of roomCard;let i= index" [ngClass]="roomdata.complete ? 'completed' : ''" (click)="presentLoading(roomdata)">
+                        <h4>{{roomdata.name}}</h4>
                         <div class="bottomDiv">
-                            <span class="green">{{roomdata.name}}</span>
+                            <span class="green">{{roomdata.room_inspection_flag}}</span>
                             <span class="components">{{roomdata.done}} / {{roomdata.component}} Bauteile</span>
                         </div>
                         <div class="crossKill" *ngIf="isCancel" (click)="eraseRoom(i)">

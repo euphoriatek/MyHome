@@ -9,15 +9,15 @@
         <p>Use your credentials to access your account.</p>
         <div class="formWrapper">
           <div class="field">
-            <ion-input type="email" placeholder="Email"></ion-input>
+            <ion-input [(ngModel)]="userInfo.email" type="email" placeholder="Email"></ion-input>
           </div>
           <div class="field">
-            <ion-input type="password" placeholder="Password"></ion-input>
+            <ion-input [(ngModel)]="userInfo.password" type="password" placeholder="Password"></ion-input>
           </div>
           <ion-row>
             <ion-col size="6">
               <div class="checkBox">
-                  <ion-checkbox color="primary"></ion-checkbox>
+                  <ion-checkbox color="primary" (ionChange)="changeValue();"></ion-checkbox>
                   <ion-label>Remember me</ion-label>
               </div>
             </ion-col>

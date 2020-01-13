@@ -34,6 +34,9 @@ export class RoomObjectPage implements OnInit {
   currentCmp:any;
   costbyprotocol:any;
   actionprotocol:any;
+  roomIdObj:any;
+  roomTypeComponent:any=[];
+  doneComponentVar:any=[];
 
   @ViewChild('owlElement',{'static':false}) owlElement: OwlCarousel
 
@@ -43,14 +46,43 @@ export class RoomObjectPage implements OnInit {
     private router: Router,
     private camera: Camera,
     public service:SimpleService,
-    public alertController: AlertController) { }
+    public alertController: AlertController,
+    private route: ActivatedRoute) {
+      this.route.queryParams.subscribe(params => {
+        if (params && params.roomInfo) {
+          this.roomIdObj = JSON.parse(params.roomInfo);
+        }
+      });
+     }
 
   ngOnInit() {
     this.storage.get('Korridor').then((val) => {
       if(val){
+        this.roomTypeComponent=[];
         this.roomComponent = val;
+        for (let index = 0; index < this.roomComponent.length; index++) {
+          // this.roomComponent[index].complete = false;
+          if(this.roomComponent[index].room_type_component.length>0){
+            for(var indexi = 0; indexi < this.roomComponent[index].room_type_component.length; indexi++){
+              if(this.roomIdObj.id == this.roomComponent[index].room_type_component[indexi]){
+                this.roomTypeComponent.push(this.roomComponent[index]);
+              }
+            }
+          }
+        }
       }
     });
+
+    this.storage.get('completeComponent').then((val) => {
+			if(val){
+        this.doneComponentVar = val;
+        for (let index = 0; index < this.doneComponentVar.length; index++) {
+        //  if(this.roomIdObj.id == this.doneComponentVar[index].room_id){
+        //   this.roomTypeComponent[this.doneComponentVar[index].component_id].complete = true;
+        //  }
+        }
+      }
+		});
   }
 
   openSliderContent(componentIndex,componentName){
@@ -102,6 +134,9 @@ export class RoomObjectPage implements OnInit {
   }
 
   gofurther(componentIndex,componentName){
+    var completeComponentArr = {'component_id':componentIndex,'room_id':this.roomIdObj.id};
+    this.doneComponentVar.push(completeComponentArr);
+    this.storage.set('completeComponent', this.doneComponentVar);
     this.service.showLoader('Please Wait...');
     this.roomComponent[componentIndex].complete_inspection=componentName;
     this.costbyprotocol='';
@@ -149,13 +184,14 @@ export class RoomObjectPage implements OnInit {
 
 
   async goToRoom() {
-    this.roomComponent[0].inspection.push(this.inspectionArr);
-    this.storage.set('Korridor',this.roomComponent);
+    // this.roomComponent[0].inspection.push(this.inspectionArr);
+    // this.storage.set('Korridor',this.roomComponent);
     const loading = await this.loadingController.create({
       message: 'Please Wait..',
       duration: 500
     });
     await loading.present();
+    this.storage.set('Korridor',this.roomComponent);
     this.router.navigate(['/rooms']);
 
     const { role, data } = await loading.onDidDismiss();

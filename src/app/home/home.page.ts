@@ -23,6 +23,15 @@ export class HomePage {
 
 
   ngOnInit() {
+    this.storage.get('loginDetail').then((val) => {
+      if(val.access_token){
+        var expireDate = new Date(val.expires_at);
+        if(expireDate <= new Date()){
+          this.storage.set('loginDetail','');
+          this.router.navigate(['/login'])
+        }
+      }
+    });
     this.service.hideLoader();
     this.storage.get('hometiles').then((val) => {
       if(val){
